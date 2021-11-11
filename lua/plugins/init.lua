@@ -2,10 +2,13 @@ local ok,packer = pcall(require,'plugins.packerInit')
 local use = packer.use
 
 if not ok then 
-	error()
+    local packer_init_error = packer
+	error('something went wrong with packer initialization:\n'..packer_init_error)
 end
 
 use {
-	'https://github.com/wbthomason/packer.nvim',
-	event = 'VimEnter'
+    'wbthomason/packer.nvim',
+    event = 'VimEnter'
 }
+
+    
