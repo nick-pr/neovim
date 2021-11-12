@@ -5,10 +5,14 @@ if not ok then
     local packer_init_error = packer
 	error('something went wrong with packer initialization:\n'..packer_init_error)
 end
+packer.startup(function(use)
 
-use {
-    'wbthomason/packer.nvim',
-    event = 'VimEnter'
-}
+    use 'wbthomason/packer.nvim'
 
-    
+    use {
+        'nvim-treesitter/nvim-treesitter',
+        event = 'BufRead',
+        config = function() require('plugins.configs.treesitter') end
+    }
+end)
+

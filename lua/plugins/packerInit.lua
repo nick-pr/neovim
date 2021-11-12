@@ -2,13 +2,12 @@ local present, packer = pcall(require,'packer')
 local cmd = vim.cmd
 local fn = vim.fn
 
-
 if not present then 
 	print('Packer wasnt found')
 	local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
 	
 	local clone_command = {
-		'git','clone','--depth', '1',
+		'git','clone',
 		'https://github.com/wbthomason/packer.nvim',
 		install_path
 	}
@@ -16,8 +15,6 @@ if not present then
 	print('Installing Packer')
 
 	fn.system(clone_command)
-
-    cmd 'packadd packer.nvim'
 
 	present, packer = pcall(require,'packer')
 
@@ -28,9 +25,8 @@ if not present then
 	end
 end 
 
-cmd 'packadd packer.nvim'
-
 packer.init {}
+cmd 'packadd packer.nvim'
 
 packer.reset()
 
