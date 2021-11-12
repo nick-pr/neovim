@@ -1,5 +1,6 @@
 local core_modules = {
 	'core.settings',
+    'core.mappings',
 }
 
 for _,module in ipairs(core_modules) do
