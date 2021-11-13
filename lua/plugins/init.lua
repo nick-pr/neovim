@@ -14,6 +14,7 @@ packer.startup(function(use)
         event = 'BufRead',
         config = function() require('plugins.configs.treesitter') end
     }
+
     use {
         'rmehri01/onenord.nvim',
     }
