@@ -11,3 +11,10 @@ if not plugins_ok then
     local plugins_err = plugins
     print('Something went wrong with loading plugins:\n'..plugins_err)
 end
+
+local colors_ok, colors = pcall(require,'colors')
+
+if not colors_ok then
+    local colors_err = colors
+    print('Something went wrong with loading colors:\n'..colors_err)
+end
