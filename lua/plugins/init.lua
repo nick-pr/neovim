@@ -18,5 +18,10 @@ packer.startup(function(use)
     use {
         'rmehri01/onenord.nvim',
     }
+
+    use {
+        'jiangmiao/auto-pairs'
+    }
+
 end)
 
