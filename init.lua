@@ -1,3 +1,4 @@
+-- Load Core
 local core_ok, core = pcall(require,'core')
 
 if not core_ok then
@@ -5,6 +6,7 @@ if not core_ok then
     print('Something went wrong with loading core.\n'..core_error)
 end
 
+-- Load Plugins
 local plugins_ok, plugins = pcall(require,'plugins')
 
 if not plugins_ok then
@@ -12,6 +14,7 @@ if not plugins_ok then
     print('Something went wrong with loading plugins:\n'..plugins_err)
 end
 
+-- Load Colors
 local colors_ok, colors = pcall(require,'colors')
 
 if not colors_ok then
