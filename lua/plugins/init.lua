@@ -28,5 +28,10 @@ packer.startup(function(use)
         'jiangmiao/auto-pairs'
     }
 
+    use {
+        'terrortylor/nvim-comment',
+        config = function() require('plugins.configs.nvim-comment') end
+    }
+
 end)
 
