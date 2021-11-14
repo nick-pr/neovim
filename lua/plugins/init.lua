@@ -20,6 +20,11 @@ packer.startup(function(use)
     }
 
     use {
+        'ellisonleao/gruvbox.nvim',
+        requires = {"rktjmp/lush.nvim"},
+    }
+
+    use {
         'jiangmiao/auto-pairs'
     }
 
