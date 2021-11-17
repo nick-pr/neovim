@@ -33,5 +33,11 @@ packer.startup(function(use)
         config = function() require('plugins.configs.nvim-comment') end
     }
 
+    use {
+        'kyazdani42/nvim-tree.lua',
+        requires = 'kyazdani42/nvim-web-devicons',
+        cmd = {'NvimTreeToggle','NvimTreeFocus'},
+        config = function() require('plugins.configs.nvim-tree') end
+    }
 end)
 
