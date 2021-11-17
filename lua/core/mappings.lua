@@ -13,3 +13,4 @@ map({'v','n'},'p',']p')
 
 -- Nvim Tree
 map({'v','i','n'},'<C-e>','<cmd>NvimTreeToggle<CR>',{silent=true,noremap=true})
+map('n','<bs>','<C-^>zz',{noremap = true, silent = true})
