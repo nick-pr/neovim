@@ -6,3 +6,4 @@ set.softtabstop = 4
 set.expandtab = true
 set.mouse = 'a'
 set.number = true
+set.hidden = true
