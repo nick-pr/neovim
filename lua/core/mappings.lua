@@ -11,6 +11,15 @@ map('v', '>', '>gv')
 -- Better Pasting (Indent)
 map({'v','n'},'p',']p')
 
--- Nvim Tree
-map({'v','i','n'},'<C-e>','<cmd>NvimTreeToggle<CR>',{silent=true,noremap=true})
+-- Buffers
+map('n','<leader>bs','<cmd>source %<CR>',{noremap = true, silent = true})
+map('n','<leader>bo','<cmd>silent !open %<CR>',{noremap = true, silent = true})
+
+-- Sick backspace map
 map('n','<bs>','<C-^>zz',{noremap = true, silent = true})
+
+-- Nvim Tree
+map({'v','i','n'},'<leader>e','<cmd>NvimTreeToggle<CR>',{silent=true,noremap=true})
+
+-- Packer
+map('n','<leader>ps','<cmd>PackerSync<CR>',{noremap = true, silent = tru})
