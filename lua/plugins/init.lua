@@ -48,6 +48,12 @@ packer.startup(function(use)
     }
 
     use {
+        'blackCauldron7/surround.nvim',
+        after = 'nvim-treesitter',
+        config = function() require('plugins.configs.surround-nvim')end,
+    }
+
+    use {
         'terrortylor/nvim-comment',
         config = function() require('plugins.configs.nvim-comment') end
     }
