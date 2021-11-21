@@ -15,14 +15,33 @@ packer.startup(function(use)
         config = function() require('plugins.configs.treesitter') end
     }
 
+--     use {
+--         'rmehri01/onenord.nvim',
+--         disable = true,
+--     }
+-- 
     use {
-        'rmehri01/onenord.nvim',
+        'navarasu/onedark.nvim',
+        config = function() require('plugins.configs.onedark') end,
     }
 
-    use {
-        'ellisonleao/gruvbox.nvim',
-        requires = {"rktjmp/lush.nvim"},
-    }
+--     use {
+--         'ellisonleao/gruvbox.nvim',
+--         disable = true,
+--         requires = {"rktjmp/lush.nvim"},
+--     }
+-- 
+--     use {
+--         'olimorris/onedarkpro.nvim',
+--         disable = true,
+--         config = function() require('plugins.configs.onedarkpro') end,
+--     }
+-- 
+--     use {
+--         'folke/tokyonight.nvim',
+--         disable = false,
+--         config = function() require('plugins.configs.tokyonight') end,
+--     }
 
     use {
         'jiangmiao/auto-pairs'
