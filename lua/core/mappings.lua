@@ -22,4 +22,7 @@ map('n','<bs>','<C-^>zz',{noremap = true, silent = true})
 map({'v','i','n'},'<leader>e','<cmd>NvimTreeToggle<CR>',{silent=true,noremap=true})
 
 -- Packer
-map('n','<leader>ps','<cmd>PackerSync<CR>',{noremap = true, silent = tru})
+map('n','<leader>ps','<cmd>PackerSync<CR>',{noremap = true, silent = true})
+
+-- Format
+map('n','<leader>bf','<cmd>FormatWrite<CR>',{noremap = true, silent = true})

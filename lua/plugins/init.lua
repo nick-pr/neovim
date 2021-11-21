@@ -39,5 +39,11 @@ packer.startup(function(use)
         cmd = {'NvimTreeToggle','NvimTreeFocus'},
         config = function() require('plugins.configs.nvim-tree') end
     }
+
+    use {
+        'mhartington/formatter.nvim',
+        config = function() require('plugins.configs.formatter') end,
+        cmd = {'Format','FormatWrite'}
+    }
 end)
 
