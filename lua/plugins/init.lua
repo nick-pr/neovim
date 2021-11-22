@@ -48,6 +48,12 @@ packer.startup(function(use)
     }
 
     use {
+        'nvim-lualine/lualine.nvim',
+        requires = {'kyazdani42/nvim-web-devicons', opt = true},
+        config = function() require('plugins.configs.lualine') end,
+    }
+
+    use {
         'blackCauldron7/surround.nvim',
         after = 'nvim-treesitter',
         config = function() require('plugins.configs.surround-nvim')end,
@@ -60,7 +66,7 @@ packer.startup(function(use)
 
     use {
         'kyazdani42/nvim-tree.lua',
-        requires = 'kyazdani42/nvim-web-devicons',
+        requires = {'kyazdani42/nvim-web-devicons', opt = true},
         cmd = {'NvimTreeToggle','NvimTreeFocus'},
         config = function() require('plugins.configs.nvim-tree') end
     }
