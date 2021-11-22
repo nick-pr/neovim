@@ -48,6 +48,12 @@ packer.startup(function(use)
     }
 
     use {
+        'lewis6991/gitsigns.nvim',
+        requires = {'nvim-lua/plenary.nvim'},
+        config= function() require('plugins.configs.gitsigns') end,
+    }
+
+    use {
         'nvim-lualine/lualine.nvim',
         requires = {'kyazdani42/nvim-web-devicons', opt = true},
         config = function() require('plugins.configs.lualine') end,
