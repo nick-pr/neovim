@@ -25,4 +25,4 @@ map({'v','i','n'},'<leader>e','<cmd>NvimTreeToggle<CR>',{silent=true,noremap=tru
 map('n','<leader>ps','<cmd>PackerSync<CR>',{noremap = true, silent = true})
 
 -- Format
-map('n','<leader>bf','<cmd>FormatWrite<CR>',{noremap = true, silent = true})
+map({'n','v'},'<leader>bf','<cmd>Format<CR>',{noremap = true, silent = true})
