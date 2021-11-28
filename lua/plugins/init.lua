@@ -20,28 +20,30 @@ packer.startup(function(use)
 --         disable = true,
 --     }
 -- 
-    use {
-        'navarasu/onedark.nvim',
-        config = function() require('plugins.configs.onedark') end,
-    }
+    -- use {
+    --     'navarasu/onedark.nvim',
+    --     config = function() require('plugins.configs.onedark') end,
+    -- }
 
---     use {
+--    use {
 --         'ellisonleao/gruvbox.nvim',
---         disable = true,
+--         disable = false,
 --         requires = {"rktjmp/lush.nvim"},
+--         config = function() require('colors.themes.gruvbox') end,
+-- 
 --     }
 -- 
 --     use {
 --         'olimorris/onedarkpro.nvim',
 --         disable = true,
---         config = function() require('plugins.configs.onedarkpro') end,
+--         config = function() require('colors.themes.onedarkpro') end,
 --     }
 -- 
---     use {
---         'folke/tokyonight.nvim',
---         disable = false,
---         config = function() require('plugins.configs.tokyonight') end,
---     }
+    use {
+        'folke/tokyonight.nvim',
+        disable = false,
+        config = function() require('colors.themes.tokyonight') end,
+    }
 
     use {
         'jiangmiao/auto-pairs'
