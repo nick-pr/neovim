@@ -89,6 +89,9 @@ packer.startup(function(use)
         'turbio/bracey.vim',
         cmd = 'Bracey'
     }
+    use {
+        'neovim/nvim-lspconfig'
+    }
 
 end)
 

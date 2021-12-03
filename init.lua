@@ -14,6 +14,14 @@ if not plugins_ok then
     print('Something went wrong with loading plugins:\n'..plugins_err)
 end
 
+-- Load LSP 
+local lsp_ok, lsp = pcall(require,'lsp')
+
+if not lsp_ok then
+    local lsp_err = lsp
+    print('Something went wrong with loading lsp:\n'..lsp_err)
+end
+
 -- Load Colors
 local colors_ok, colors = pcall(require,'colors')
 
