@@ -84,5 +84,11 @@ packer.startup(function(use)
         config = function() require('plugins.configs.formatter') end,
         cmd = {'Format','FormatWrite'}
     }
+
+    use {
+        'turbio/bracey.vim',
+        cmd = 'Bracey'
+    }
+
 end)
 
