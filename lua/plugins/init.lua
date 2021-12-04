@@ -100,6 +100,7 @@ packer.startup(function(use)
     use {
         'folke/trouble.nvim',
         config = function() require('plugins.configs.trouble') end, 
+        cmd = {'Trouble','TroubleToggle'}
     }
 
 end)
