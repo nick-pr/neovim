@@ -97,6 +97,10 @@ packer.startup(function(use)
         config = function() require('plugins.configs.neoscroll')end,
         keys= {'<S-j>','<S-k>'}
     }
+    use {
+        'folke/trouble.nvim',
+        config = function() require('plugins.configs.trouble') end, 
+    }
 
 end)
 
