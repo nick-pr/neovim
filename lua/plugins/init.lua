@@ -20,18 +20,18 @@ packer.startup(function(use)
     --     disable = true,
     -- }
  
-    -- use {
-    --     'navarasu/onedark.nvim',
-    --     config = function() require('plugins.configs.onedark') end,
-    -- }
-
-   use {
-        'ellisonleao/gruvbox.nvim',
-        disable = false,
-        requires = {"rktjmp/lush.nvim"},
-        config = function() require('colors.themes.gruvbox') end,
-
+    use {
+        'navarasu/onedark.nvim',
+        config = function() require('colors.themes.onedark') end,
     }
+
+--    use {
+--         'ellisonleao/gruvbox.nvim',
+--         disable = false,
+--         requires = {"rktjmp/lush.nvim"},
+--         config = function() require('colors.themes.gruvbox') end,
+-- 
+--     }
 
     -- use {
     --     'olimorris/onedarkpro.nvim',
