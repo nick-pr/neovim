@@ -7,3 +7,4 @@ set.expandtab = true
 set.mouse = 'a'
 set.number = true
 set.hidden = true
+set.scrolloff = 3

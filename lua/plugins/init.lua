@@ -92,6 +92,11 @@ packer.startup(function(use)
     use {
         'neovim/nvim-lspconfig'
     }
+    use {
+        'karb94/neoscroll.nvim',
+        config = function() require('plugins.configs.neoscroll')end,
+        keys= {'<S-j>','<S-k>'}
+    }
 
 end)
 
