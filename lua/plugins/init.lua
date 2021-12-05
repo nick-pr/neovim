@@ -110,6 +110,10 @@ packer.startup(function(use)
         config = function() require('plugins.configs.telescope') end, 
         event = 'bufEnter',
     }
+    use {
+        disable = false,
+        'dstein64/vim-startuptime',
+    }
 
 end)
 
