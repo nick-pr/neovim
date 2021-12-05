@@ -46,13 +46,15 @@ packer.startup(function(use)
     -- }
 
     use {
-        'jiangmiao/auto-pairs'
+        'jiangmiao/auto-pairs',
+        event = 'bufEnter'
     }
 
     use {
         'lewis6991/gitsigns.nvim',
         requires = {'nvim-lua/plenary.nvim'},
         config= function() require('plugins.configs.gitsigns') end,
+        event = 'bufEnter'
     }
 
     use {
@@ -63,12 +65,13 @@ packer.startup(function(use)
 
     use {
         'blackCauldron7/surround.nvim',
-        after = 'nvim-treesitter',
+        event = 'bufEnter',
         config = function() require('plugins.configs.surround-nvim')end,
     }
 
     use {
         'terrortylor/nvim-comment',
+        event = 'bufEnter',
         config = function() require('plugins.configs.nvim-comment') end
     }
 
@@ -95,7 +98,7 @@ packer.startup(function(use)
     use {
         'karb94/neoscroll.nvim',
         config = function() require('plugins.configs.neoscroll')end,
-        keys= {'<S-j>','<S-k>'}
+        keys= {'<S-j>','<S-k>','zz','zb','zt'}
     }
     use {
         'folke/trouble.nvim',
@@ -105,7 +108,7 @@ packer.startup(function(use)
     use {
         'nvim-telescope/telescope.nvim',
         config = function() require('plugins.configs.telescope') end, 
-        -- keys = {'<leader>ff','<leader>fb','<leader>fe'}
+        event = 'bufEnter',
     }
 
 end)
