@@ -24,5 +24,10 @@ map({'v','i','n'},'<leader>e','<cmd>NvimTreeToggle<CR>',{silent=true,noremap=tru
 -- Packer
 map('n','<leader>ps','<cmd>PackerSync<CR>',{noremap = true, silent = true})
 
+-- Telescope
+map('n','<leader>ff', '<cmd>lua require("telescope.builtin").find_files()<CR>')
+map('n','<leader>fb', '<cmd>lua require("telescope.builtin").buffers()<CR>')
+map('n','<leader>fe', '<cmd>lua require("telescope.builtin").file_browser()<CR>')
+
 -- Format
 map({'n','v'},'<leader>bf','<cmd>Format<CR>',{noremap = true, silent = true})

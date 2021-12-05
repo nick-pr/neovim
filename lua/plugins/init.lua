@@ -102,6 +102,11 @@ packer.startup(function(use)
         config = function() require('plugins.configs.trouble') end, 
         cmd = {'Trouble','TroubleToggle'}
     }
+    use {
+        'nvim-telescope/telescope.nvim',
+        config = function() require('plugins.configs.telescope') end, 
+        -- keys = {'<leader>ff','<leader>fb','<leader>fe'}
+    }
 
 end)
 
