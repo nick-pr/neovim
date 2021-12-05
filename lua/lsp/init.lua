@@ -1,5 +1,6 @@
 local lsp_servers = {
-'lsp.tsserver',
+    'lsp.tsserver',
+    'lsp.eslint'
 }
 
 for _,module in ipairs(lsp_servers) do
