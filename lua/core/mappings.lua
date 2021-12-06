@@ -31,3 +31,6 @@ map('n','<leader>fe', '<cmd>lua require("telescope.builtin").file_browser()<CR>'
 
 -- Format
 map({'n','v'},'<leader>bf','<cmd>Format<CR>',{noremap = true, silent = true})
+
+-- LSP
+map({'n'},'gd','<cmd>lua vim.lsp.buf.definition()<CR>',{noremap = true, silent = true})
