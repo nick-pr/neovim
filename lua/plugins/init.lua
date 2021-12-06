@@ -20,10 +20,10 @@ packer.startup(function(use)
     --     disable = true,
     -- }
  
-    use {
-        'navarasu/onedark.nvim',
-        config = function() require('colors.themes.onedark') end,
-    }
+    -- use {
+    --     'navarasu/onedark.nvim',
+    --     config = function() require('colors.themes.onedark') end,
+    -- }
 
 --    use {
 --         'ellisonleao/gruvbox.nvim',
@@ -39,10 +39,14 @@ packer.startup(function(use)
     --     config = function() require('colors.themes.onedarkpro') end,
     -- }
 -- 
+    use {
+        'folke/tokyonight.nvim',
+        disable = false,
+        config = function() require('colors.themes.tokyonight') end,
+    }
     -- use {
-    --     'folke/tokyonight.nvim',
-    --     disable = false,
-    --     config = function() require('colors.themes.tokyonight') end,
+    --     'bluz71/vim-nightfly-guicolors',
+    --     config = function() require('colors.themes.nightfly') end
     -- }
 
     use {
