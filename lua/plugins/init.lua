@@ -118,6 +118,18 @@ packer.startup(function(use)
         disable = false,
         'dstein64/vim-startuptime',
     }
-
+    use {
+        disable = false,
+        'hrsh7th/nvim-cmp',
+        config = function() require('plugins.configs.cmp_config') end,
+    }
+    use {
+        disable = false,
+        'hrsh7th/cmp-nvim-lsp',
+    }
+    use {
+        disable = false,
+        'L3MON4D3/LuaSnip',
+    }
 end)
 

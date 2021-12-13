@@ -9,7 +9,8 @@ map('v', '<', '<gv')
 map('v', '>', '>gv')
 
 -- Better Pasting (Indent)
-map({'v','n'},'p',']p')
+map({'v','n'},'p',"]p")
+map({'v','n'},'<S-p>',"[p")
 
 -- Buffers
 map('n','<leader>bs','<cmd>source %<CR>',{noremap = true, silent = true})
