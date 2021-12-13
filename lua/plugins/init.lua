@@ -131,5 +131,9 @@ packer.startup(function(use)
         disable = false,
         'L3MON4D3/LuaSnip',
     }
+    use {
+        'simrat39/rust-tools.nvim',
+         -- ft = 'rust',
+    }
 end)
 

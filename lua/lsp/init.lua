@@ -1,6 +1,8 @@
 local lsp_servers = {
     'lsp.tsserver',
-    'lsp.eslint'
+    'lsp.eslint',
+    'lsp.rls',
+    'lsp.rust-tools'
 }
 
 for _,module in ipairs(lsp_servers) do
