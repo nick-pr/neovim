@@ -97,7 +97,11 @@ packer.startup(function(use)
         cmd = 'Bracey'
     }
     use {
-        'neovim/nvim-lspconfig'
+        'neovim/nvim-lspconfig',
+        config = function() 
+            require('lsp.tsserver')
+            require('lsp.eslint')
+        end,
     }
     use {
         'karb94/neoscroll.nvim',
@@ -133,7 +137,8 @@ packer.startup(function(use)
     }
     use {
         'simrat39/rust-tools.nvim',
-         -- ft = 'rust',
+         ft = 'rust',
+         config = function() require('lsp.rust-tools')end,
     }
 end)
 
