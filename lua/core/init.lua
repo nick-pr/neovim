@@ -1,6 +1,7 @@
 local core_modules = {
 	'core.settings',
     'core.mappings',
+    'core.autocmds',
 }
 
 for _,module in ipairs(core_modules) do

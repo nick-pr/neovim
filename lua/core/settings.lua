@@ -8,3 +8,5 @@ set.mouse = 'a'
 set.number = true
 set.hidden = true
 set.scrolloff = 3
+set.signcolumn = 'yes:1'
+set.swapfile = false
