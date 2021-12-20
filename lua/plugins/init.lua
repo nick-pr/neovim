@@ -77,21 +77,21 @@ packer.startup(function(use)
         event = 'bufEnter',
     }
     use {
-        disable = false,
         'dstein64/vim-startuptime',
+        disable = false,
     }
     use {
-        disable = false,
         'hrsh7th/nvim-cmp',
+        disable = false,
         config = function() require('plugins.configs.cmp_config') end,
     }
     use {
-        disable = false,
         'hrsh7th/cmp-nvim-lsp',
+        disable = false,
     }
     use {
-        disable = false,
         'L3MON4D3/LuaSnip',
+        disable = false,
     }
     use {
         'simrat39/rust-tools.nvim',
