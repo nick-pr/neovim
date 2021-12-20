@@ -98,5 +98,9 @@ packer.startup(function(use)
          ft = 'rust',
          config = function() require('lsp.rust-tools')end,
     }
+    use {
+        'lifepillar/pgsql.vim',
+         ft = 'sql'
+    }
 end)
 
