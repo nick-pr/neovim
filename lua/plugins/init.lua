@@ -90,10 +90,6 @@ packer.startup(function(use)
         disable = false,
     }
     use {
-        'L3MON4D3/LuaSnip',
-        disable = false,
-    }
-    use {
         'simrat39/rust-tools.nvim',
          ft = 'rust',
          config = function() require('lsp.rust-tools')end,
@@ -101,6 +97,15 @@ packer.startup(function(use)
     use {
         'lifepillar/pgsql.vim',
          ft = 'sql'
+    }
+    use {
+        'L3MON4D3/LuaSnip',
+        config = function()require('plugins.configs.lua-snip')end,
+    }
+    use {
+        'akinsho/toggleterm.nvim',
+        config = function()require('plugins.configs.toggleterm')end,
+        keys = [[<c-\>]],
     }
 end)
 
