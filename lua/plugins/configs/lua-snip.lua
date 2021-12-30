@@ -85,3 +85,5 @@ ls.snippets.html = {
     s('h2',{t('<h2>'),i(1),t('</h2>')}),
     s('h3',{t('<h3>'),i(1),t('</h3>')}),
 }
+
+ls.filetype_extend("vue",{"javascript","html"})
