@@ -1,4 +1,4 @@
-require("formatter").setup({
+require("formatter").setup {
 	filetype = {
 		javascript = {
 			function()
@@ -51,4 +51,4 @@ require("formatter").setup({
 			end,
 		},
 	},
-})
+}

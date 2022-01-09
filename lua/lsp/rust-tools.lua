@@ -1,2 +1,1 @@
-require('rust-tools').setup{}
-
+require("rust-tools").setup {}

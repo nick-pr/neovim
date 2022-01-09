@@ -1,5 +1,5 @@
-local catppuccin = require("catppuccin")
+local catppuccin = require "catppuccin"
 
 catppuccin.setup()
 
-vim.cmd[[colorscheme catppuccin]]
+vim.cmd [[colorscheme catppuccin]]
