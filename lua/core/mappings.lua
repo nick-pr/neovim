@@ -36,6 +36,9 @@ map({'n','v'},'<leader>bf','<cmd>Format<CR>',{noremap = true, silent = true})
 -- LSP
 map({'n'},'gd','<cmd>lua vim.lsp.buf.definition()<CR>',{noremap = true, silent = true})
 
+-- Trouble
+map ({'n','i'},'<leader>tt','<cmd>TroubleToggle<CR>')
+
 -- Terminal
 map ('t','<ESC>','<C-\\><C-n>')
 map ('t','<C-w>j','<C-\\><C-n><C-w>j')

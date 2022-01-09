@@ -4,6 +4,13 @@ local lsp_servers = {
     -- 'lsp.rls',
     -- 'lsp.rust-tools'
 }
+vim.diagnostic.config({
+  virtual_text = false,
+  signs = true,
+  underline = false,
+  update_in_insert = false,
+  severity_sort = false,
+})
 
 for _,module in ipairs(lsp_servers) do
     local ok, err = pcall(require,module)

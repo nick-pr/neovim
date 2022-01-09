@@ -70,20 +70,23 @@ ls.snippets = {
 }
 
 ls.snippets.javascript = {
-    s('af',{ t('('),i(1),t(')'),t(' => '),t('{'),i(2),t('}') }),
-    s('clg',{t('console.log('),i(1),t(');')}),
-    s('imp',{t('import '),i(1),t(' from \''),i(2),t('\';')})
+    s('af',{ t('('),i(1),t(')'),t(' => '),t('{'),i(0),t('}') }),
+    s('clg',{t('console.log('),i(0),t(');')}),
+    s('imp',{t('import '),i(1),t(' from \''),i(0),t('\';')})
 }
 
 ls.snippets.html = {
-    s('html',{t('<html>'),i(1),t('</html>')}),
-    s('head',{t('<head>'),i(1),t('</head>')}),
-    s('body',{t('<body>'),i(1),t('</body>')}),
-    s('button',{t('<button>'),i(1),t('</button>')}),
-    s('p',{t('<p>'),i(1),t('</p>')}),
-    s('h1',{t('<h1>'),i(1),t('</h1>')}),
-    s('h2',{t('<h2>'),i(1),t('</h2>')}),
-    s('h3',{t('<h3>'),i(1),t('</h3>')}),
+    s('html',{t('<html>'),i(0),t('</html>')}),
+    s('head',{t('<head>'),i(0),t('</head>')}),
+    s('body',{t('<body>'),i(0),t('</body>')}),
+    s('button',{t('<button>'),i(0),t('</button>')}),
+    s('template',{t('<template>'),i(0),t('</template>')}),
+    s('script',{t('<script>'),i(0),t('</script>')}),
+    s('style',{t('<style>'),i(0),t('</style>')}),
+    s('p',{t('<p>'),i(0),t('</p>')}),
+    s('h1',{t('<h1>'),i(0),t('</h1>')}),
+    s('h2',{t('<h2>'),i(0),t('</h2>')}),
+    s('h3',{t('<h3>'),i(0),t('</h3>')}),
 }
 
 ls.filetype_extend("vue",{"javascript","html"})
