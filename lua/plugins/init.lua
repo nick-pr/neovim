@@ -15,9 +15,9 @@ packer.startup(function(use)
 		end,
 	}
 	use {
-		"folke/tokyonight.nvim",
+		"rebelot/kanagawa.nvim",
 		config = function()
-			require "colors.themes.tokyonight"
+			require "colors.themes.kanagawa"
 		end,
 	}
 	use {
