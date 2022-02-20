@@ -1,15 +1,20 @@
 local utils = require "core.utils"
 local map = utils.map
 
-map("v", "<S-j>", "<cmd>m .+1<CR>==", { silent = true })
-
 -- Better Indenting
 map("v", "<", "<gv")
 map("v", ">", ">gv")
+map("v", ">", ">gv")
 
--- Better Pasting (Indent)
-map({ "v", "n" }, "p", "]p")
-map({ "v", "n" }, "<S-p>", "[p")
+-- Yanking
+map({ "n" }, "<leader>yy", '"*yy', { noremap = true, silent = true })
+map({ "v" }, "<leader>y", '"*y', { noremap = true, silent = true })
+
+-- Pasting
+map({ "v", "n" }, "p", "]p", { noremap = true, silent = true })
+map({ "v", "n" }, "<S-p>", "[p", { noremap = true, silent = true })
+map({ "v", "n" }, "<leader>p", '"*]p', { noremap = true, silent = true })
+map({ "v", "n" }, "<leader><S-p>", '"*[p', { noremap = true, silent = true })
 
 -- Buffers
 map("n", "<leader>bs", "<cmd>source %<CR>", { noremap = true, silent = true })
@@ -24,10 +29,8 @@ map({ "v", "i", "n" }, "<leader>e", "<cmd>NvimTreeToggle<CR>", { silent = true, 
 -- Packer
 map("n", "<leader>ps", "<cmd>PackerSync<CR>", { noremap = true, silent = true })
 
--- Telescope
-map("n", "<leader>ff", '<cmd>lua require("telescope.builtin").find_files()<CR>')
-map("n", "<leader>fb", '<cmd>lua require("telescope.builtin").buffers()<CR>')
-map("n", "<leader>fe", '<cmd>lua require("telescope.builtin").file_browser()<CR>')
+-- FzfLua
+map("n", "<leader>ff", "<cmd>FzfLua files<CR>")
 
 -- Format
 map({ "n", "v" }, "<leader>bf", "<cmd>Format<CR>", { noremap = true, silent = true })
@@ -37,6 +40,12 @@ map({ "n" }, "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", { noremap = true, si
 
 -- Trouble
 map({ "n", "i" }, "<leader>tt", "<cmd>TroubleToggle<CR>")
+
+-- Neoscroll
+map({ "n" }, "<S-k>", "<cmd>lua require('neoscroll').scroll(-0.10,false,200)<CR>")
+map({ "n" }, "<S-j>", "<cmd>lua require('neoscroll').scroll(0.10,false,200)<CR>")
+-- map({ "n", "i" }, "<ScrollWheelUp>", "<cmd>lua require('neoscroll').scroll(-0.10,false,200)<CR>")
+-- map({ "n", "i" }, "<ScrollWheelDown>", "<cmd>lua require('neoscroll').scroll(0.10,false,200)<CR>")
 
 -- Terminal
 map("t", "<ESC>", "<C-\\><C-n>")

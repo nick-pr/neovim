@@ -1,25 +1,15 @@
-local colors = require "colors.themes.tokyonight"
-local opts = {
-	padding = 1,
+local kanagawa_colors = require "colors.themes.kanagawa"
+
+local colors = {
+	fg = kanagawa_colors.fujiWhite,
 }
+
 local componets = {
 	branch = {
 		"branch",
 		color = {
 			fg = colors.fg,
 			bg = colors.bg,
-		},
-		padding = opts.padding,
-	},
-	diff = {
-		"diff",
-		color = {
-			bg = colors.bg,
-		},
-		symbols = {
-			added = " ",
-			modified = " ",
-			removed = " ",
 		},
 	},
 	filename = {
@@ -33,7 +23,7 @@ local componets = {
 require("lualine").setup {
 	options = {
 		icons_enabled = true,
-		theme = "tokyonight",
+		theme = "auto",
 		component_separators = { left = "", right = "" },
 		section_separators = { left = "", right = "" },
 		disabled_filetypes = { "NvimTree", "toggleterm" },
@@ -41,8 +31,8 @@ require("lualine").setup {
 	},
 	sections = {
 		lualine_a = { "mode" },
-		lualine_b = { componets.branch },
-		lualine_c = { componets.filename },
+		lualine_b = { "branch" },
+		lualine_c = { "filename" },
 		lualine_x = { { "filetype" } },
 		lualine_y = { "progress" },
 		lualine_z = { "location" },

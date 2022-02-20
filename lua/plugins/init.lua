@@ -5,6 +5,7 @@ if not ok then
 	local packer_init_error = packer
 	error("something went wrong with packer initialization:\n" .. packer_init_error)
 end
+
 packer.startup(function(use)
 	use "wbthomason/packer.nvim"
 	use {
@@ -81,7 +82,6 @@ packer.startup(function(use)
 		config = function()
 			require "plugins.configs.neoscroll"
 		end,
-		keys = { "<S-j>", "<S-k>", "zz", "zb", "zt" },
 	}
 	use {
 		"folke/trouble.nvim",
@@ -91,9 +91,10 @@ packer.startup(function(use)
 		cmd = { "Trouble", "TroubleToggle" },
 	}
 	use {
-		"nvim-telescope/telescope.nvim",
+		"ibhagwan/fzf-lua",
+		requires = { "kyazdani42/nvim-web-devicons" },
 		config = function()
-			require "plugins.configs.telescope"
+			require "plugins.configs.fzf_config"
 		end,
 		event = "bufEnter",
 	}
@@ -139,5 +140,9 @@ packer.startup(function(use)
 	use {
 		"nvim-treesitter/playground",
 		after = "nvim-treesitter",
+	}
+	use {
+		"ellisonleao/glow.nvim",
+		cmd = { "Glow", "GlowInstall" },
 	}
 end)

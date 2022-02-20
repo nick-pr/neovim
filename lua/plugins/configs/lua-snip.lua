@@ -45,13 +45,6 @@ _G.s_tab_complete = function()
 	return ""
 end
 
--- vim.api.nvim_set_keymap("i", "<Tab>", "v:lua.tab_complete()", {expr = true})
--- vim.api.nvim_set_keymap("s", "<Tab>", "v:lua.tab_complete()", {expr = true})
--- vim.api.nvim_set_keymap("i", "<S-Tab>", "v:lua.s_tab_complete()", {expr = true})
--- vim.api.nvim_set_keymap("s", "<S-Tab>", "v:lua.s_tab_complete()", {expr = true})
--- vim.api.nvim_set_keymap("i", "<C-E>", "<Plug>luasnip-next-choice", {})
--- vim.api.nvim_set_keymap("s", "<C-E>", "<Plug>luasnip-next-choice", {})
-
 local ls = require "luasnip"
 local s = ls.snippet
 local sn = ls.snippet_node
@@ -63,12 +56,6 @@ local c = ls.choice_node
 local d = ls.dynamic_node
 local r = ls.restore_node
 local events = require "luasnip.util.events"
-
-ls.snippets = {
-	lua = {
-		s("trigger", t "Wow! Text!"),
-	},
-}
 
 ls.snippets.javascript = {
 	s("af", { t "(", i(1), t ")", t " => ", t "{", i(0), t "}" }),
@@ -91,3 +78,5 @@ ls.snippets.html = {
 }
 
 ls.filetype_extend("vue", { "javascript", "html" })
+ls.filetype_extend("javascriptreact", { "javascript", "html" })
+ls.filetype_extend("svelte", { "javascript", "html" })

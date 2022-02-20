@@ -1,20 +1,25 @@
+local javascript_formatter = function()
+	return {
+		exe = "prettier",
+		args = {
+			"--stdin-filepath",
+			vim.fn.fnameescape(vim.api.nvim_buf_get_name(0)),
+			"--single-quote",
+			"--arrow-parens",
+			"avoid",
+			"--tab-width",
+			4,
+			"--config-precedence",
+			"prefer-file",
+		},
+		stdin = true,
+	}
+end
+
 require("formatter").setup {
 	filetype = {
-		javascript = {
-			function()
-				return {
-					exe = "prettier",
-					args = {
-						"--stdin-filepath",
-						vim.fn.fnameescape(vim.api.nvim_buf_get_name(0)),
-						"--single-quote",
-						"--tab-width",
-						4,
-					},
-					stdin = true,
-				}
-			end,
-		},
+		javascript = { javascript_formatter },
+		javascriptreact = { javascript_formatter },
 		vue = {
 			function()
 				return {
