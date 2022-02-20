@@ -22,7 +22,8 @@ packer.startup(function(use)
 		end,
 	}
 	use {
-		"jiangmiao/auto-pairs",
+        "windwp/nvim-autopairs",
+        config = function() require('plugins.configs.auto-pairs')end,
 		event = "bufEnter",
 	}
 	use {
