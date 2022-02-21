@@ -22,8 +22,10 @@ packer.startup(function(use)
 		end,
 	}
 	use {
-        "windwp/nvim-autopairs",
-        config = function() require('plugins.configs.auto-pairs')end,
+		"windwp/nvim-autopairs",
+		config = function()
+			require "plugins.configs.auto-pairs"
+		end,
 		event = "bufEnter",
 	}
 	use {
@@ -39,13 +41,6 @@ packer.startup(function(use)
 		requires = { "kyazdani42/nvim-web-devicons", opt = true },
 		config = function()
 			require "plugins.configs.lualine"
-		end,
-	}
-	use {
-		"blackCauldron7/surround.nvim",
-		event = "bufEnter",
-		config = function()
-			require "plugins.configs.surround-nvim"
 		end,
 	}
 	use {
