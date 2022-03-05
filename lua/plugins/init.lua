@@ -141,4 +141,11 @@ packer.startup(function(use)
 		"ellisonleao/glow.nvim",
 		cmd = { "Glow", "GlowInstall" },
 	}
+	use {
+		"lervag/vimtex",
+		config = function()
+			require "plugins.configs.vimtex"
+		end,
+		ft = "tex",
+	}
 end)
