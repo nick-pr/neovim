@@ -36,13 +36,10 @@ packer.startup(function(use)
 		end,
 		event = "bufEnter",
 	}
-	use {
-		"nvim-lualine/lualine.nvim",
-		requires = { "kyazdani42/nvim-web-devicons", opt = true },
-		config = function()
-			require "plugins.configs.lualine"
-		end,
-	}
+    use {
+        "feline-nvim/feline.nvim",
+        config = function()require("plugins.configs.feline")end
+    }
 	use {
 		"terrortylor/nvim-comment",
 		event = "bufEnter",
