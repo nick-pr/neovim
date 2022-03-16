@@ -10,7 +10,13 @@ map("v", ">", ">gv")
 map({ "n" }, "<leader>yy", '"*yy', { noremap = true, silent = true })
 map({ "v" }, "<leader>y", '"*y', { noremap = true, silent = true })
 
--- Pasting
+-- Moving lines
+map({ "i" }, "<C-j>", "<esc>:m .+1<CR>==i", { noremap = true , silent= true})
+map({ "i" }, "<c-k>", "<esc>:m .-2<cr>==i", { noremap = true, silent= true })
+map({ "v" }, "J", ":m '>+1<cr>gv=gv", { noremap = true , silent = true})
+map({ "v" }, "K", ":m '<-2<cr>gv=gv", { noremap = true , silent= true})
+
+-- pasting
 map({ "v", "n" }, "p", "]p", { noremap = true, silent = true })
 map({ "v", "n" }, "<S-p>", "[p", { noremap = true, silent = true })
 map({ "v", "n" }, "<leader>p", '"*]p', { noremap = true, silent = true })
@@ -42,8 +48,8 @@ map({ "n" }, "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", { noremap = true, si
 map({ "n", "i" }, "<leader>tt", "<cmd>TroubleToggle<CR>")
 
 -- Neoscroll
-map({ "n" }, "<S-k>", "<cmd>lua require('neoscroll').scroll(-0.10,false,200)<CR>")
-map({ "n" }, "<S-j>", "<cmd>lua require('neoscroll').scroll(0.10,false,200)<CR>")
+-- map({ "n" }, "<S-k>", "<cmd>lua require('neoscroll').scroll(-0.10,false,200)<CR>")
+-- map({ "n" }, "<S-j>", "<cmd>lua require('neoscroll').scroll(0.10,false,200)<CR>")
 -- map({ "n", "i" }, "<ScrollWheelUp>", "<cmd>lua require('neoscroll').scroll(-0.10,false,200)<CR>")
 -- map({ "n", "i" }, "<ScrollWheelDown>", "<cmd>lua require('neoscroll').scroll(0.10,false,200)<CR>")
 
