@@ -57,13 +57,13 @@ local d = ls.dynamic_node
 local r = ls.restore_node
 local events = require "luasnip.util.events"
 
-ls.snippets.javascript = {
+ls.add_snippets("javascript", {
 	s("af", { t "(", i(1), t ")", t " => ", t "{", i(0), t "}" }),
 	s("clg", { t "console.log(", i(0), t ");" }),
 	s("imp", { t "import ", i(1), t " from '", i(0), t "';" }),
-}
+})
 
-ls.snippets.html = {
+ls.add_snippets("html", {
 	s("html", { t "<html>", i(0), t "</html>" }),
 	s("head", { t "<head>", i(0), t "</head>" }),
 	s("body", { t "<body>", i(0), t "</body>" }),
@@ -75,7 +75,7 @@ ls.snippets.html = {
 	s("h1", { t "<h1>", i(0), t "</h1>" }),
 	s("h2", { t "<h2>", i(0), t "</h2>" }),
 	s("h3", { t "<h3>", i(0), t "</h3>" }),
-}
+})
 
 ls.filetype_extend("vue", { "javascript", "html" })
 ls.filetype_extend("javascriptreact", { "javascript", "html" })
