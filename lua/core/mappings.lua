@@ -1,5 +1,4 @@
-local utils = require "core.utils"
-local map = utils.map
+local map = vim.keymap.set
 
 -- Better Indenting
 map("v", "<", "<gv")
