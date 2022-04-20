@@ -46,12 +46,6 @@ map({ "n" }, "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", { noremap = true, si
 -- Trouble
 map({ "n", "i" }, "<leader>tt", "<cmd>TroubleToggle<CR>")
 
--- Neoscroll
--- map({ "n" }, "<S-k>", "<cmd>lua require('neoscroll').scroll(-0.10,false,200)<CR>")
--- map({ "n" }, "<S-j>", "<cmd>lua require('neoscroll').scroll(0.10,false,200)<CR>")
--- map({ "n", "i" }, "<ScrollWheelUp>", "<cmd>lua require('neoscroll').scroll(-0.10,false,200)<CR>")
--- map({ "n", "i" }, "<ScrollWheelDown>", "<cmd>lua require('neoscroll').scroll(0.10,false,200)<CR>")
-
 -- Terminal
 map("t", "<ESC>", "<C-\\><C-n>")
 map("t", "<C-w>j", "<C-\\><C-n><C-w>j")
