@@ -29,7 +29,7 @@ map("n", "<leader>bo", "<cmd>silent !open %<CR>", { noremap = true, silent = tru
 map("n", "<bs>", "<C-^>zz", { noremap = true, silent = true })
 
 -- Nvim Tree
-map({ "v", "i", "n" }, "<leader>e", "<cmd>NvimTreeToggle<CR>", { silent = true, noremap = true })
+map({ "n" }, "<leader>e", "<cmd>NvimTreeToggle<CR>", { silent = true, noremap = true })
 
 -- Packer
 map("n", "<leader>ps", "<cmd>PackerSync<CR>", { noremap = true, silent = true })
