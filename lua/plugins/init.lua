@@ -1,117 +1,75 @@
 local ok, packer = pcall(require, "plugins.packerInit")
 local use = packer.use
-
 if not ok then
 	local packer_init_error = packer
 	error("something went wrong with packer initialization:\n" .. packer_init_error)
+end
+
+function useConfig(plugin)
+	return string.format('require("plugins.configs.%s")', plugin)
 end
 
 packer.startup(function(use)
 	use "wbthomason/packer.nvim"
 	use {
 		"nvim-treesitter/nvim-treesitter",
+		config = useConfig "treesitter",
 		event = "BufRead",
-		config = function()
-			require "plugins.configs.treesitter"
-		end,
 	}
 	use {
 		"rebelot/kanagawa.nvim",
-		config = function()
-			require "colors.themes.kanagawa"
-		end,
+		config = useConfig "kanagawa",
 	}
 	use {
 		"windwp/nvim-autopairs",
-		config = function()
-			require "plugins.configs.auto-pairs"
-		end,
+		config = useConfig "auto-pairs",
 		event = "bufEnter",
 	}
 	use {
 		"lewis6991/gitsigns.nvim",
 		requires = { "nvim-lua/plenary.nvim" },
-		config = function()
-			require "plugins.configs.gitsigns"
-		end,
+		config = useConfig "gitsigns",
 		event = "bufEnter",
 	}
-    use {
-        "feline-nvim/feline.nvim",
-        config = function()require("plugins.configs.feline")end
-    }
 	use {
 		"terrortylor/nvim-comment",
+		config = useConfig "nvim-comment",
 		event = "bufEnter",
-		config = function()
-			require "plugins.configs.nvim-comment"
-		end,
 	}
 	use {
 		"kyazdani42/nvim-tree.lua",
 		requires = { "kyazdani42/nvim-web-devicons", opt = true },
+		config = useConfig "nvim-tree",
 		cmd = { "NvimTreeToggle", "NvimTreeFocus" },
-		config = function()
-			require "plugins.configs.nvim-tree"
-		end,
 	}
 	use {
 		"mhartington/formatter.nvim",
-		config = function()
-			require "plugins.configs.formatter"
-		end,
+		config = useConfig "formatter",
 		cmd = { "Format", "FormatWrite" },
 	}
 	use {
 		"neovim/nvim-lspconfig",
-		config = function()
-			require "lsp.tsserver"
-			require "lsp.eslint"
-			require "lsp.eslint"
-		end,
+		config = useConfig "nvim-lspconfig",
 	}
 	use {
 		"karb94/neoscroll.nvim",
-		config = function()
-			require "plugins.configs.neoscroll"
-		end,
+		config = useConfig "neoscroll",
 	}
 	use {
 		"folke/trouble.nvim",
-		config = function()
-			require "plugins.configs.trouble"
-		end,
+		config = useConfig "trouble",
 		cmd = { "Trouble", "TroubleToggle" },
 	}
 	use {
 		"ibhagwan/fzf-lua",
 		requires = { "kyazdani42/nvim-web-devicons" },
-		config = function()
-			require "plugins.configs.fzf_config"
-		end,
+		config = useConfig "fzf-lua",
 		event = "bufEnter",
 	}
 	use {
-		"dstein64/vim-startuptime",
-		disable = false,
-	}
-	use {
 		"hrsh7th/nvim-cmp",
-		disable = false,
-		config = function()
-			require "plugins.configs.cmp_config"
-		end,
-	}
-	use {
-		"hrsh7th/cmp-nvim-lsp",
-		disable = false,
-	}
-	use {
-		"simrat39/rust-tools.nvim",
-		ft = "rust",
-		config = function()
-			require "lsp.rust-tools"
-		end,
+		requires = { "hrsh7th/cmp-nvim-lsp" },
+		config = useConfig "nvim-cmp",
 	}
 	use {
 		"lifepillar/pgsql.vim",
@@ -122,13 +80,6 @@ packer.startup(function(use)
 		config = function()
 			require "plugins.configs.lua-snip"
 		end,
-	}
-	use {
-		"akinsho/toggleterm.nvim",
-		config = function()
-			require "plugins.configs.toggleterm"
-		end,
-		keys = [[<c-\>]],
 	}
 	use {
 		"nvim-treesitter/playground",

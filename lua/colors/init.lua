@@ -1,5 +1,1 @@
-local set = vim.opt
-
-set.termguicolors = true
-
--- require('colors.themes.tokyonight')
+vim.cmd"colorscheme kanagawa"
