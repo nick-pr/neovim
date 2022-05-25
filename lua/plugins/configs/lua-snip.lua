@@ -59,6 +59,7 @@ local events = require "luasnip.util.events"
 
 ls.add_snippets("javascript", {
 	s("af", { t "(", i(1), t ")", t " => ", t "{", i(0), t "}" }),
+    s("aaf", { t "async (", i(1), t ")", t " => ", t "{", i(0), t "}" }),
 	s("clg", { t "console.log(", i(0), t ");" }),
 	s("imp", { t "import ", i(1), t " from '", i(0), t "';" }),
 })
