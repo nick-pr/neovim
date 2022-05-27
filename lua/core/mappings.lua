@@ -36,6 +36,7 @@ map("n", "<leader>ps", "<cmd>PackerSync<CR>", { noremap = true, silent = true })
 
 -- FzfLua
 map("n", "<leader>ff", "<cmd>FzfLua files<CR>")
+map("n", "<leader>fb", "<cmd>FzfLua grep_curbuf<CR>")
 
 -- Format
 map({ "n", "v" }, "<leader>bf", "<cmd>Format<CR>", { noremap = true, silent = true })
