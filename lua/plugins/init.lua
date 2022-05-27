@@ -25,6 +25,11 @@ packer.startup(function(use)
 		config = useConfig "auto-pairs",
 		event = "bufEnter",
 	}
+    use {
+        "nvim-lualine/lualine.nvim",
+        requires = { 'kyazdani42/nvim-web-devicons', opt = true },
+        config = useConfig "lualine",
+    }
 	use {
 		"lewis6991/gitsigns.nvim",
 		requires = { "nvim-lua/plenary.nvim" },
