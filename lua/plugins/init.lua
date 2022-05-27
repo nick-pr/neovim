@@ -20,6 +20,9 @@ packer.startup(function(use)
 		"rebelot/kanagawa.nvim",
 		config = useConfig "kanagawa",
 	}
+    use {
+        "Mofiqul/adwaita.nvim",
+    }
 	use {
 		"windwp/nvim-autopairs",
 		config = useConfig "auto-pairs",
