@@ -2,6 +2,7 @@ local present, packer = pcall(require, "packer")
 local cmd = vim.cmd
 local fn = vim.fn
 
+-- Bootstrapping Packer
 if not present then
 	print "Packer wasnt found"
 	local install_path = fn.stdpath "data" .. "/site/pack/packer/start/packer.nvim"
@@ -26,6 +27,7 @@ if not present then
 	end
 end
 
+-- Packer initialization
 packer.init {
 	display = {
 		open_fn = function()
@@ -33,8 +35,5 @@ packer.init {
 		end,
 	},
 }
-cmd "packadd packer.nvim"
-
-packer.reset()
 
 return packer

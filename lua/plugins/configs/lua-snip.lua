@@ -58,10 +58,10 @@ local r = ls.restore_node
 local events = require "luasnip.util.events"
 
 ls.add_snippets("javascript", {
-	s("af", { t "(", i(1), t ")", t " => ", t "{", i(0), t "}" }),
-    s("if",{t"if(",i(1),t"){",i(0),t"}"}),
-    s("for",{t"for(let ",i(1,"i"),t"=",i(2,"0"),t"; ",i(3),t"; ",i(4),t"){",i(0),t"}"}),
-    s("aaf", { t "async (", i(1), t ")", t " => ", t "{", i(0), t "}" }),
+	s({ trig = "af", name = "Arrow Function" }, { t "(", i(1), t ")", t " => ", t "{", i(0), t "}" }),
+	s("if", { t "if(", i(1), t "){", i(0), t "}" }),
+	s("for", { t "for(let ", i(1, "i"), t "=", i(2, "0"), t "; ", i(3), t "; ", i(4), t "){", i(0), t "}" }),
+	s("aaf", { t "async (", i(1), t ")", t " => ", t "{", i(0), t "}" }),
 	s("clg", { t "console.log(", i(0), t ");" }),
 	s("imp", { t "import ", i(1), t " from '", i(0), t "';" }),
 })
@@ -82,4 +82,5 @@ ls.add_snippets("html", {
 
 ls.filetype_extend("vue", { "javascript", "html" })
 ls.filetype_extend("javascriptreact", { "javascript", "html" })
+ls.filetype_extend("typescript", { "javascript" })
 ls.filetype_extend("svelte", { "javascript", "html" })

@@ -24,4 +24,12 @@ M.create_augroup = function(name, definitions)
 	api.nvim_command "augroup END"
 end
 
+M.icon_from_hex = function(hex)
+    return vim.fn.nr2char(tonumber(hex, 16))
+end
+
+M.is_lsp_attached = function()
+        return next(vim.lsp.buf_get_clients(0)) ~= nil 
+    end
+
 return M

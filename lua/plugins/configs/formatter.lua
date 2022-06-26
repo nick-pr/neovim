@@ -1,3 +1,5 @@
+local map = vim.keymap.set
+
 local javascript_formatter = function()
 	return {
 		exe = "prettier",
@@ -16,8 +18,10 @@ local javascript_formatter = function()
 	}
 end
 
+-- Setup
 require("formatter").setup {
 	filetype = {
+		typescript = { javascript_formatter },
 		javascript = { javascript_formatter },
 		javascriptreact = { javascript_formatter },
 		vue = {
@@ -57,3 +61,6 @@ require("formatter").setup {
 		},
 	},
 }
+
+-- Mappings
+map({ "n", "v" }, "<leader>bf", "<cmd>Format<CR>", { noremap = true, silent = true })
