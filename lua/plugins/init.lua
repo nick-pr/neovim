@@ -114,10 +114,3 @@ use {
 	"akinsho/toggleterm.nvim",
 	config = useConfig "toggleterm",
 }
-use {
-	"lervag/vimtex",
-	config = function()
-		require "plugins.configs.vimtex"
-	end,
-	ft = "tex",
-}
