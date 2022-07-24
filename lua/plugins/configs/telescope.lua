@@ -1,7 +1,16 @@
 local map = vim.keymap.set
+local actions = require("telescope.actions")
 
 -- Setup
-require("telescope").setup()
+require("telescope").setup {
+    defaults = {
+        mappings = {
+            i = {
+                ["<esc>"] = actions.close,
+            },
+        },
+    },
+}
 
 -- Mappings
 map("n", "<leader>ff", "<cmd>Telescope find_files<CR>")
