@@ -20,46 +20,9 @@ table.insert(statusline.active[1], components.git_branch)
 table.insert(statusline.active[1], { hl = { bg = colors.bg } })
 
 table.insert(statusline.active[3], components.lsp_status)
-table.insert(statusline.active[3], {
-	hl = {
-		bg = "#2A2A37",
-	},
-	right_sep = {
-		str = "",
-		hl = {
-			fg = "#2A2A37",
-		},
-		always_visible = true,
-	},
-})
 
 -- Inactive
-table.insert(statusline.inactive[1], {
-	hl = {
-		bg = "none",
-	},
-	right_sep = {
-		str = "",
-		hl = {
-			fg = colors.bg,
-		},
-		always_visible = true,
-	},
-})
 table.insert(statusline.inactive[1], { hl = { bg = colors.bg } })
-
-table.insert(statusline.inactive[3], {
-	hl = {
-		bg = "none",
-	},
-	right_sep = {
-		str = "",
-		hl = {
-			fg = colors.bg,
-		},
-		always_visible = true,
-	},
-})
 
 ----- Winbar ----
 
@@ -78,9 +41,6 @@ table.insert(winbar.inactive[1], { hl = { bg = "none" } })
 
 require("feline").setup {
 	components = statusline,
-	default_bg = "#2A2A37",
-	-- vi_mode_colors = {
-	-- }
 }
 
 require("feline").winbar.setup {
@@ -94,5 +54,5 @@ require("feline").winbar.setup {
 		},
 		bufnames = {},
 	},
-	default_bg = "#2A2A37",
+    default_bg = colors.bg
 }

@@ -1,7 +1,6 @@
 local colors = {
-    bg_normal = "#1F1F28",
-	bg = "#2A2A37",
+    bg_normal = "#1C1B21",
+	bg = "#1c1b21",
 	light_purple = "#db7ef0",
-	-- vi_mode = require("feline.providers.vi_mode").get_mode_color()
 }
 return colors

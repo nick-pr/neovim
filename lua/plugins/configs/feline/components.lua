@@ -15,18 +15,6 @@ components.file_path = {
 		bg = colors.bg,
 	},
 	icon = "﬌",
-	left_sep = {
-		str = "",
-		hl = {
-			fg = colors.bg,
-		},
-	},
-	right_sep = {
-		str = "",
-		hl = {
-			fg = colors.bg,
-		},
-	},
 }
 
 components.git_added = {
@@ -86,12 +74,10 @@ components.vi_mode = {
 		}
 	end,
 	right_sep = {
-		str = "",
-		always_visible = true,
+		str = " ",
 		hl = function()
 			return {
-				fg = require("feline.providers.vi_mode").get_mode_color(),
-				bg = colors.bg,
+				bg = vi_mode_color(),
 			}
 		end,
 	},
@@ -100,10 +86,10 @@ components.vi_mode = {
 		always_visible = true,
 	},
 	left_sep = {
-		str = "",
+		str = " ",
 		hl = function()
 			return {
-				fg = vi_mode_color(),
+				bg = vi_mode_color(),
 			}
 		end,
 		always_visible = true,
@@ -126,18 +112,18 @@ components.lsp_status = {
 	provider = function()
 		local attached_lsp = require("feline.providers.lsp").is_lsp_attached()
 		if attached_lsp then
-            local lsp_client_name = require("feline.providers.lsp").lsp_client_names()
+			local lsp_client_name = require("feline.providers.lsp").lsp_client_names()
 			return lsp_client_name
-        else
-            return ''
+		else
+			return ""
 		end
 	end,
-    icon = {
-        str = " "
-    },
-    hl = {
-        bg = colors.bg
-    }
+	icon = {
+		str = " ",
+	},
+	hl = {
+		bg = colors.bg,
+	},
 }
 
 return components
