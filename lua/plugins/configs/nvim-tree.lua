@@ -3,6 +3,9 @@ local map = vim.keymap.set
 -- Setup
 require("nvim-tree").setup {
 	update_cwd = true,
+    view = {
+        signcolumn = "auto",
+    },
 	renderer = {
 		indent_markers = {
 			enable = true,
@@ -14,8 +17,9 @@ require("nvim-tree").setup {
 			},
 		},
         icons = {
+            git_placement = "signcolumn",
             show = {
-                folder_arrow = false
+                folder_arrow = false,
             }
         }
 	},
