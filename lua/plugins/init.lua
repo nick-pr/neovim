@@ -101,6 +101,7 @@ use {
 	"hrsh7th/nvim-cmp",
 	requires = { "hrsh7th/cmp-nvim-lsp" },
 	config = useConfig "nvim-cmp",
+    after = "LuaSnip"
 }
 -- Cmp Source for LuaSnip
 use {
