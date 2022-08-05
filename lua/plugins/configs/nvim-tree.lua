@@ -4,7 +4,8 @@ local map = vim.keymap.set
 require("nvim-tree").setup {
 	update_cwd = true,
     view = {
-        signcolumn = "auto",
+        adaptive_size = true,
+        signcolumn = "yes",
     },
 	renderer = {
 		indent_markers = {
