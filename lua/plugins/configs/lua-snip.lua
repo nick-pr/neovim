@@ -47,9 +47,11 @@ ls.add_snippets("html", {
 	s("h1", { t "<h1>", i(0), t "</h1>" }),
 	s("h2", { t "<h2>", i(0), t "</h2>" }),
 	s("h3", { t "<h3>", i(0), t "</h3>" }),
+	s("div", { t "<div>", i(0), t "</div>" }),
 })
 
 ls.filetype_extend("vue", { "javascript", "html" })
 ls.filetype_extend("javascriptreact", { "javascript", "html" })
+ls.filetype_extend("typescriptreact", { "javascript", "html" })
 ls.filetype_extend("typescript", { "javascript" })
 ls.filetype_extend("svelte", { "javascript", "html" })

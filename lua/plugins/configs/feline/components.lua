@@ -1,5 +1,4 @@
 local utils = require "core.utils"
-local colors = require "plugins.configs.feline.colors"
 local vi_mode_color = require("feline.providers.vi_mode").get_mode_color
 
 local components = {}
@@ -12,7 +11,7 @@ components.file_path = {
 		},
 	},
 	hl = {
-		bg = colors.bg,
+		bg = "bg_normal",
 	},
 	icon = "﬌",
 }
@@ -28,9 +27,6 @@ components.git_added = {
 	left_sep = {
 		str = " ",
 	},
-	right_sep = {
-		str = " ",
-	},
 }
 
 components.git_changed = {
@@ -41,7 +37,7 @@ components.git_changed = {
 			fg = "orange",
 		},
 	},
-	right_sep = {
+	left_sep = {
 		str = " ",
 	},
 }
@@ -53,7 +49,7 @@ components.git_removed = {
 			fg = "red",
 		},
 	},
-	right_sep = {
+	left_sep = {
 		str = " ",
 	},
 }
@@ -69,7 +65,6 @@ components.vi_mode = {
 		return {
 			name = require("feline.providers.vi_mode").get_mode_highlight_name(),
 			bg = require("feline.providers.vi_mode").get_mode_color(),
-			fg = colors.bg,
 			style = "bold",
 		}
 	end,
@@ -100,11 +95,9 @@ components.git_branch = {
 	provider = "git_branch",
 	left_sep = {
 		str = " ",
-		hl = { bg = colors.bg },
 	},
 	hl = {
-		fg = colors.light_purple,
-		bg = colors.bg,
+		fg = "fuchsia",
 	},
 }
 
@@ -118,12 +111,14 @@ components.lsp_status = {
 			return ""
 		end
 	end,
+	right_sep = {
+		str = " ",
+	},
 	icon = {
 		str = " ",
 	},
-	hl = {
-		bg = colors.bg,
-	},
 }
+
+components.git_changes = { components.git_added, components.git_changed, components.git_removed }
 
 return components

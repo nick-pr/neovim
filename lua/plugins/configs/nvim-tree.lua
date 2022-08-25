@@ -8,6 +8,7 @@ require("nvim-tree").setup {
         signcolumn = "yes",
     },
 	renderer = {
+        root_folder_modifier = ":t:r",
 		indent_markers = {
 			enable = true,
 			icons = {

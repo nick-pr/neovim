@@ -22,6 +22,7 @@ end
 require("formatter").setup {
 	filetype = {
 		typescript = { javascript_formatter },
+		typescriptreact = { javascript_formatter },
 		javascript = { javascript_formatter },
 		javascriptreact = { javascript_formatter },
 		vue = {

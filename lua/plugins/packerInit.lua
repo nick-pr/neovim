@@ -37,20 +37,24 @@ packer.init {
 }
 
 -- Autocommand when editing config files.
-vim.api.nvim_create_autocmd("BufWritePost",{
-    pattern = {
-        "*/nvim/lua/plugins/init.lua",
-        "*/nvim/lua/plugins/packerInit.lua"
-    },
-    callback = function()
-        if not vim.g.config_dir then
-            local myvimrc = os.getenv("MYVIMRC")
-            vim.g.config_dir = string.match(myvimrc, ".*/")
-        end
-        
-        vim.api.nvim_command("so "..vim.g.config_dir.."lua/plugins/packerInit.lua")
-        vim.api.nvim_command("so "..vim.g.config_dir.."lua/plugins/init.lua")
-    end
+local group = vim.api.nvim_create_augroup("Packer", { clear = true })
+vim.api.nvim_create_autocmd("BufWritePost", {
+    group = group,
+	pattern = {
+		"*/nvim/lua/plugins/init.lua",
+		"*/nvim/lua/plugins/packerInit.lua",
+		"*/nvim/lua/thenme/external.lua",
+	},
+	callback = function()
+		if not vim.g.config_dir then
+			local myvimrc = os.getenv "MYVIMRC"
+			vim.g.config_dir = string.match(myvimrc, ".*/")
+		end
+
+		vim.api.nvim_command("so " .. vim.g.config_dir .. "lua/plugins/packerInit.lua")
+		vim.api.nvim_command("so " .. vim.g.config_dir .. "lua/plugins/init.lua")
+		vim.api.nvim_command("so " .. vim.g.config_dir .. "lua/theme/external.lua")
+	end,
 })
 
 return packer
