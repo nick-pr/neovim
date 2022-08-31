@@ -17,9 +17,6 @@ local winbar = {
 
 -- Active
 table.insert(statusline.active[1], components.vi_mode)
-table.insert(statusline.active[1], components.git_added)
-table.insert(statusline.active[1], components.git_changed)
-table.insert(statusline.active[1], components.git_removed)
 table.insert(statusline.active[1], { provider = " on", hl = { fg = "fg_dark" } })
 table.insert(statusline.active[1], components.git_branch)
 table.insert(statusline.active[3], components.lsp_status)
@@ -37,6 +34,9 @@ table.insert(statusline.inactive[1], {})
 
 -- Active
 table.insert(winbar.active[1], components.file_path)
+table.insert(winbar.active[1], components.git_added)
+table.insert(winbar.active[1], components.git_changed)
+table.insert(winbar.active[1], components.git_removed)
 table.insert(winbar.active[1], { hl = { bg = "none" } })
 
 -- Inactive
@@ -49,13 +49,14 @@ require("feline").setup {
 	components = statusline,
 	theme = theme,
 	vi_mode_colors = {
-		NORMAL = "dark_green",
+		NORMAL = "blue",
+		COMMAND = "orange",
+		INSERT = "red",
 	},
 }
 
 require("feline").winbar.setup {
 	components = winbar,
-	theme = theme,
 	disable = {
 		filetypes = {
 			"^NvimTree$",

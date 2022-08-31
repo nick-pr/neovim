@@ -18,39 +18,66 @@ components.file_path = {
 
 components.git_added = {
 	provider = "git_diff_added",
+	hl = {
+		fg = "green",
+		bg = "bg_normal",
+	},
 	icon = {
-		str = utils.icon_from_hex "f915",
+		-- str = utils.icon_from_hex "f915",
+		str = "+",
 		hl = {
 			fg = "green",
+			bg = "bg_normal",
 		},
 	},
 	left_sep = {
 		str = " ",
+		hl = {
+			bg = "bg_normal",
+		},
 	},
 }
 
 components.git_changed = {
 	provider = "git_diff_changed",
+	hl = {
+		fg = "orange",
+		bg = "bg_normal",
+	},
 	icon = {
-		str = utils.icon_from_hex "f9c9",
+		-- str = utils.icon_from_hex "f9c9",
+		str = "~",
 		hl = {
 			fg = "orange",
+			bg = "bg_normal",
 		},
 	},
 	left_sep = {
 		str = " ",
+		hl = {
+			bg = "bg_normal",
+		},
 	},
 }
 components.git_removed = {
 	provider = "git_diff_removed",
+	hl = {
+		fg = "red",
+		bg = "bg_normal",
+	},
 	icon = {
-		str = utils.icon_from_hex "f146" .. " ",
+		-- str = utils.icon_from_hex "f146" .. " ",
+		str = "-",
 		hl = {
 			fg = "red",
+			bg = "bg_normal",
 		},
 	},
 	left_sep = {
 		str = " ",
+		hl = {
+			bg = "bg_normal",
+		},
 	},
 }
 
@@ -65,6 +92,7 @@ components.vi_mode = {
 		return {
 			name = require("feline.providers.vi_mode").get_mode_highlight_name(),
 			bg = require("feline.providers.vi_mode").get_mode_color(),
+			fg = "bg",
 			style = "bold",
 		}
 	end,
