@@ -39,7 +39,7 @@ packer.init {
 -- Autocommand when editing config files.
 local group = vim.api.nvim_create_augroup("Packer", { clear = true })
 vim.api.nvim_create_autocmd("BufWritePost", {
-    group = group,
+	group = group,
 	pattern = {
 		"*/nvim/lua/plugins/init.lua",
 		"*/nvim/lua/plugins/packerInit.lua",

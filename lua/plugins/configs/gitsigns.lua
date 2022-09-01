@@ -1,4 +1,3 @@
-
 local sign = "┃"
 
 require("gitsigns").setup {

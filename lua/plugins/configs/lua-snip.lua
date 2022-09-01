@@ -16,9 +16,9 @@ local events = require "luasnip.util.events"
 function on_tab_press()
 	if ls.expand_or_jumpable() then
 		-- return "<cmd>lua require('luasnip').expand_or_jump()<CR>"
-        ls.expand_or_jump()
+		ls.expand_or_jump()
 	else
-        vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<Tab>", true, true, true), "n", true)
+		vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<Tab>", true, true, true), "n", true)
 	end
 end
 

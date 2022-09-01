@@ -3,12 +3,12 @@ local map = vim.keymap.set
 -- Setup
 require("nvim-tree").setup {
 	update_cwd = true,
-    view = {
-        adaptive_size = true,
-        signcolumn = "yes",
-    },
+	view = {
+		adaptive_size = true,
+		signcolumn = "yes",
+	},
 	renderer = {
-        root_folder_modifier = ":t:r",
+		root_folder_modifier = ":t:r",
 		indent_markers = {
 			enable = true,
 			icons = {
@@ -18,12 +18,12 @@ require("nvim-tree").setup {
 				none = " ",
 			},
 		},
-        icons = {
-            git_placement = "signcolumn",
-            show = {
-                folder_arrow = false,
-            }
-        }
+		icons = {
+			git_placement = "signcolumn",
+			show = {
+				folder_arrow = false,
+			},
+		},
 	},
 }
 

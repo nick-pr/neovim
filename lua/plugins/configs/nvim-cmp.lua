@@ -2,7 +2,7 @@ local set = vim.opt
 local cmp = require "cmp"
 local luasnip = require "luasnip"
 local api = vim.api
-local utils = require('core.utils')
+local utils = require "core.utils"
 
 set.completeopt = { "menu", "menuone", "noselect" }
 
@@ -13,7 +13,7 @@ end
 
 -- Setup Function
 cmp.setup {
-    enabled = utils.is_lsp_attached,
+	enabled = utils.is_lsp_attached,
 	view = {
 		entries = "custom",
 	},

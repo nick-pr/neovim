@@ -1,15 +1,15 @@
 local map = vim.keymap.set
-local actions = require("telescope.actions")
+local actions = require "telescope.actions"
 
 -- Setup
 require("telescope").setup {
-    defaults = {
-        mappings = {
-            i = {
-                ["<esc>"] = actions.close,
-            },
-        },
-    },
+	defaults = {
+		mappings = {
+			i = {
+				["<esc>"] = actions.close,
+			},
+		},
+	},
 }
 
 -- Mappings

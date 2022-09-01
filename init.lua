@@ -1,4 +1,4 @@
 -- Load Modules
-require("core")
-require("plugins")
-require("theme")
+require "core"
+require "plugins"
+require "theme"
