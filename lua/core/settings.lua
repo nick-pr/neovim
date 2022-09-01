@@ -17,5 +17,6 @@ set.laststatus = 3
 set.showmode = false
 set.linebreak = true
 set.cursorline = true
+set.relativenumber = true
 
 vim.api.nvim_create_autocmd("BufEnter", { command = "set formatoptions-=o" })
