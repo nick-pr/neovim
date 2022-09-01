@@ -1,4 +1,5 @@
 local map = vim.keymap.set
+local util = require "formatter.util"
 
 local javascript_formatter = function()
 	return {
@@ -52,6 +53,13 @@ require("formatter").setup {
 			function()
 				return {
 					exe = "stylua",
+					args = {
+						"--search-parent-directories",
+						"--stdin-filepath",
+						util.escape_path(util.get_current_buffer_file_path()),
+						"--",
+						"-",
+					},
 					stdin = true,
 				}
 			end,
