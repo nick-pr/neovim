@@ -33,14 +33,16 @@ table.insert(statusline.inactive[1], {})
 ----- Winbar ----
 
 -- Active
-table.insert(winbar.active[1], components.file_path)
+table.insert(winbar.active[1], components.parent_file_path)
+table.insert(winbar.active[1], components.file_name)
 table.insert(winbar.active[1], components.git_added)
 table.insert(winbar.active[1], components.git_changed)
 table.insert(winbar.active[1], components.git_removed)
 table.insert(winbar.active[1], { hl = { bg = "none" } })
 
 -- Inactive
-table.insert(winbar.inactive[1], components.file_path)
+table.insert(winbar.inactive[1], components.parent_file_path)
+table.insert(winbar.inactive[1], components.file_name)
 table.insert(winbar.inactive[1], { hl = { bg = "none" } })
 
 ------ Setup ------
@@ -52,6 +54,22 @@ require("feline").setup {
 		NORMAL = "blue",
 		COMMAND = "orange",
 		INSERT = "red",
+	},
+	custom_providers = {
+		parent_file_path = function(comp, opts)
+			local path_to_parent = vim.fn.expand "%:.:h"
+
+			if path_to_parent == "." or path_to_parent == "" then
+				return ""
+			end
+
+			return path_to_parent .. "/"
+		end,
+
+		file_name = function(comp, opts)
+			local file_name = vim.fn.expand "%:t"
+			return file_name
+		end,
 	},
 }
 

@@ -3,17 +3,30 @@ local vi_mode_color = require("feline.providers.vi_mode").get_mode_color
 
 local components = {}
 
-components.file_path = {
+components.parent_file_path = {
+	provider = {
+		name = "parent_file_path",
+	},
+	hl = {
+		fg = "fg_dark",
+	},
+	icon = {
+		str = "﬌ ",
+		always_visible = true,
+	},
+}
+
+components.file_name = {
 	provider = {
 		name = "file_info",
 		opts = {
-			type = "relative",
+			type = "base_only",
 		},
 	},
 	hl = {
 		bg = "bg_normal",
 	},
-	icon = "﬌",
+	icon = "",
 }
 
 components.git_added = {
