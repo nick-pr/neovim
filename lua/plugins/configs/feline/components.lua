@@ -16,9 +16,13 @@ components.parent_file_path = {
 	},
 	hl = {
 		fg = "fg_dark",
+        bg = "bg_normal"
 	},
 	icon = {
 		str = "﬌ ",
+        hl = {
+            bg = "bg_normal"
+        },
 		always_visible = true,
 	},
 }
