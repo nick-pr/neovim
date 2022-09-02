@@ -3,6 +3,13 @@ local vi_mode_color = require("feline.providers.vi_mode").get_mode_color
 
 local components = {}
 
+components.pwd = {
+    provider = {
+        name = "relative_pwd"
+    },
+    left_sep = " ",
+}
+
 components.parent_file_path = {
 	provider = {
 		name = "parent_file_path",

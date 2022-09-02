@@ -17,6 +17,7 @@ local winbar = {
 
 -- Active
 table.insert(statusline.active[1], components.vi_mode)
+table.insert(statusline.active[1], components.pwd)
 table.insert(statusline.active[1], { provider = " on", hl = { fg = "fg_dark" } })
 table.insert(statusline.active[1], components.git_branch)
 table.insert(statusline.active[3], components.lsp_status)
@@ -70,6 +71,10 @@ require("feline").setup {
 			local file_name = vim.fn.expand "%:t"
 			return file_name
 		end,
+
+        relative_pwd = function(comp,opts)
+            return vim.fn.fnamemodify(vim.fn.getcwd(), ":~")
+        end
 	},
 }
 
