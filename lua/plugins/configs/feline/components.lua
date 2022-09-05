@@ -4,10 +4,10 @@ local vi_mode_color = require("feline.providers.vi_mode").get_mode_color
 local components = {}
 
 components.pwd = {
-    provider = {
-        name = "relative_pwd"
-    },
-    left_sep = " ",
+	provider = {
+		name = "relative_pwd",
+	},
+	left_sep = " ",
 }
 
 components.parent_file_path = {
@@ -16,13 +16,13 @@ components.parent_file_path = {
 	},
 	hl = {
 		fg = "fg_dark",
-        bg = "bg_normal"
+		bg = "bg_normal",
 	},
 	icon = {
 		str = "﬌ ",
-        hl = {
-            bg = "bg_normal"
-        },
+		hl = {
+			bg = "bg_normal",
+		},
 		always_visible = true,
 	},
 }
@@ -154,15 +154,7 @@ components.git_branch = {
 }
 
 components.lsp_status = {
-	provider = function()
-		local attached_lsp = require("feline.providers.lsp").is_lsp_attached()
-		if attached_lsp then
-			local lsp_client_name = require("feline.providers.lsp").lsp_client_names()
-			return lsp_client_name
-		else
-			return ""
-		end
-	end,
+	provider = "lsp_info",
 	right_sep = {
 		str = " ",
 	},

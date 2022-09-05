@@ -72,9 +72,19 @@ require("feline").setup {
 			return file_name
 		end,
 
-        relative_pwd = function(comp,opts)
-            return vim.fn.fnamemodify(vim.fn.getcwd(), ":~")
-        end
+		relative_pwd = function(comp, opts)
+			return vim.fn.fnamemodify(vim.fn.getcwd(), ":~")
+		end,
+
+		lsp_info = function()
+			local attached_lsp = require("feline.providers.lsp").is_lsp_attached()
+			if attached_lsp then
+				local lsp_client_name = require("feline.providers.lsp").lsp_client_names()
+				return lsp_client_name
+			else
+				return ""
+			end
+		end,
 	},
 }
 
