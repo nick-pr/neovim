@@ -29,6 +29,11 @@ use {
 	event = "bufEnter",
 }
 
+use {
+	"gbprod/substitute.nvim",
+	config = useConfig "substitute",
+}
+
 -- Feline, for status bar and win bar.
 use {
 	"feline-nvim/feline.nvim",
