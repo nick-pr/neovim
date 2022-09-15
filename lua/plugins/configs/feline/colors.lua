@@ -2,7 +2,7 @@ local feline = require "feline"
 local colors = require "argon.palette"
 
 return {
-	bg_normal = "#1A1A1A",
+	bg_normal = colors.dark_1,
 	light_purple = "#db7ef0",
 
 	bg = colors.dark_2,
