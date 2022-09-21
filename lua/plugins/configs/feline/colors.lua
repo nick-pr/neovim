@@ -1,5 +1,6 @@
 local feline = require "feline"
-local colors = require "argon.palette"
+local p = require "theme.palette"
+local c = require "theme.colors"
 
 return {
 	bg_normal = colors.dark_1,

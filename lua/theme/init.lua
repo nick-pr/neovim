@@ -1,5 +1,11 @@
--- Bring in all the colorschemes
-require "theme.external"
+local hl = require("core.utils").highlight
+local highlights = require("theme.highlights")
 
--- Set the colorcheme
-vim.cmd "colorscheme argon"
+local M = {}
+
+M.init = function()
+	for group, opt in pairs(highlights) do
+		hl(group, opt)
+	end
+end
+return M
