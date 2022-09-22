@@ -1,4 +1,6 @@
 -- Load Modules
 require "core"
 require "plugins"
-require "theme"
+
+-- Set colorscheme
+vim.cmd("colorscheme argon")
