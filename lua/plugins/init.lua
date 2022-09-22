@@ -94,18 +94,7 @@ use {
 	end,
 }
 
--- Telescope, for fuzzy finding all the things.
-use {
-	"nvim-telescope/telescope.nvim",
-	requires = { { "nvim-lua/plenary.nvim" } },
-	config = useConfig "telescope",
-}
-
--- Telecope fzf native, for making telescope go brrr.
-use {
-	"nvim-telescope/telescope-fzf-native.nvim",
-	run = "make",
-}
+use { "ibhagwan/fzf-lua", config = useConfig "fzf" }
 --Lua Snip, for snippets.
 use {
 	"L3MON4D3/LuaSnip",
