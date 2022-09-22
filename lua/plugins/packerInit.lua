@@ -53,7 +53,6 @@ vim.api.nvim_create_autocmd("BufWritePost", {
 
 		vim.api.nvim_command("so " .. vim.g.config_dir .. "lua/plugins/packerInit.lua")
 		vim.api.nvim_command("so " .. vim.g.config_dir .. "lua/plugins/init.lua")
-		vim.api.nvim_command("so " .. vim.g.config_dir .. "lua/theme/external.lua")
 	end,
 })
 
