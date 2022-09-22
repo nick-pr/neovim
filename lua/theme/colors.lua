@@ -1,6 +1,7 @@
 local p = require "theme.palette"
 -- Color variables
 return {
+    floatBG = p.dark_10,
     background = p.dark_10,
     backgroundNC = p.dark_1,
     foreground = p.slate_100,

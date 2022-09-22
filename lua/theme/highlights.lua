@@ -12,8 +12,8 @@ return {
     CursorLineNR =  { fg = p.orange_300 , bg = c.background },
     CursorLine =    { bg = c.background },
     EndOfBuffer =   { fg = c.background },
-    Pmenu =         { fg = c.foreground, bg = p.dark_1 },
-    PmenuSel =      { fg = c.foreground , bg = p.grey },
+    Pmenu =         { fg = c.overlay, bg = p.dark_1 },
+    PmenuSel =      { fg = p.orange_300 , bg = p.dark_1 },
     Keyword =       { fg = c.keyword },
     String =        { fg = c.string },
     Number =        { fg = p.red_300 },
@@ -23,8 +23,8 @@ return {
     Include =       { fg = p.blue_300 },
     MatchParen =    { fg = c.foreground, bg = c.background, gui = "bold" },
     VertSplit =     { fg = p.dark_3, bg = c.background },
-    FloatBorder =   { fg = c.overlay },
-    NormalFloat =   { bg = p.dark_1 },
+    FloatBorder =   { fg = c.overlay, bg = c.floatBG },
+    NormalFloat =   { bg = c.floatBG },
     Error =         { fg = c.foreground, bg = p.red_300},
     Special =       { fg = p.orange_300 },
     Visual =        { bg = p.gray_800 },
@@ -36,8 +36,14 @@ return {
     GitSignsDelete =    { fg = p.red_400, bg = c.background },
 
     -- Telescope
-    TelescopeBorder =   { fg = c.overlay },
-    TelescopeNormal =   { fg = c.overlay, bg = p.dark_1 },
+    TelescopeBorder =   { fg = c.overlay, bg = c.floatBG },
+    TelescopeNormal =   { fg = c.overlay, bg = c.floatBG },
+
+    -- Fzf-lua
+    FzfLuaNormal =      { fg = c.overlay, bg = c.floatBG },
+    FzfLuaCursor =      { fg = c.foreground, bg = c.floatBG },
+    FzfLuaBorder =      { fg = c.overlay },
+    FzfLuaCursorLine =  { bg = c.floatBg, fg = p.orange_300 },
 
     -- Treesitter
     TSProperty =            { fg = c.property },
