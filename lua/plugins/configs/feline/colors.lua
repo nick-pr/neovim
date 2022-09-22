@@ -3,32 +3,34 @@ local p = require "theme.palette"
 local c = require "theme.colors"
 
 return {
-	bg_normal = colors.dark_1,
 	light_purple = "#db7ef0",
 
-	bg = colors.dark_2,
+    light_bg = p.dark_4,
+    bg = p.dark_3,
+    bg_normal = c.background,
 
-	fg = colors.neutral_100,
-	fg_dark = colors.neutral_400,
+	fg = p.slate_100,
+	fg_dark = p.gray_400,
 
-	blue = colors.blue_400,
-	dark_blue = colors.blue_500,
+	blue = p.blue_400,
+	dark_blue = p.blue_500,
 
-	red = colors.red_400,
-	dark_red = colors.red_600,
+	red = p.red_400,
+	dark_red = p.red_600,
 
-	orange = colors.orange_400,
-	dark_orange = colors.orange_600,
+	orange = p.orange_300,
+	dark_orange = p.orange_600,
 
-	green = colors.green_400,
-	dark_green = colors.green_700,
+	green = p.green_400,
+	dark_green = p.green_700,
 
-	emerald = colors.emerald_400,
-	dark_emerald = colors.emerald_800,
+	emerald = p.emerald_400,
+	dark_emerald = p.emerald_800,
 
-	fuchsia = colors.fuchsia_400,
+	fuchsia = p.fuchsia_400,
 
-	gray = colors.gray_400,
+	gray = p.gray_400,
+    dark_gray = p.gray_800,
 
 	black = "#000000",
 }

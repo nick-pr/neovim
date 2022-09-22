@@ -7,6 +7,11 @@ components.pwd = {
 	provider = {
 		name = "relative_pwd",
 	},
+	hl = { fg = "orange" },
+	icon = {
+		str = "[]PWD:",
+		hl = { fg = "fg_dark" },
+	},
 	left_sep = " ",
 }
 
@@ -115,31 +120,24 @@ components.vi_mode = {
 	hl = function()
 		return {
 			name = require("feline.providers.vi_mode").get_mode_highlight_name(),
-			bg = require("feline.providers.vi_mode").get_mode_color(),
-			fg = "bg",
+			fg = require("feline.providers.vi_mode").get_mode_color(),
+			bg = "light_bg",
 			style = "bold",
 		}
 	end,
-	right_sep = {
-		str = " ",
-		hl = function()
-			return {
-				bg = vi_mode_color(),
-			}
-		end,
-	},
 	icon = {
-		str = "",
+		-- str = "[]MODE:",
+		-- hl = { fg = "fg_dark" },
+        str = "",
 		always_visible = true,
 	},
 	left_sep = {
 		str = " ",
-		hl = function()
-			return {
-				bg = vi_mode_color(),
-			}
-		end,
-		always_visible = true,
+		hl = { bg = "light_bg" },
+	},
+	right_sep = {
+		str = "right_rounded",
+		hl = { fg = "light_bg" },
 	},
 }
 
@@ -155,11 +153,30 @@ components.git_branch = {
 
 components.lsp_status = {
 	provider = "lsp_info",
+	hl = function()
+		local attached_lsp = require("feline.providers.lsp").is_lsp_attached()
+		local hl = {}
+		if attached_lsp then
+			hl.fg = "green"
+		else
+			hl.fg = "red"
+		end
+		return hl
+	end,
 	right_sep = {
 		str = " ",
+		hl = { fg = "fg" },
 	},
+	-- left_sep = {
+	-- 	str = "[",
+	-- 	hl = { fg = "fg" },
+	-- },
 	icon = {
-		str = " ",
+		str = "[]LSP:",
+		-- str = "LSP:",
+		hl = {
+			fg = "fg_dark",
+		},
 	},
 }
 

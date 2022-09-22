@@ -18,15 +18,9 @@ local winbar = {
 -- Active
 table.insert(statusline.active[1], components.vi_mode)
 table.insert(statusline.active[1], components.pwd)
-table.insert(statusline.active[1], { provider = " on", hl = { fg = "fg_dark" } })
-table.insert(statusline.active[1], components.git_branch)
+-- table.insert(statusline.active[1], { provider = " on", hl = { fg = "fg_dark" } })
+-- table.insert(statusline.active[1], components.git_branch)
 table.insert(statusline.active[3], components.lsp_status)
-table.insert(statusline.active[3], {
-	provider = " ",
-	hl = function()
-		return { bg = require("feline.providers.vi_mode").get_mode_color() }
-	end,
-})
 
 -- Inactive
 table.insert(statusline.inactive[1], {})
@@ -79,10 +73,10 @@ require("feline").setup {
 		lsp_info = function()
 			local attached_lsp = require("feline.providers.lsp").is_lsp_attached()
 			if attached_lsp then
-				local lsp_client_name = require("feline.providers.lsp").lsp_client_names()
-				return lsp_client_name
+				-- local lsp_client_name = require("feline.providers.lsp").lsp_client_names()
+				return "online"
 			else
-				return ""
+				return "offline"
 			end
 		end,
 	},
