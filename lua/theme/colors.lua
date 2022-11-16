@@ -14,7 +14,7 @@ local p = require "theme.palette"
 --     overlay = p.gray_400,
 -- }
 return {
-    floatBG = p.dark_1,
+    floatBG = p.dark_1_5,
     background = p.dark_1_5,
     foreground = p.gray_250,
     keyword = p.purple_350,
