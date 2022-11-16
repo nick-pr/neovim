@@ -42,3 +42,6 @@ require("lspconfig").tsserver.setup {}
 
 -- Rust-analyzer
 require("lspconfig").rust_analyzer.setup {}
+
+-- Gopls
+require'lspconfig'.gopls.setup{}
