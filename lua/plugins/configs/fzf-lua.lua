@@ -3,11 +3,14 @@ local map = vim.keymap.set
 
 -- Setup
 fzf.setup {
-    files = {
-        previewer = false,
-    }
+	winopts = {
+		border = { "🭽", "▔", "🭾", "▕", "🭿", "▁", "🭼", "▏" },
+	},
+	files = {
+		previewer = false,
+	},
 }
 
 -- Mappings
 map("n", "<leader>ff", fzf.files, { noremap = true })
-
+map("n", "<leader>fc", fzf.colorschemes, { noremap = true })

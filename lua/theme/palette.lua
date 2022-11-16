@@ -1,10 +1,11 @@
 return {
-    dark_1 =            "#18191A",
-    dark_2 =            "#1F2122",
-    dark_3 =            "#232425",
-    dark_4 =            "#2E2F31",
+    dark_1 =            "#1A1C1E",
+    dark_1_5 =          "#1F2123",
+    dark_2 =            "#222426",
+    dark_3 =            "#27292B",
+    dark_4 =            "#2C2E30",
+    dark_5 =            "#313335",
 
-    dark_10 =           "#1D1E1F",
 
     slate_100 =         "#f1f5f9",
     slate_200 =         "#e2e8f0",
@@ -16,6 +17,9 @@ return {
 
     gray_100 =          "#f3f4f6",
     gray_200 =          "#e5e7eb",
+    gray_250 =          "#DBDEE3",
+    gray_275 =          "#D6DADF",
+    gray_300 =          "#D1D5DB",
     gray_400 =          "#9CA3AF",
     gray_500 =          "#6B7280",
     gray_600 =          "#4B5563",
@@ -53,8 +57,10 @@ return {
     orange_500 =        "#F97316",
     orange_600 =        "#EA580C",
 
+    amber_200 =         "#FDE68A",
     amber_300 =         "#FCD34D",
     amber_400 =         "#FBBF24",
+    amber_500 =         "#F59E0B",
 
     yellow_200 =        "#FEF08A",
     yellow_300 =        "#FDE047",
@@ -65,7 +71,9 @@ return {
     lime_300 =          "#BEF264",
 
     green_200 =         "#BBF7D0",
+    green_250 =         "#A1F3BE",
     green_300 =         "#86EFAC",
+    green_350 =         "#68E796",
     green_400 =         "#4ADE80",
     green_500 =         "#22C55E",
     green_600 =         "#16A34A",
@@ -82,8 +90,8 @@ return {
 
     teal_200 =          "#99F6E4",
     teal_300 =          "#5EEAD4",
+    teal_400 =          "#2DD4BF",
 
-    cyan_200 =          "#A5F3FC",
     cyan_300 =          "#67E8F9",
     cyan_400 =          "#22D3EE",
     cyan_500 =          "#06B6D4",
@@ -94,22 +102,45 @@ return {
     sky_600 =           "#0284c7",
 
     blue_300 =          "#93C5FD",
+    blue_350 =          "#7AB5FC",
+    blue_375 =          "#6DADFB",
     blue_400 =          "#60A5FA",
     blue_500 =          "#3B82F6",
     blue_600 =          "#2563EB",
 
     violet_300 =        "#C4B5FD",
+    violet_325 =        "#BDABFC",
+    violet_350 =        "#B6A0FC",
+    violet_375 =        "#AE96FB",
     violet_400 =        "#A78BFA",
 
     indigo_300 =        "#A5B4FC",
+    indigo_400 =        "#818CF8",
 
     purple_300 =        "#D8B4FE",
+    purple_325 =        "#D2A8FE",
+    purple_350 =        "#CC9CFD",
+    purple_375 =        "#C690FD",
     purple_400 =        "#C084FC",
+    purple_500 =        "#A855F7",
+    purple_600 =        "#9333EA",
+    purple_700 =        "#7E22CE",
 
     fuchsia_300 =       "#F0ABFC",
     fuchsia_400 =       "#E879F9",
     fuchsia_500 =       "#D946EF",
+    fuchsia_600 =       "#C026D3",
     fuchsia_900 =       "#701A75",
 
     rose_300 =          "#FDA4AF",
+
+    habamax = {
+        bg = "#1c1c1c",
+        green = "#87af87",
+        purple = "#af87af",
+        blue = "#87afd7"
+    },
+    other = {
+        purple = "#C49DEE"
+    },
 }

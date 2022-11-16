@@ -7,105 +7,113 @@ components.pwd = {
 	provider = {
 		name = "relative_pwd",
 	},
-	hl = { fg = "orange" },
+	hl = { fg = "orange_300" },
 	icon = {
-		str = "[]PWD:",
-		hl = { fg = "fg_dark" },
+		str = " ",
+		hl = { fg = "orange_300" },
 	},
 	left_sep = " ",
 }
 
-components.parent_file_path = {
-	provider = {
-		name = "parent_file_path",
-	},
-	hl = {
-		fg = "fg_dark",
-		bg = "bg_normal",
-	},
-	icon = {
-		str = "﬌ ",
-		hl = {
-			bg = "bg_normal",
+components.relative_file_name = {
+	-- Parent file path
+	{
+		provider = {
+			name = "parent_file_path",
 		},
-		always_visible = true,
-	},
-}
-
-components.file_name = {
-	provider = {
-		name = "file_info",
-		opts = {
-			type = "base_only",
+		hl = {
+			bg = "dark_4",
+		},
+		icon = {
+			str = " ﬌ ",
+			always_visible = true,
 		},
 	},
-	hl = {
-		bg = "bg_normal",
-	},
-	icon = "",
-}
-
-components.git_added = {
-	provider = "git_diff_added",
-	hl = {
-		fg = "green",
-		bg = "bg_normal",
-	},
-	icon = {
-		-- str = utils.icon_from_hex "f915",
-		str = "+",
-		hl = {
-			fg = "green",
-			bg = "bg_normal",
+	-- File name
+	{
+		provider = {
+			name = "file_info",
+			opts = {
+				type = "base_only",
+			},
 		},
-	},
-	left_sep = {
-		str = " ",
 		hl = {
-			bg = "bg_normal",
+			fg = "orange_300",
+            bg = "dark_4"
+		},
+		icon = "",
+		right_sep = {
+			str = "right_rounded",
+			hl = { fg = "dark_4", bg = "none" },
 		},
 	},
 }
 
-components.git_changed = {
-	provider = "git_diff_changed",
-	hl = {
-		fg = "orange",
-		bg = "bg_normal",
-	},
-	icon = {
-		-- str = utils.icon_from_hex "f9c9",
-		str = "~",
+components.git_info = {
+	-- Git Add
+	{
+		provider = "git_diff_added",
 		hl = {
-			fg = "orange",
+			fg = "green_300",
 			bg = "bg_normal",
 		},
-	},
-	left_sep = {
-		str = " ",
-		hl = {
-			bg = "bg_normal",
+		icon = {
+			-- str = utils.icon_from_hex "f915",
+			str = "+",
+			hl = {
+				fg = "green_300",
+				bg = "none",
+			},
+		},
+		left_sep = {
+			str = " ",
+			hl = {
+				bg = "none",
+			},
 		},
 	},
-}
-components.git_removed = {
-	provider = "git_diff_removed",
-	hl = {
-		fg = "red",
-		bg = "bg_normal",
-	},
-	icon = {
-		-- str = utils.icon_from_hex "f146" .. " ",
-		str = "-",
+	-- Git Changed
+	{
+		provider = "git_diff_changed",
 		hl = {
-			fg = "red",
-			bg = "bg_normal",
+			fg = "orange_300",
+			bg = "none",
+		},
+		icon = {
+			-- str = utils.icon_from_hex "f9c9",
+			str = "~",
+			hl = {
+				fg = "orange_300",
+				bg = "none",
+			},
+		},
+		left_sep = {
+			str = " ",
+			hl = {
+				bg = "none",
+			},
 		},
 	},
-	left_sep = {
-		str = " ",
+	-- Git Removed
+	{
+		provider = "git_diff_removed",
 		hl = {
-			bg = "bg_normal",
+			fg = "red_400",
+			bg = "none",
+		},
+		icon = {
+			-- str = utils.icon_from_hex "f146" .. " ",
+			str = "-",
+			hl = {
+				fg = "red_400",
+				bg = "none",
+			},
+		},
+		left_sep = {
+			str = " ",
+			hl = {
+				bg = "none",
+			},
 		},
 	},
 }
@@ -121,23 +129,23 @@ components.vi_mode = {
 		return {
 			name = require("feline.providers.vi_mode").get_mode_highlight_name(),
 			fg = require("feline.providers.vi_mode").get_mode_color(),
-			bg = "light_bg",
+			bg = "bg_light",
 			style = "bold",
 		}
 	end,
 	icon = {
 		-- str = "[]MODE:",
 		-- hl = { fg = "fg_dark" },
-        str = "",
+		str = "",
 		always_visible = true,
 	},
 	left_sep = {
 		str = " ",
-		hl = { bg = "light_bg" },
+		hl = { bg = "bg_light" },
 	},
 	right_sep = {
 		str = "right_rounded",
-		hl = { fg = "light_bg" },
+		hl = { fg = "bg_light" },
 	},
 }
 
@@ -145,24 +153,21 @@ components.git_branch = {
 	provider = "git_branch",
 	left_sep = {
 		str = " ",
+		hl = { bg = "purple_700" },
+	},
+	right_sep = {
+		str = "right_rounded",
+		hl = { fg = "purple_700", bg = "dark_3" },
 	},
 	hl = {
-		fg = "fuchsia",
+		bg = "purple_700",
+		fg = "white",
 	},
 }
 
 components.lsp_status = {
-	provider = "lsp_info",
-	hl = function()
-		local attached_lsp = require("feline.providers.lsp").is_lsp_attached()
-		local hl = {}
-		if attached_lsp then
-			hl.fg = "green"
-		else
-			hl.fg = "red"
-		end
-		return hl
-	end,
+	provider = "lsp_client_names",
+	hl = { fg = "purple_350" },
 	right_sep = {
 		str = " ",
 		hl = { fg = "fg" },
@@ -171,13 +176,19 @@ components.lsp_status = {
 	-- 	str = "[",
 	-- 	hl = { fg = "fg" },
 	-- },
-	icon = {
-		str = "[]LSP:",
-		-- str = "LSP:",
-		hl = {
-			fg = "fg_dark",
-		},
-	},
+}
+
+components.lsp_errors = {
+	provider = "diagnostic_errors",
+	hl = { bg = "none" },
+}
+components.lsp_warnings = {
+	provider = "diagnostic_errors",
+	hl = { bg = "none" },
+}
+components.lsp_hints = {
+	provider = "diagnostic_errors",
+	hl = { bg = "none" },
 }
 
 components.git_changes = { components.git_added, components.git_changed, components.git_removed }

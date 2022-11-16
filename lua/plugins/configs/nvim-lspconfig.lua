@@ -1,9 +1,10 @@
 local map = vim.keymap.set
+local utils = require "core.utils"
 
 vim.diagnostic.config {
 	virtual_text = false,
 	float = {
-		border = "rounded",
+		border = "single",
 	},
 	signs = {
 		severity_sort = true,
@@ -14,9 +15,16 @@ vim.diagnostic.config {
 	severity_sort = false,
 }
 
+local orig_util_open_floating_preview = vim.lsp.util.open_floating_preview
+function vim.lsp.util.open_floating_preview(contents, syntax, opts, ...)
+	opts = opts or {}
+	opts.border = opts.border or "single"
+	return orig_util_open_floating_preview(contents, syntax, opts, ...)
+end
+
 -- Set Icons and Colors
--- local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
-local signs = { Error = "", Warn = "", Hint = "", Info = "" }
+-- local signs = { Error = "", Warn = utils.icon_from_hex "fad5", Hint = " ", Info = " " }
+local signs = { Error = "", Warn = "", Hint = "", Info = "" }
 for type, icon in pairs(signs) do
 	local hl = "DiagnosticSign" .. type
 	vim.fn.sign_define(hl, { text = icon, texthl = hl })

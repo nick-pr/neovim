@@ -1,11 +1,24 @@
 local map = vim.keymap.set
 
+local gheight = vim.api.nvim_list_uis()[1].height
+local gwidth = vim.api.nvim_list_uis()[1].width
+local width = 30
+local height = 30
+
 -- Setup
 require("nvim-tree").setup {
 	update_cwd = true,
 	view = {
+		mappings = {
+			list = {
+				{ key = "<ESC>", action = "close" },
+			},
+		},
 		adaptive_size = true,
 		signcolumn = "yes",
+		float = {
+			enable = false,
+		},
 	},
 	renderer = {
 		root_folder_modifier = ":t:r",

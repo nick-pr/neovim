@@ -1,54 +1,70 @@
 local theme = require "plugins.configs.feline.colors"
-
 local utils = require "core.utils"
 local components = require "plugins.configs.feline.components"
 
+Bar = {}
+MetaBar = {}
+MetaBar.__index = Bar
+
+function Bar.new()
+	local instance = setmetatable({}, MetaBar)
+	instance.components = { {}, {}, {} }
+	return instance
+end
+
+function Bar:append_component(index, component)
+	if component[1] == nil then
+		table.insert(self.components[index], component)
+	else
+		for i, comp in ipairs(component) do
+			table.insert(self.components[index], comp)
+		end
+	end
+end
+
 local statusline = {
-	active = { {}, {}, {} },
-	inactive = { {}, {}, {} },
+	active = Bar:new(),
+	inactive = Bar:new(),
+}
+local winbar = {
+	active = Bar:new(),
+	inactive = Bar:new(),
 }
 
-local winbar = {
-	active = { {}, {}, {} },
-	inactive = { {}, {}, {} },
+local file_tree = {
+	active = Bar:new(),
+	inactive = Bar:new(),
 }
 
 ------ Statusline -----
+statusline.active:append_component(1, components.vi_mode)
+statusline.active:append_component(1, components.pwd)
+statusline.active:append_component(3, components.lsp_status)
 
--- Active
-table.insert(statusline.active[1], components.vi_mode)
-table.insert(statusline.active[1], components.pwd)
--- table.insert(statusline.active[1], { provider = " on", hl = { fg = "fg_dark" } })
--- table.insert(statusline.active[1], components.git_branch)
-table.insert(statusline.active[3], components.lsp_status)
+statusline.inactive:append_component(1, {})
 
--- Inactive
-table.insert(statusline.inactive[1], {})
+------ Winbar -------
+winbar.active:append_component(1, components.relative_file_name)
+winbar.active:append_component(1, components.git_info)
 
------ Winbar ----
+winbar.inactive:append_component(1, components.relative_file_name)
+winbar.inactive:append_component(1, components.git_info)
 
--- Active
-table.insert(winbar.active[1], components.parent_file_path)
-table.insert(winbar.active[1], components.file_name)
-table.insert(winbar.active[1], components.git_added)
-table.insert(winbar.active[1], components.git_changed)
-table.insert(winbar.active[1], components.git_removed)
-table.insert(winbar.active[1], { hl = { bg = "none" } })
-
--- Inactive
-table.insert(winbar.inactive[1], components.parent_file_path)
-table.insert(winbar.inactive[1], components.file_name)
-table.insert(winbar.inactive[1], { hl = { bg = "none" } })
+------ File Tree Bar -------
+file_tree.active:append_component(1, { provider = "", hl = { bg = "dark_3" } })
+file_tree.active:append_component(2, { provider = "File Tree", icon = { str = utils.icon_from_hex "fb44".." " } })
 
 ------ Setup ------
-
 require("feline").setup {
-	components = statusline,
+	components = {
+		active = statusline.active.components,
+		inactive = statusline.inactive.components,
+	},
 	theme = theme,
 	vi_mode_colors = {
-		NORMAL = "blue",
-		COMMAND = "orange",
-		INSERT = "red",
+		NORMAL = "blue_400",
+		COMMAND = "orange_400",
+		INSERT = "red_400",
 	},
 	custom_providers = {
 		parent_file_path = function(comp, opts)
@@ -83,10 +99,22 @@ require("feline").setup {
 }
 
 require("feline").winbar.setup {
-	components = winbar,
+	components = {
+		active = winbar.active.components,
+		inactive = winbar.inactive.components,
+	},
+	conditional_components = {
+		{
+			condition = function()
+				return vim.api.nvim_buf_get_option(0, "filetype") == "NvimTree"
+			end,
+			active = file_tree.active.components,
+			inactive = file_tree.active.components,
+		},
+	},
 	disable = {
 		filetypes = {
-			"^NvimTree$",
+			"^packer$",
 		},
 		buftypes = {
 			"^terminal$",
