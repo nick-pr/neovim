@@ -35,6 +35,7 @@ return {
     -- StatusLineNC =  { link = "VertSplit" },
     StatusLineTerm =    { link = "VertSplit" },
     -- StatusLineNC =  { link = "VertSplit" },
+    Folded =        { bg = p.dark_3 },
 
     -- GitSigns
     GitSignsAdd =       { fg = p.green_400, bg = c.background },
