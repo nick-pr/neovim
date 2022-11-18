@@ -69,7 +69,7 @@ return {
     ["@boolean"] =                  { link = "@number" },
     ["@operator"] =                 { fg = c.operator },
     ["@parameter"] =                { fg = p.red_400 },
-    ["@variable"] =                 { link= "Normal" },
+    ["@variable"] =                 { fg = c.foreground },
     ["@variable.builtin"] =         { link= "@number" },
     ["@constant.builtin"] =         { link= "@number" },
     ["@number"] =                   { fg = p.red_300 },
