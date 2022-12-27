@@ -1,5 +1,6 @@
 return {
     dark_1 =            "#1A1C1E",
+    dark_1_25 =         "#1D1F21",
     dark_1_5 =          "#1F2123",
     dark_2 =            "#222426",
     dark_3 =            "#27292B",
@@ -17,6 +18,7 @@ return {
 
     gray_100 =          "#f3f4f6",
     gray_200 =          "#e5e7eb",
+    gray_225 =          "#E0E3E7",
     gray_250 =          "#DBDEE3",
     gray_275 =          "#D6DADF",
     gray_300 =          "#D1D5DB",
@@ -47,6 +49,7 @@ return {
     stone_900 =         "#1C1917",
 
     red_300 =           "#FCA5A5",
+    red_350 =           "#FA8B8B",
     red_400 =           "#F87171",
     red_500 =           "#EF4444",
     red_600 =           "#DC2626",
@@ -97,6 +100,7 @@ return {
     cyan_500 =          "#06B6D4",
 
     sky_300 =           "#7DD3FC",
+    sky_350 =           "#5BC8FA",
     sky_400 =           "#38BDF8",
     sky_500 =           "#0ea5e9",
     sky_600 =           "#0284c7",
@@ -127,6 +131,7 @@ return {
     purple_700 =        "#7E22CE",
 
     fuchsia_300 =       "#F0ABFC",
+    fuchsia_350 =       "#EC92FB",
     fuchsia_400 =       "#E879F9",
     fuchsia_500 =       "#D946EF",
     fuchsia_600 =       "#C026D3",

@@ -33,6 +33,7 @@ end
 -- Mappings
 map("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", { noremap = true, silent = true })
 map("n", "<space>e", vim.diagnostic.open_float, { noremap = true, silent = true })
+map("n", "K", vim.lsp.buf.hover, { noremap = true, silent = true })
 map("n", "[d", vim.diagnostic.goto_prev, { noremap = true, silent = true })
 map("n", "]d", vim.diagnostic.goto_next, { noremap = true, silent = true })
 map("n", "<space>rn", vim.lsp.buf.rename, { noremap = true, silent = true })
@@ -44,4 +45,4 @@ require("lspconfig").tsserver.setup {}
 require("lspconfig").rust_analyzer.setup {}
 
 -- Gopls
-require'lspconfig'.gopls.setup{}
+require("lspconfig").gopls.setup {}

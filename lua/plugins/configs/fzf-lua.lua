@@ -3,9 +3,8 @@ local map = vim.keymap.set
 
 -- Setup
 fzf.setup {
-	-- winopts = {
-	-- 	border = { "🭽", "▔", "🭾", "▕", "🭿", "▁", "🭼", "▏" },
-	-- },
+	winopts = {},
+    file_ignore_patterns = {"/opt/homebrew/", "node_modules/"},
 	files = {
 		previewer = false,
 	},

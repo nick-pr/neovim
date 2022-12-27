@@ -9,6 +9,7 @@ local height = 30
 require("nvim-tree").setup {
 	update_cwd = true,
 	view = {
+        hide_root_folder = true,
 		mappings = {
 			list = {
 				{ key = "<ESC>", action = "close" },

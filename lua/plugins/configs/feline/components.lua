@@ -24,8 +24,12 @@ components.relative_file_name = {
 		hl = {
 			bg = "dark_4",
 		},
+		left_sep = {
+			str = " ",
+			always_visible = true,
+		},
 		icon = {
-			str = " ﬌ ",
+			str = "﬌ ",
 			always_visible = true,
 		},
 	},
@@ -39,7 +43,7 @@ components.relative_file_name = {
 		},
 		hl = {
 			fg = "orange_300",
-            bg = "dark_4"
+			bg = "dark_4",
 		},
 		icon = "",
 		right_sep = {
@@ -128,8 +132,8 @@ components.vi_mode = {
 	hl = function()
 		return {
 			name = require("feline.providers.vi_mode").get_mode_highlight_name(),
-			fg = require("feline.providers.vi_mode").get_mode_color(),
-			bg = "bg_light",
+			bg = require("feline.providers.vi_mode").get_mode_color(),
+			fg = "dark_1",
 			style = "bold",
 		}
 	end,
@@ -140,12 +144,22 @@ components.vi_mode = {
 		always_visible = true,
 	},
 	left_sep = {
-		str = " ",
-		hl = { bg = "bg_light" },
+		str = "left_rounded",
+		hl = function()
+			return {
+				bg = "none",
+				fg = require("feline.providers.vi_mode").get_mode_color(),
+			}
+		end,
 	},
 	right_sep = {
 		str = "right_rounded",
-		hl = { fg = "bg_light" },
+		hl = function()
+			return {
+				bg = "bg",
+				fg = require("feline.providers.vi_mode").get_mode_color(),
+			}
+		end,
 	},
 }
 

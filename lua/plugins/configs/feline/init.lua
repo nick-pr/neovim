@@ -40,6 +40,10 @@ local file_tree = {
 statusline.active:append_component(1, components.vi_mode)
 statusline.active:append_component(1, components.pwd)
 statusline.active:append_component(3, components.lsp_status)
+statusline.active:append_component(
+	3,
+	{ provider = "", right_sep = { str = "right_rounded", always_visible = true, hl = { fg = "dark_4", bg = "none" } } }
+)
 
 statusline.inactive:append_component(1, {})
 
@@ -51,8 +55,14 @@ winbar.inactive:append_component(1, components.relative_file_name)
 winbar.inactive:append_component(1, components.git_info)
 
 ------ File Tree Bar -------
-file_tree.active:append_component(1, { provider = "", hl = { bg = "dark_3" } })
-file_tree.active:append_component(2, { provider = "File Tree", icon = { str = utils.icon_from_hex "fb44".." " } })
+file_tree.active:append_component(1, { provider = "", hl = { bg = "dark_4" } })
+file_tree.active:append_component(2, {
+	provider = "File Tree",
+	icon = { str = utils.icon_from_hex "fb44" .. " " },
+	-- left_sep = { str = "left_rounded", hl = { bg = "dark_1", fg = "dark_4" } },
+	-- right_sep = { str = "right_rounded", hl = { bg = "dark_1", fg = "dark_4" } },
+})
+file_tree.active:append_component(3, { provider = "", hl = { bg = "dark_4" } })
 
 ------ Setup ------
 require("feline").setup {

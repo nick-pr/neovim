@@ -48,6 +48,11 @@ use {
 	event = "bufEnter",
 }
 
+-- Nvim-web-devicons, for icons.
+use {
+	"kyazdani42/nvim-web-devicons",
+	config = useConfig "nvim-web-devicons",
+}
 -- Nvim-comment, for better commenting.
 use {
 	"terrortylor/nvim-comment",
@@ -58,7 +63,6 @@ use {
 -- Nvim-tree, for a file tree within neovim.
 use {
 	"kyazdani42/nvim-tree.lua",
-	requires = { "kyazdani42/nvim-web-devicons" },
 	config = useConfig "nvim-tree",
 }
 
