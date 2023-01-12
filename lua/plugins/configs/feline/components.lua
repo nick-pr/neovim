@@ -22,7 +22,7 @@ components.relative_file_name = {
 			name = "parent_file_path",
 		},
 		hl = {
-			bg = "dark_4",
+			bg = "dark_3",
 		},
 		left_sep = {
 			str = " ",
@@ -43,12 +43,12 @@ components.relative_file_name = {
 		},
 		hl = {
 			fg = "orange_300",
-			bg = "dark_4",
+			bg = "dark_3",
 		},
 		icon = "",
 		right_sep = {
 			str = "right_rounded",
-			hl = { fg = "dark_4", bg = "none" },
+			hl = { fg = "dark_3", bg = "none" },
 		},
 	},
 }
@@ -144,7 +144,7 @@ components.vi_mode = {
 		always_visible = true,
 	},
 	left_sep = {
-		str = "left_rounded",
+		str = "block",
 		hl = function()
 			return {
 				bg = "none",
@@ -153,7 +153,7 @@ components.vi_mode = {
 		end,
 	},
 	right_sep = {
-		str = "right_rounded",
+		str = "block",
 		hl = function()
 			return {
 				bg = "bg",

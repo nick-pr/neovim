@@ -42,7 +42,7 @@ statusline.active:append_component(1, components.pwd)
 statusline.active:append_component(3, components.lsp_status)
 statusline.active:append_component(
 	3,
-	{ provider = "", right_sep = { str = "right_rounded", always_visible = true, hl = { fg = "dark_4", bg = "none" } } }
+	{ provider = "", right_sep = { str = "block", always_visible = true, hl = { fg = "dark_3", bg = "none" } } }
 )
 
 statusline.inactive:append_component(1, {})
