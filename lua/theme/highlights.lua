@@ -1,7 +1,7 @@
 local p = require("theme.palette")
 
 local c = {
-    floatBG = p.dark_1_5,
+    floatBG = p.dark_1,
     background = p.dark_1,
     foreground = p.gray_225,
     keyword = p.purple_350,
@@ -13,7 +13,7 @@ local c = {
     string = p.green_250,
     type =  p.teal_400,
     tag = p.red_300,
-    operator = p.orange_300,
+    operator = p.gray_225,
     constructor = p.orange_300,
     overlay = p.gray_400,
     puncBracket = p.gray_400,
@@ -44,7 +44,7 @@ return {
     Error =             { fg = c.foreground, bg = p.red_300},
     Special =           { fg = p.orange_300 },
     Function =          { fg = c.functions },
-    Operator =          { fg = p.orange_300 },
+    Operator =          { fg = c.operator },
 
     Todo =              { fg = p.orange_300 },
     Include =           { fg = p.orange_300 },
@@ -70,10 +70,10 @@ return {
     TelescopeNormal =   { fg = c.overlay, bg = c.floatBG },
 
     -- Fzf-lua
-    FzfLuaNormal =      { fg = c.overlay, bg = c.floatBG },
-    FzfLuaCursor =      { fg = c.foreground, bg = c.floatBG },
-    FzfLuaBorder =      { fg = c.overlay, bg = c.floatBG },
-    FzfLuaCursorLine =  { bg = c.floatBg, fg = p.orange_300 },
+    FzfLuaNormal =      { link = "Normal" },
+    -- FzfLuaCursor =      { fg = c.foreground, bg = c.floatBG },
+    -- FzfLuaBorder =      { fg = c.overlay, bg = c.floatBG },
+    -- FzfLuaCursorLine =  { bg = c.floatBg, fg = p.orange_300 },
 
     -- Treesitter
     ["@type"] =                     { link = "Type" },
@@ -108,7 +108,7 @@ return {
     DiagnosticSignError =           { fg = p.red_500 },
 
     -- Nvim-tree
-    NvimTreeNormal =            { fg = c.foreground, bg = p.dark_1 },
+    NvimTreeNormal =            { link = "Normal" },
     NvimTreeFolderIcon =        { fg = p.blue_300 },
     NvimTreeFolderName =        { fg = p.blue_300 },
     NvimTreeRootFolder =        { fg = p.neutral_400 },

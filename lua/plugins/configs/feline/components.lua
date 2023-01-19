@@ -22,7 +22,7 @@ components.relative_file_name = {
 			name = "parent_file_path",
 		},
 		hl = {
-			bg = "dark_3",
+			bg = "bg",
 		},
 		left_sep = {
 			str = " ",
@@ -43,7 +43,7 @@ components.relative_file_name = {
 		},
 		hl = {
 			fg = "orange_300",
-			bg = "dark_3",
+			bg = "bg",
 		},
 		icon = "",
 		right_sep = {
@@ -59,7 +59,7 @@ components.git_info = {
 		provider = "git_diff_added",
 		hl = {
 			fg = "green_300",
-			bg = "bg_normal",
+			bg = "none",
 		},
 		icon = {
 			-- str = utils.icon_from_hex "f915",
@@ -171,7 +171,7 @@ components.git_branch = {
 	},
 	right_sep = {
 		str = "right_rounded",
-		hl = { fg = "purple_700", bg = "dark_3" },
+		hl = { fg = "purple_700", bg = "bg" },
 	},
 	hl = {
 		bg = "purple_700",

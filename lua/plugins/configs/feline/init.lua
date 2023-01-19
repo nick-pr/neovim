@@ -55,14 +55,14 @@ winbar.inactive:append_component(1, components.relative_file_name)
 winbar.inactive:append_component(1, components.git_info)
 
 ------ File Tree Bar -------
-file_tree.active:append_component(1, { provider = "", hl = { bg = "dark_4" } })
+file_tree.active:append_component(1, { provider = "", hl = { bg = "bg" } })
 file_tree.active:append_component(2, {
 	provider = "File Tree",
 	icon = { str = utils.icon_from_hex "fb44" .. " " },
 	-- left_sep = { str = "left_rounded", hl = { bg = "dark_1", fg = "dark_4" } },
 	-- right_sep = { str = "right_rounded", hl = { bg = "dark_1", fg = "dark_4" } },
 })
-file_tree.active:append_component(3, { provider = "", hl = { bg = "dark_4" } })
+file_tree.active:append_component(3, { provider = "", hl = { bg = "bg" } })
 
 ------ Setup ------
 require("feline").setup {
@@ -73,6 +73,7 @@ require("feline").setup {
 	theme = theme,
 	vi_mode_colors = {
 		NORMAL = "blue_400",
+        VISUAL = "purple_400",
 		COMMAND = "orange_400",
 		INSERT = "red_400",
 	},
