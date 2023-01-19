@@ -1,6 +1,6 @@
 require("nvim-treesitter.configs").setup {
-	ensure_installed = "all",
-	ignore_install = { "phpdoc" },
+	ensure_installed = { "lua", "vim", "go", "help","gitcommit"},
+	auto_install = false,
 	highlight = {
 		enable = true,
 	},
