@@ -1,11 +1,5 @@
-local ok, packer = pcall(require, "plugins.packerInit")
+local packer = require "plugins.packerInit"
 local use = packer.use
-
-if not ok then
-	local packer_init_error = packer
-	local use = packer.use
-	error("something went wrong with packer initialization:\n" .. packer_init_error)
-end
 
 function useConfig(plugin)
 	return string.format('require("plugins.configs.%s")', plugin)
@@ -18,8 +12,10 @@ use "wbthomason/packer.nvim"
 use {
 	"nvim-treesitter/nvim-treesitter",
 	config = useConfig "treesitter",
-	run = ":TSUpdate",
-	event = "BufRead",
+	run = function()
+		local ts_update = require("nvim-treesitter.install").update
+		ts_update { with_sync = true }
+	end,
 }
 
 -- Autopairs, for auto closing/opening of pairs as god intended.
@@ -118,22 +114,6 @@ use {
 use {
 	"saadparwaiz1/cmp_luasnip",
 }
--- Lsp signature, for lsp signatures..
--- use {
--- 	"ray-x/lsp_signature.nvim",
--- 	config = function()
--- 		require("lsp_signature").setup {
--- 			hint_enable = false,
--- 			floating_window_off_x = 0,
--- 			floating_window_off_y = -5,
---             floating_window_above_cur_line = false,
---             doc_lines = 0,
---             max_height = 3,
---             max_width = 20,
--- 			-- floating_window = false,
--- 		}
--- 	end,
--- }
 use {
 	"nvim-treesitter/playground",
 	after = "nvim-treesitter",
@@ -142,3 +122,12 @@ use {
 	"akinsho/toggleterm.nvim",
 	config = useConfig "toggleterm",
 }
+
+if packer.was_bootstrapped then
+	packer.sync()
+	-- vim.api.nvim_create_autocmd("User PackerComplete", {
+	-- 	callback = function()
+	-- 		print "Sync done!"
+	-- 	end,
+	-- })
+end

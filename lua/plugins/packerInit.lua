@@ -1,11 +1,13 @@
-local present, packer = pcall(require, "packer")
 local cmd = vim.cmd
 local fn = vim.fn
 
 -- Bootstrapping Packer
-if not present then
-	print "Packer wasnt found"
-	local install_path = fn.stdpath "data" .. "/site/pack/packer/start/packer.nvim"
+local install_path = fn.stdpath "data" .. "/site/pack/packer/start/packer.nvim"
+local packer_installed = fn.empty(fn.glob(install_path)) <= 0
+local bootstrapped = false
+
+if not packer_installed then
+	print "[packer] Packer wasnt found, installing now."
 
 	local clone_command = {
 		"git",
@@ -14,24 +16,24 @@ if not present then
 		install_path,
 	}
 
-	print "Installing Packer"
-
 	fn.system(clone_command)
+	vim.cmd [[packadd packer.nvim]]
 
-	present, packer = pcall(require, "packer")
-
-	if present then
-		print "Packer successfully installed."
-	else
-		error "Something went wrong with installing packer"
-	end
+    bootstrapped = true
 end
 
 -- Packer initialization
+local packer = require "packer"
+
+if bootstrapped then
+    packer.was_bootstrapped = true
+end
+
 packer.init {
 	display = {
+		--         non_interactive = true,
 		open_fn = function()
-			return require("packer.util").float { border = "single" }
+			return require("packer.util").float { border = "rounded" }
 		end,
 	},
 }
