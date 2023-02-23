@@ -1,8 +1,8 @@
 local p = require("theme.palette")
 
 local c = {
-    floatBG = p.dark_1,
-    background = p.dark_1,
+    float_bg = "#121213",
+    background = "#171719",
     foreground = p.gray_225,
     keyword = p.purple_350,
     functions = p.blue_350,
@@ -13,11 +13,12 @@ local c = {
     string = p.green_250,
     type =  p.teal_400,
     tag = p.red_300,
-    operator = p.gray_225,
+    operator = p.red_300,
     constructor = p.orange_300,
     overlay = p.gray_400,
-    puncBracket = p.gray_400,
+    punc_bracket = p.gray_400,
     numbers = p.red_400,
+    visual = "#272932",
 }
 
 -- Highlight table that will used to apply the highlights. Uses colors directly from the palette or from predefined color variables as defined above. 
@@ -49,10 +50,10 @@ return {
     Todo =              { fg = p.orange_300 },
     Include =           { fg = p.orange_300 },
     MatchParen =        { fg = c.foreground, bg = c.background },
-    VertSplit =         { fg = p.dark_3, bg = c.background },
-    FloatBorder =       { fg = c.overlay, bg = c.floatBG },
-    NormalFloat =       { bg = c.floatBG },
-    Visual =            { bg = p.dark_3 },
+    VertSplit =         { fg = "#1F1F23", bg = c.background },
+    FloatBorder =       { fg = c.overlay, bg = c.float_bg },
+    NormalFloat =       { bg = c.float_bg },
+    Visual =            { bg = c.visual },
     Search =            { bg = p.dark_4 },
     Comment =           { link = "@comment" },
     PreProc =           { fg = p.orange_300 },
@@ -66,13 +67,13 @@ return {
     GitSignsDelete =    { fg = p.red_400, bg = c.background },
 
     -- Telescope
-    TelescopeBorder =   { fg = c.overlay, bg = c.floatBG },
-    TelescopeNormal =   { fg = c.overlay, bg = c.floatBG },
+    TelescopeBorder =   { fg = c.overlay, bg = c.float_bg },
+    TelescopeNormal =   { fg = c.overlay, bg = c.float_bg },
 
     -- Fzf-lua
     FzfLuaNormal =      { link = "Normal" },
-    -- FzfLuaCursor =      { fg = c.foreground, bg = c.floatBG },
-    -- FzfLuaBorder =      { fg = c.overlay, bg = c.floatBG },
+    -- FzfLuaCursor =      { fg = c.foreground, bg = c.float_bg },
+    -- FzfLuaBorder =      { fg = c.overlay, bg = c.float_bg },
     -- FzfLuaCursorLine =  { bg = c.floatBg, fg = p.orange_300 },
 
     -- Treesitter
@@ -83,7 +84,7 @@ return {
     ["@conditional"] =              { link = "Conditional"},
     ["@constructor"] =              { fg = c.constructor },
     ["@constructor.lua"] =          { link = "@punctuation.bracket" },
-    ["@punctuation.bracket"] =      { fg = c.puncBracket },
+    ["@punctuation.bracket"] =      { fg = c.punc_bracket },
     ["@punctuation.delimiter"] =    { fg = c.overlay },
     ["@tag.delimiter"] =            { fg = c.overlay },
     ["@property"] =                 { link = "Function" },
@@ -93,10 +94,11 @@ return {
     ["@tag"] =                      { fg = c.tag },
     ["@boolean"] =                  { link = "Boolean" },
     ["@operator"] =                 { link = "Operator" },
-    ["@parameter"] =                { fg = p.red_400 },
+    ["@parameter"] =                { fg = p.orange_300 },
     ["@variable"] =                 { fg = c.foreground },
     ["@variable.builtin"] =         { link = "@number" },
     ["@constant.builtin"] =         { link = "@number" },
+    ["@constant"] =                 { link = "Normal" },
     ["@number"] =                   { link = "Number" },
     ["@label"]  =                   { fg = p.blue_300 },
     ["@function.macro"] =           { fg = p.orange_300 },
@@ -108,7 +110,7 @@ return {
     DiagnosticSignError =           { fg = p.red_500 },
 
     -- Nvim-tree
-    NvimTreeNormal =            { link = "Normal" },
+    NvimTreeNormal =            { bg = c.float_bg },
     NvimTreeFolderIcon =        { fg = p.blue_300 },
     NvimTreeFolderName =        { fg = p.blue_300 },
     NvimTreeRootFolder =        { fg = p.neutral_400 },

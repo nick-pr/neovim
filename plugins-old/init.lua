@@ -9,14 +9,14 @@ end
 use "wbthomason/packer.nvim"
 
 -- Treesitter, for better syntax highlighting and more!
-use {
-	"nvim-treesitter/nvim-treesitter",
-	config = useConfig "treesitter",
-	run = function()
-		local ts_update = require("nvim-treesitter.install").update
-		ts_update { with_sync = true }
-	end,
-}
+-- use {
+-- 	"nvim-treesitter/nvim-treesitter",
+-- 	config = useConfig "treesitter",
+-- 	run = function()
+-- 		local ts_update = require("nvim-treesitter.install").update
+-- 		ts_update { with_sync = true }
+-- 	end,
+-- }
 
 -- Autopairs, for auto closing/opening of pairs as god intended.
 use {
@@ -114,10 +114,10 @@ use {
 use {
 	"saadparwaiz1/cmp_luasnip",
 }
-use {
-	"nvim-treesitter/playground",
-	after = "nvim-treesitter",
-}
+-- use {
+-- 	"nvim-treesitter/playground",
+-- 	after = "nvim-treesitter",
+-- }
 use {
 	"akinsho/toggleterm.nvim",
 	config = useConfig "toggleterm",
