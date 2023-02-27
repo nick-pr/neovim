@@ -2,7 +2,7 @@ local p = require("theme.palette")
 
 local c = {
     float_bg = "#121213",
-    background = "#171719",
+    background = "#161617",
     foreground = p.gray_225,
     keyword = p.purple_350,
     functions = p.blue_350,
