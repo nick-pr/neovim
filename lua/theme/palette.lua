@@ -146,6 +146,8 @@ return {
         blue = "#87afd7"
     },
     other = {
-        purple = "#C49DEE"
+        purple = "#C49DEE",
+        teal = "#93DDC2",
+        yellow = "#FFC552",
     },
 }
