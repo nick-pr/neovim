@@ -1,8 +1,26 @@
 local M = { "neovim/nvim-lspconfig" }
 
+function all_on_attach()
+	local opts = { noremap = true, silent = true, buffer = bufnr }
+	vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
+	vim.keymap.set("n", "<Leader>d", ":lua vim.diagnostic.open_float()<CR>", opts)
+end
+
+function gopls_on_attach()
+	all_on_attach()
+end
+
+function rust_on_attach()
+	all_on_attach()
+end
+
 M.config = function(opts)
 	local lspconfig = require "lspconfig"
 
+	-- Setting the border of LspInfo
+	require("lspconfig.ui.windows").default_options.border = "single"
+
+	-- Diagnostic configuration
 	vim.diagnostic.config {
 		virtual_text = false,
 		float = {
@@ -14,22 +32,24 @@ M.config = function(opts)
 		},
 		underline = false,
 		update_in_insert = true,
-		severity_sort = false,
+		severity_sort = true,
 	}
 
 	local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
-	local opts = { noremap = true, silent = true, buffer = bufnr }
-	vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
-	vim.keymap.set("n", "<Leader>d", ":lua vim.diagnostic.open_float()<CR>", opts)
-
 	-- Gopls LSP setup
 	lspconfig.gopls.setup {
-		cmd = { "gopls"},
+		cmd = { "gopls" },
 		capabilities = capabilities,
 		init_options = {
 			staticcheck = true,
 		},
+	}
+
+	-- Rust Analyzer setup
+	lspconfig.rust_analyzer.setup {
+		capabilities = capabilities,
+		on_attach = rust_on_attach,
 	}
 end
 
