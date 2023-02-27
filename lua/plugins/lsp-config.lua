@@ -39,7 +39,7 @@ M.config = function(opts)
 
 	-- Gopls LSP setup
 	lspconfig.gopls.setup {
-		cmd = { "gopls" },
+		cmd = { "gopls","--remote=auto" },
 		capabilities = capabilities,
 		init_options = {
 			staticcheck = true,
