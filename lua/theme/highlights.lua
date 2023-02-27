@@ -51,8 +51,8 @@ return {
     Include =           { fg = p.orange_300 },
     MatchParen =        { fg = c.foreground, bg = c.background },
     VertSplit =         { fg = "#1F1F23", bg = c.background },
-    FloatBorder =       { fg = c.overlay, bg = c.float_bg },
-    NormalFloat =       { bg = c.float_bg },
+    FloatBorder =       { fg = c.overlay },
+    NormalFloat =       { bg = c.background },
     Visual =            { bg = c.visual },
     Search =            { bg = p.dark_4 },
     Comment =           { link = "@comment" },
@@ -103,6 +103,11 @@ return {
     ["@label"]  =                   { fg = p.blue_300 },
     ["@function.macro"] =           { fg = p.orange_300 },
     ["@namespace"] =                { fg = p.red_400 },
+
+
+    ["@type.toml"] =                { fg = p.orange_300 },
+    ["@property.toml"] =            { fg = c.foreground },
+
 
     -- LSP 
     DiagnosticSignHint =            { fg = p.blue_400 },
