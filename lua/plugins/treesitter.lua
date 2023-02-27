@@ -70,6 +70,7 @@ return {
 			"go",
 			"markdown",
 			"markdown_inline",
+            "toml",
 			"python",
 			"query",
 			"regex",
