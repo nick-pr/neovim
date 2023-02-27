@@ -78,6 +78,7 @@ return {
 			"typescript",
 			"vim",
 			"yaml",
+            "gitcommit"
 		},
 		incremental_selection = {
 			enable = true,
