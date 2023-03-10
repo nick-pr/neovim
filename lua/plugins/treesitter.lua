@@ -78,6 +78,7 @@ return {
 			"typescript",
 			"vim",
 			"yaml",
+            "rust",
             "gitcommit"
 		},
 		incremental_selection = {
