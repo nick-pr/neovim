@@ -37,7 +37,7 @@ return {
     Pmenu =             { fg = c.overlay, bg = p.dark_1 },
     PmenuSel =          { fg = p.orange_300, bg = p.dark_1 },
 
-    Keyword =           { fg = c.keyword, bold=true},
+    Keyword =           { fg = c.keyword, bold = true },
     Conditional =       { link = "Keyword" },
     Repeat =            { link = "Keyword" },
 
@@ -48,7 +48,7 @@ return {
     Error =             { fg = c.foreground, bg = p.red_300},
     Special =           { fg = p.orange_300 },
     Function =          { fg = c.functions },
-    Operator =          { fg = c.operator , bold = true},
+    Operator =          { fg = c.operator },
 
     Todo =              { fg = p.orange_300 },
     Include =           { fg = c.import ,bold = true},
@@ -63,7 +63,7 @@ return {
     StatusLine =        { link = "VertSplit" },
     StatusLineTerm =    { link = "VertSplit" },
     MatchParen =        { fg = p.other.yellow, bold = true },
-    Folded =            { bg = p.dark_3 },
+    Folded =            { bg = "#181820" },
 
     -- GitSigns
     GitSignsAdd =       { fg = p.green_400, bg = c.background },
@@ -83,6 +83,7 @@ return {
     -- Treesitter
     ["@type"] =                     { link = "Type" },
     ["@type.definition"] =          { fg = c.type, bold = true},
+    ["@type.qualifier"] =           { fg = c.keyword, bold = true},
     ["@keyword"] =                  { link = "Keyword"},
     ["@repeat"] =                   { link = "Repeat" },
     ["@conditional"] =              { link = "Conditional"},
@@ -101,17 +102,21 @@ return {
     ["@parameter"] =                { fg = c.parameter },
     ["@variable"] =                 { fg = c.foreground },
     ["@variable.builtin"] =         { link = "@number" },
-    ["@constant.builtin"] =         { link = "@number" },
+    ["@constant.builtin"] =         { link = "@function.macro" },
     ["@constant"] =                 { link = "Normal" },
     ["@number"] =                   { link = "Number" },
     ["@label"]  =                   { fg = p.blue_300 },
-    ["@function.macro"] =           { fg = p.orange_300 },
-    ["@function.builtin"] =           { fg = p.orange_300 },
+    ["@function.macro"] =           { fg = p.orange_300 , bold = true },
+    ["@exception"] =                { fg = p.orange_300 , bold = true },
+    ["@function.builtin"] =         { fg = p.orange_300, bold = true },
+    ["@text.reference"] =           { fg = c.functions },
     ["@namespace"] =                { fg = p.red_350 },
 
 
     ["@type.toml"] =                { fg = p.orange_300 },
     ["@property.toml"] =            { fg = c.foreground },
+    
+    ["@field.lua"] =                { fg = c.property },
 
 
     -- LSP 
