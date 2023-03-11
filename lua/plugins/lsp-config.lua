@@ -3,6 +3,7 @@ local M = { "neovim/nvim-lspconfig" }
 function all_on_attach()
 	local opts = { noremap = true, silent = true, buffer = bufnr }
 	vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
+	vim.keymap.set("n", "gi", vim.lsp.buf.implementation, opts)
 	vim.keymap.set("n", "<Leader>d", ":lua vim.diagnostic.open_float()<CR>", opts)
 end
 
