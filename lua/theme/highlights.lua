@@ -83,7 +83,7 @@ return {
     -- Treesitter
     ["@type"] =                     { link = "Type" },
     ["@type.definition"] =          { fg = c.type, bold = true},
-    ["@type.qualifier"] =           { fg = c.keyword, bold = true},
+    ["@type.qualifier"] =           { fg = p.emerald_300, bold = true},
     ["@keyword"] =                  { link = "Keyword"},
     ["@repeat"] =                   { link = "Repeat" },
     ["@conditional"] =              { link = "Conditional"},
