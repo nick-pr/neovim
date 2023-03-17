@@ -13,6 +13,10 @@ if not lazy_installed then
 end
 vim.opt.rtp:prepend(lazypath)
 
+-- Disable Netrw
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+
 -- Call Modules
 require "core"
 require("lazy").setup("plugins", {
