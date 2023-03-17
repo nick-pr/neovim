@@ -1,6 +1,8 @@
 local M = { "lewis6991/gitsigns.nvim" }
 
-M.opts = {}
+M.opts = {
+    signcolumn = false,
+}
 
 M.config = function(lazy_plugin, opts)
 	local gitsigns = require "gitsigns"
