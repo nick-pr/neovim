@@ -41,7 +41,7 @@ winbar_components.inactive:append(1, { provider = "", hl = { bg = "none" } })
 
 ----File Tree Bar -------
 file_tree_components.active:append(1, {
-	provider = utils.icon_from_hex "fb44" .. " ",
+	provider = "󰙅 ",
 	hl = { bg = "blue_500" },
 	left_sep = { str = " ", hl = { fg = "bg", bg = "blue_500" } },
 	right_sep = { str = "right_rounded", hl = { fg = "blue_500", bg = "bg" } },

@@ -7,7 +7,7 @@ local c = {
     background = "#161617",
     foreground = FOREGROUND,
     keyword = p.fuchsia_350,
-    functions = p.blue_300,
+    functions = p.blue_350,
     parameter = p.orange_300,
     comment = p.gray_500,
     property = p.orange_200,
@@ -117,6 +117,7 @@ return {
     ["@property.toml"] =            { fg = c.foreground },
     
     ["@field.lua"] =                { fg = c.property },
+    ["@lsp.type.variable"] =        { link = "@variable" },
 
 
     -- LSP 
