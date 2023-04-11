@@ -1,6 +1,6 @@
 local map = vim.keymap.set
 
-require("substitute").setup {}
+require("substitute").setup({})
 
 -- Mappings
 map("n", "s", "<cmd>lua require('substitute').operator()<cr>", { noremap = true })

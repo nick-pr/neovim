@@ -1,3 +1,3 @@
-local M = {'nvim-treesitter/playground'}
+local M = { "nvim-treesitter/playground" }
 
 return M

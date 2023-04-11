@@ -1,32 +1,32 @@
 return {
-	"nvim-treesitter/nvim-treesitter",
-	build = ":TSUpdate",
-	event = "BufReadPost",
-	dependencies = { "nvim-treesitter/nvim-treesitter-textobjects" },
-	opts = {
+    "nvim-treesitter/nvim-treesitter",
+    build = ":TSUpdate",
+    event = "BufReadPost",
+    dependencies = { "nvim-treesitter/nvim-treesitter-textobjects" },
+    opts = {
         playground = {
             enable = true,
             disable = {},
             updatetime = 25, -- Debounced time for highlighting nodes in the playground from source code
             persist_queries = false, -- Whether the query persists across vim sessions
         },
-		textobjects = {
-			select = {
-				enable = true,
-				lookahead = true,
-				keymaps = {
-					["af"] = "@function.outer",
-					["if"] = "@function.inner",
-					["ac"] = "@class.outer",
-					["ic"] = { query = "@class.inner", desc = "Select inner part of a class region" },
-				},
-				selection_modes = {
-					["@parameter.outer"] = "v",
-					["@function.outer"] = "V",
-					["@class.outer"] = "<c-v>",
-				},
-				include_surrounding_whitespace = true,
-			},
+        textobjects = {
+            select = {
+                enable = true,
+                lookahead = true,
+                keymaps = {
+                    ["af"] = "@function.outer",
+                    ["if"] = "@function.inner",
+                    ["ac"] = "@class.outer",
+                    ["ic"] = { query = "@class.inner", desc = "Select inner part of a class region" },
+                },
+                selection_modes = {
+                    ["@parameter.outer"] = "v",
+                    ["@function.outer"] = "V",
+                    ["@class.outer"] = "<c-v>",
+                },
+                include_surrounding_whitespace = true,
+            },
             move = {
                 enable = true,
                 set_jumps = true, -- whether to set jumps in the jumplist
@@ -54,48 +54,48 @@ return {
                 },
                 goto_previous = {
                     ["[d"] = "@conditional.outer",
-                }
+                },
             },
         },
-    highlight = { enable = true },
-    indent = { enable = true },
-    context_commentstring = { enable = true, enable_autocmd = false },
-    ensure_installed = {
-        "bash",
-			"help",
-			"html",
-			"javascript",
-			"json",
-			"lua",
-			"go",
-			"markdown",
-			"markdown_inline",
+        highlight = { enable = true },
+        indent = { enable = true },
+        context_commentstring = { enable = true, enable_autocmd = false },
+        ensure_installed = {
+            "bash",
+            "help",
+            "html",
+            "javascript",
+            "json",
+            "lua",
+            "go",
+            "markdown",
+            "markdown_inline",
             "toml",
-			"python",
-			"query",
-			"regex",
-			"tsx",
-			"typescript",
-			"vim",
-			"yaml",
+            "python",
+            "query",
+            "regex",
+            "tsx",
+            "typescript",
+            "vim",
+            "yaml",
             "rust",
-            "gitcommit"
-		},
-		incremental_selection = {
-			enable = true,
-			keymaps = {
-				init_selection = "<C-space>",
-				node_incremental = "<C-space>",
-				scope_incremental = "<nop>",
-				node_decremental = "<bs>",
-			},
-		},
-	},
-	---@param opts TSConfig
-	config = function(plugin, opts)
-		if plugin.ensure_installed then
-			require("lazyvim.util").deprecate("treesitter.ensure_installed", "treesitter.opts.ensure_installed")
-		end
-		require("nvim-treesitter.configs").setup(opts)
-	end,
+            "gitcommit",
+        },
+        incremental_selection = {
+            enable = true,
+            keymaps = {
+                init_selection = "<C-space>",
+                node_incremental = "<C-space>",
+                scope_incremental = "<nop>",
+                node_decremental = "<bs>",
+            },
+        },
+    },
+    ---@param opts TSConfig
+    config = function(plugin, opts)
+        if plugin.ensure_installed then
+            require("lazyvim.util").deprecate("treesitter.ensure_installed", "treesitter.opts.ensure_installed")
+        end
+        require("nvim-treesitter.configs").setup(opts)
+    end,
 }
