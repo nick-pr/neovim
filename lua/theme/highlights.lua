@@ -1,19 +1,20 @@
 local p = require("theme.palette")
 
 local FOREGROUND = p.gray_200
+local BACKGROUND = "#161617"
 local c = {
-    float_bg = "#121213",
-    background = "#161617",
+    float_bg = BACKGROUND,
+    background = BACKGROUND,
     foreground = FOREGROUND,
-    keyword = p.fuchsia_350,
-    functions = p.blue_350,
+    keyword = p.fuchsia_300,
+    functions = p.blue_300,
     parameter = p.orange_300,
     comment = p.gray_500,
     property = p.orange_200,
     field = FOREGROUND,
     import = p.orange_300,
     string = p.green_250,
-    type = p.teal_400,
+    type = p.teal_300,
     tag = p.red_300,
     operator = FOREGROUND,
     constructor = p.orange_300,
@@ -24,8 +25,10 @@ local c = {
 }
 
 -- Highlight table that will used to apply the highlights. Uses colors directly from the palette or from predefined color variables as defined above.
-return {
 
+local M = {}
+
+M.dark = {
     -- Core Highlights
     Normal = { fg = c.foreground, bg = c.background },
     SignColumn = { bg = c.background },
@@ -109,13 +112,21 @@ return {
     ["@exception"] = { fg = p.orange_300, bold = true },
     ["@function.builtin"] = { fg = p.orange_300, bold = true },
     ["@text.reference"] = { fg = c.functions },
-    ["@namespace"] = { fg = p.red_350 },
+    ["@namespace"] = { fg = p.rose_300 },
 
+    -- Treesitter (Rust)
+    ["@storageclass.rust"] = { link = "@keyword" },
+
+    -- Treesitter (Toml)
     ["@type.toml"] = { fg = p.orange_300 },
     ["@property.toml"] = { fg = c.foreground },
 
+    -- Treesitter (Lua)
     ["@field.lua"] = { fg = c.property },
+
+    -- Treesitter (LSP)
     ["@lsp.type.variable"] = { link = "@variable" },
+    ["@lsp.type.namespace"] = { link = "@namespace" },
 
     -- LSP
     DiagnosticSignHint = { fg = p.blue_400 },
@@ -130,3 +141,10 @@ return {
     NvimTreeOpenedFolderName = { fg = p.orange_300 },
     NvimTreeOpenedFile = { fg = c.foreground },
 }
+
+
+
+M.dark2 = {
+
+}
+return M

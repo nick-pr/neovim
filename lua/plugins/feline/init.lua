@@ -2,7 +2,7 @@ local components = require("plugins/feline/components")
 local p = require("theme.palette")
 local utils = require("core.utils")
 
-local M = { "feline-nvim/feline.nvim" }
+local M = { "freddiehaddad/feline.nvim" }
 
 Bar = {}
 MetaBar = {}

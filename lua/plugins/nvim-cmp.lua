@@ -13,6 +13,13 @@ M.config = function()
     vim.opt.completeopt = { "menu", "menuone", "noselect" }
 
     local opts = {
+        formatting = {
+            format = function(entry,vim_item)
+                vim_item.abbr = string.sub(vim_item.abbr, 1, 15)
+                vim_item.menu = ""
+                return vim_item
+            end
+        },
         window = {
             completion = cmp.config.window.bordered(),
             documentation = cmp.config.window.bordered(),

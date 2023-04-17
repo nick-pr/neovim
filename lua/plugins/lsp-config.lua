@@ -1,18 +1,21 @@
 local M = { "neovim/nvim-lspconfig" }
 
-function all_on_attach()
+function all_on_attach(client)
     local opts = { noremap = true, silent = true, buffer = bufnr }
     vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
     vim.keymap.set("n", "gi", vim.lsp.buf.implementation, opts)
     vim.keymap.set("n", "<Leader>d", ":lua vim.diagnostic.open_float()<CR>", opts)
 end
 
-function gopls_on_attach()
-    all_on_attach()
+function gopls_on_attach(client)
+    all_on_attach(client)
 end
 
-function rust_on_attach()
-    all_on_attach()
+function rust_on_attach(client)
+    all_on_attach(client)
+    -- Hide all semantic highlights because it is current overriding highlights in a manner I don't like for rust
+    -- TODO: Find a better solution to this because semantic highlighting can be useful
+    client.server_capabilities.semanticTokensProvider = nil
 end
 
 M.config = function(opts)

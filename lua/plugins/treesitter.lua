@@ -91,11 +91,16 @@ return {
             },
         },
     },
-    ---@param opts TSConfig
     config = function(plugin, opts)
         if plugin.ensure_installed then
             require("lazyvim.util").deprecate("treesitter.ensure_installed", "treesitter.opts.ensure_installed")
         end
         require("nvim-treesitter.configs").setup(opts)
+
+        -- Hide all semantic highlights because it is current overriding highlights in a manner I don't like
+        -- TODO: Find a better solution to this because semantic highlighting can be useful for lsp
+        for _, group in ipairs(vim.fn.getcompletion("@lsp", "highlight")) do
+            vim.api.nvim_set_hl(0, group, {})
+        end
     end,
 }
