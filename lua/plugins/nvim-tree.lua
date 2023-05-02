@@ -15,14 +15,14 @@ M.opts = {
 
     view = {
         preserve_window_proportions = true,
-        hide_root_folder = true,
         float = {
             enable = false,
         },
     },
     renderer = {
+        root_folder_label = false,
         icons = {
-            padding = "  ",
+            padding = " ",
         },
     },
     actions = {
