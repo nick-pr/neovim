@@ -1,12 +1,13 @@
 local p = require("theme.palette")
 
 local FOREGROUND = p.gray_200
-local BACKGROUND = "#161617"
+-- local BACKGROUND = "#161617"
+local BACKGROUND = "#111112"
 local c = {
-    float_bg = BACKGROUND,
+    float_bg = "#1A1A1B",
     background = BACKGROUND,
     foreground = FOREGROUND,
-    keyword = p.fuchsia_300,
+    keyword = p.fuchsia_325,
     functions = p.blue_300,
     parameter = p.orange_300,
     comment = p.gray_500,
@@ -14,7 +15,7 @@ local c = {
     field = FOREGROUND,
     import = p.orange_300,
     string = p.green_250,
-    type = p.teal_300,
+    type = p.teal_350,
     tag = p.red_300,
     operator = FOREGROUND,
     constructor = p.orange_300,
@@ -34,12 +35,12 @@ M.dark = {
     SignColumn = { bg = c.background },
     LineNr = { fg = p.gray_500, bg = c.background },
     CursorLineNR = { fg = p.orange_300, bg = c.background },
-    CursorLine = { bg = c.background },
+    CursorLine = { bg = "none" },
     EndOfBuffer = { fg = c.background },
     Pmenu = { fg = c.overlay, bg = p.dark_1 },
     PmenuSel = { fg = p.orange_300, bg = p.dark_1 },
 
-    Keyword = { fg = c.keyword, bold = true },
+    Keyword = { fg = c.keyword, bold = false },
     Conditional = { link = "Keyword" },
     Repeat = { link = "Keyword" },
 
@@ -53,9 +54,9 @@ M.dark = {
     Operator = { fg = c.operator },
 
     Todo = { fg = p.orange_300 },
-    Include = { fg = c.import, bold = true },
+    Include = { fg = c.import, bold = false },
     MatchParen = { fg = c.foreground, bg = c.background },
-    VertSplit = { fg = "#1F1F23", bg = c.background },
+    VertSplit = { fg = "#303030", bg = c.background },
     FloatBorder = { fg = c.overlay },
     NormalFloat = { bg = c.background },
     Visual = { bg = c.visual },
@@ -84,8 +85,8 @@ M.dark = {
 
     -- Treesitter
     ["@type"] = { link = "Type" },
-    ["@type.definition"] = { fg = c.type, bold = true },
-    ["@type.qualifier"] = { fg = p.emerald_300, bold = true },
+    ["@type.definition"] = { fg = c.type, bold = false },
+    ["@type.qualifier"] = { fg = p.emerald_300, bold = false },
     ["@keyword"] = { link = "Keyword" },
     ["@repeat"] = { link = "Repeat" },
     ["@conditional"] = { link = "Conditional" },
@@ -108,9 +109,9 @@ M.dark = {
     ["@constant"] = { link = "Normal" },
     ["@number"] = { link = "Number" },
     ["@label"] = { fg = p.blue_300 },
-    ["@function.macro"] = { fg = p.orange_300, bold = true },
-    ["@exception"] = { fg = p.orange_300, bold = true },
-    ["@function.builtin"] = { fg = p.orange_300, bold = true },
+    ["@function.macro"] = { fg = p.orange_300, bold = false },
+    ["@exception"] = { fg = p.orange_300, bold = false },
+    ["@function.builtin"] = { fg = p.orange_300, bold = false },
     ["@text.reference"] = { fg = c.functions },
     ["@namespace"] = { fg = p.rose_300 },
 
@@ -142,9 +143,5 @@ M.dark = {
     NvimTreeOpenedFile = { fg = c.foreground },
 }
 
-
-
-M.dark2 = {
-
-}
+M.dark2 = {}
 return M

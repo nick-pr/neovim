@@ -5,7 +5,7 @@ return {
     opts = {
         winopts = {
             border = "single",
-            fullscreen = true,
+            fullscreen = false,
         },
         file_ignore_patterns = { "/opt/homebrew/", "node_modules/" },
         files = {
@@ -17,7 +17,7 @@ return {
     config = function(lazy, opts)
         local map = vim.keymap.set
         require("fzf-lua").setup(opts)
-        -- map("n", "<leader>ff", "<cmd>Fzf files<CR>", { noremap = true })
-        -- map("n", "<leader>fb", "<cmd>Fzf buffers<CR>", { noremap = true })
+        map("n", "<leader>ff", "<cmd>Fzf files<CR>", { noremap = true })
+        map("n", "<leader>fb", "<cmd>Fzf buffers<CR>", { noremap = true })
     end,
 }

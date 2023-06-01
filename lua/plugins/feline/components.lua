@@ -7,9 +7,9 @@ M.file_info = {
             type = "relative",
         },
     },
-    hl = { style = "bold", bg = "bg" },
-    left_sep = { str = " ", hl = { bg = "bg" } },
-    right_sep = { str = "right_rounded", hl = { fg = "bg", bg = "none" } },
+    hl = { style = "bold", bg = "none" },
+    left_sep = { str = " ", hl = { bg = "none" } },
+    -- right_sep = { str = "right_rounded", hl = { fg = "bg", bg = "none" } },
 }
 
 return M

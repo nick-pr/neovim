@@ -5,6 +5,7 @@ function all_on_attach(client)
     vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
     vim.keymap.set("n", "gi", vim.lsp.buf.implementation, opts)
     vim.keymap.set("n", "<Leader>d", ":lua vim.diagnostic.open_float()<CR>", opts)
+    vim.keymap.set("n", "<Leader>r", ":lua vim.lsp.buf.rename()<CR>", opts)
 end
 
 function gopls_on_attach(client)
@@ -16,6 +17,10 @@ function rust_on_attach(client)
     -- Hide all semantic highlights because it is current overriding highlights in a manner I don't like for rust
     -- TODO: Find a better solution to this because semantic highlighting can be useful
     client.server_capabilities.semanticTokensProvider = nil
+end
+
+function python_on_attach(client)
+    all_on_attach(client)
 end
 
 M.config = function(opts)
@@ -55,6 +60,12 @@ M.config = function(opts)
     lspconfig.rust_analyzer.setup({
         capabilities = capabilities,
         on_attach = rust_on_attach,
+    })
+
+    -- Pyright setup
+    lspconfig.pyright.setup({
+        capabilities = capabilities,
+        on_attach = python_on_attach,
     })
 end
 

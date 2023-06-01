@@ -14,11 +14,9 @@ M.config = function()
 
     local opts = {
         formatting = {
-            format = function(entry,vim_item)
-                vim_item.abbr = string.sub(vim_item.abbr, 1, 15)
-                vim_item.menu = ""
-                return vim_item
-            end
+            -- format = function(entry,vim_item)
+            --     return vim_item
+            -- end
         },
         window = {
             completion = cmp.config.window.bordered(),

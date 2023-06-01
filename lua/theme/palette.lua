@@ -92,6 +92,7 @@ return {
 
     teal_200 = "#99F6E4",
     teal_300 = "#5EEAD4",
+    teal_350 = "#46DFCA",
     teal_400 = "#2DD4BF",
 
     cyan_300 = "#67E8F9",
@@ -130,6 +131,7 @@ return {
     purple_700 = "#7E22CE",
 
     fuchsia_300 = "#F0ABFC",
+    fuchsia_325 = "#EE9FFC",
     fuchsia_350 = "#EC92FB",
     fuchsia_400 = "#E879F9",
     fuchsia_500 = "#D946EF",

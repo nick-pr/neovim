@@ -44,7 +44,7 @@ file_tree_components.active:append(1, {
     provider = "󰙅 ",
     hl = { bg = "blue_500" },
     left_sep = { str = " ", hl = { fg = "bg", bg = "blue_500" } },
-    right_sep = { str = "right_rounded", hl = { fg = "blue_500", bg = "bg" } },
+    -- right_sep = { str = "right_rounded", hl = { fg = "blue_500", bg = "bg" } },
 })
 file_tree_components.active:append(1, {
     provider = {
@@ -75,7 +75,7 @@ M.opts = {
         },
     },
     statusline = {
-        theme = vim.tbl_extend("force", p, {}),
+        theme = vim.tbl_extend("force", p, { bg = "#272728" }),
         custom_providers = {
             cwd_parent_dir = function()
                 return vim.fn.fnamemodify(vim.fn.getcwd(), ":t")
