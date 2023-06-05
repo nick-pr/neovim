@@ -3,7 +3,7 @@ return {
     build = ":TSUpdate",
     event = "BufReadPost",
     dependencies = { "nvim-treesitter/nvim-treesitter-textobjects" },
-    commit = "23dfae4db84f71e2ddb56c024845b322035182ee",
+    -- commit = "23dfae4db84f71e2ddb56c024845b322035182ee",
     opts = {
         playground = {
             enable = true,
