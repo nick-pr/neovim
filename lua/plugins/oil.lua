@@ -1,10 +1,6 @@
 function toggle()
-    local util = require("oil.util")
-    if util.is_oil_bufnr(0) then
-        require("oil").close()
-    else
-        require("oil").open()
-    end
+    local oil = require("oil")
+    oil.toggle_float()
 end
 
 return {
@@ -13,6 +9,7 @@ return {
         columns = {},
         keymaps = {
             ["<ESC>"] = "actions.close",
+            ["q"] = "actions.close",
             ["<bs>"] = "actions.parent",
         },
     },
