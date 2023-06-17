@@ -2,9 +2,9 @@ local p = require("theme.palette")
 
 local FOREGROUND = p.gray_200
 -- local BACKGROUND = "#161617"
-local BACKGROUND = "#111112"
+local BACKGROUND = "#141418"
 local c = {
-    float_bg = "#1A1A1B",
+    float_bg = "#1B1B1F",
     background = BACKGROUND,
     foreground = FOREGROUND,
     keyword = p.fuchsia_325,
