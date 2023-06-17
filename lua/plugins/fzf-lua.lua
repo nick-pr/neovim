@@ -9,7 +9,7 @@ return {
         },
         file_ignore_patterns = { "/opt/homebrew/", "node_modules/" },
         files = {
-            -- previewer = false,
+            previewer = false,
             file_icons = true,
             git_icons = false,
         },
