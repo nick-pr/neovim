@@ -67,6 +67,13 @@ M.config = function(opts)
         capabilities = capabilities,
         on_attach = python_on_attach,
     })
+    lspconfig.tsserver.setup({
+        capabilities = capabilities,
+        on_attach = function(client)
+            all_on_attach(client)
+            client.server_capabilities.semanticTokensProvider = nil
+        end,
+    })
 end
 
 return M
