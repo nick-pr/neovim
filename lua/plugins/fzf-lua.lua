@@ -1,19 +1,17 @@
 return {
     "ibhagwan/fzf-lua",
     dependencies = { "nvim-tree/nvim-web-devicons" },
-    event = "VimEnter",
+    keys = {
+        { "<leader>ff", "<cmd>FzfLua files<cr>", desc = "FzfLua Files" },
+    },
     opts = {
-        winopts = {
-            border = "single",
-            fullscreen = false,
-        },
+        "max-perf",
         file_ignore_patterns = { "/opt/homebrew/", "node_modules/" },
         files = {
             previewer = false,
-            file_icons = true,
-            git_icons = false,
         },
     },
+
     config = function(lazy, opts)
         local map = vim.keymap.set
         require("fzf-lua").setup(opts)
