@@ -10,8 +10,8 @@ map({ "n" }, "<leader>yy", '"+yy', { noremap = true, silent = true })
 map({ "v" }, "<leader>y", '"+y', { noremap = true, silent = true })
 
 -- Moving lines
-map({ "i" }, "<C-j>", "<esc>:m .+1<CR>==i", { noremap = true, silent = true })
-map({ "i" }, "<c-k>", "<esc>:m .-2<cr>==i", { noremap = true, silent = true })
+-- map({ "i" }, "<C-j>", "<esc>:m .+1<CR>==i", { noremap = true, silent = true })
+-- map({ "i" }, "<c-k>", "<esc>:m .-2<cr>==i", { noremap = true, silent = true })
 map({ "v" }, "J", ":m '>+1<cr>gv=gv", { noremap = true, silent = true })
 map({ "v" }, "K", ":m '<-2<cr>gv=gv", { noremap = true, silent = true })
 

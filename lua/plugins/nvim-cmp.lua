@@ -19,7 +19,8 @@ M.config = function()
             -- end
         },
         window = {
-            completion = cmp.config.window.bordered(),
+            -- completion = cmp.config.window.bordered({ border = {"┌","─","┐","│","┘","─","└","│"}}),
+            completion = cmp.config.window.bordered({border = "single"}),
             documentation = cmp.config.window.bordered(),
         },
         snippet = {

@@ -1,9 +1,10 @@
 local p = require("theme.palette")
 
 local FOREGROUND = p.gray_200
--- local BACKGROUND = "#161617"
-local BACKGROUND = "#141418"
+local BACKGROUND = "#141416"
+
 local c = {
+    float_border = p.gray_400,
     float_bg = "#1B1B1F",
     background = BACKGROUND,
     foreground = FOREGROUND,
@@ -80,7 +81,7 @@ M.dark = {
     -- Fzf-lua
     FzfLuaNormal = { link = "Normal" },
     -- FzfLuaCursor =      { fg = c.foreground, bg = c.float_bg },
-    -- FzfLuaBorder =      { fg = c.overlay, bg = c.float_bg },
+    FzfLuaBorder =      { fg = c.FOREGROUND, bg = c.BACKGROUND },
     -- FzfLuaCursorLine =  { bg = c.floatBg, fg = p.orange_300 },
 
     -- Treesitter
@@ -100,6 +101,8 @@ M.dark = {
     ["@field"] = { fg = c.field },
     ["@comment"] = { link = "Comment" },
     ["@tag"] = { fg = c.tag },
+    ["@tag.attribute.svelte"] = { fg = p.sky_300 },
+    ["@text.title.svelte"] = { link = "Normal"},
     ["@boolean"] = { link = "Boolean" },
     ["@operator"] = { link = "Operator" },
     ["@parameter"] = { fg = c.parameter },

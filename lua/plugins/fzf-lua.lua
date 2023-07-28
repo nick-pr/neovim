@@ -1,14 +1,12 @@
 return {
     "ibhagwan/fzf-lua",
     dependencies = { "nvim-tree/nvim-web-devicons" },
-    keys = {
-        { "<leader>ff", "<cmd>FzfLua files<cr>", desc = "FzfLua Files" },
-    },
     opts = {
         "max-perf",
         file_ignore_patterns = { "/opt/homebrew/", "node_modules/" },
         files = {
             previewer = false,
+            cwd_prompt = false,
         },
     },
 
