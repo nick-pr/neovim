@@ -92,6 +92,7 @@ return {
 
     teal_200 = "#99F6E4",
     teal_300 = "#5EEAD4",
+    teal_325 = "#52E5CF",
     teal_350 = "#46DFCA",
     teal_400 = "#2DD4BF",
 

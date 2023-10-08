@@ -1,8 +1,7 @@
-local components = require("plugins/feline/components")
 local p = require("theme.palette")
 local utils = require("core.utils")
-
-local M = { "freddiehaddad/feline.nvim" }
+local custom_providers = require("plugins/feline/custom_providers")
+local components = require("plugins/feline/components")
 
 Bar = {}
 MetaBar = {}
@@ -34,6 +33,7 @@ local file_tree_components = {
 }
 
 winbar_components.active:append(1, components.file_info)
+winbar_components.active:append(1, components.lsp_locations)
 winbar_components.active:append(1, { provider = "", hl = { bg = "none" } })
 
 winbar_components.inactive:append(1, components.file_info)
@@ -61,33 +61,30 @@ file_tree_components.active:append(3, {
     right_sep = { str = " ", hl = { fg = "bg", bg = "bg" } },
 })
 
-M.opts = {
-    winbar = {
-        components = winbar_components,
-        conditional_components = {
-            {
-                condition = function()
-                    return vim.api.nvim_buf_get_option(0, "filetype") == "NvimTree"
-                end,
-                active = file_tree_components.active,
-                inactive = file_tree_components.active,
+return {
+    "freddiehaddad/feline.nvim",
+    opts = {
+        winbar = {
+            components = winbar_components,
+            conditional_components = {
+                {
+                    condition = function()
+                        return vim.api.nvim_buf_get_option(0, "filetype") == "NvimTree"
+                    end,
+                    active = file_tree_components.active,
+                    inactive = file_tree_components.active,
+                },
             },
         },
-    },
-    statusline = {
-        theme = vim.tbl_extend("force", p, { bg = "#272728" }),
-        custom_providers = {
-            cwd_parent_dir = function()
-                return vim.fn.fnamemodify(vim.fn.getcwd(), ":t")
-            end,
+        statusline = {
+            theme = vim.tbl_extend("force", p, { bg = "#272728" }),
+            custom_providers = custom_providers,
         },
     },
+
+    config = function(lazy_plugin, opts)
+        local feline = require("feline")
+        feline.setup(opts.statusline)
+        feline.winbar.setup(opts.winbar)
+    end,
 }
-
-M.config = function(lazy_plugin, opts)
-    local feline = require("feline")
-    feline.setup(opts.statusline)
-    feline.winbar.setup(opts.winbar)
-end
-
-return M

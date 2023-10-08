@@ -8,6 +8,9 @@ return {
             previewer = false,
             cwd_prompt = false,
         },
+        buffers = {
+            previewer = false,
+        },
     },
 
     config = function(lazy, opts)

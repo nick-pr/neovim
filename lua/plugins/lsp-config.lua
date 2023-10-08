@@ -2,6 +2,13 @@ local M = { "neovim/nvim-lspconfig" }
 
 M.config = function(opts)
     local lspconfig = require("lspconfig")
+    local navic = require("nvim-navic")
+
+    function base_on_attach(client, bufnr)
+        if client.server_capabilities.documentSymbolProvider then
+            navic.attach(client, bufnr)
+        end
+    end
 
     -- Setting the border of LspInfo
     require("lspconfig.ui.windows").default_options.border = "rounded"
@@ -39,12 +46,17 @@ M.config = function(opts)
         cmd = { "gopls", "--remote=auto" },
         capabilities = capabilities,
         init_options = { staticcheck = true },
+        on_attach = base_on_attach
     })
 
-    lspconfig.rust_analyzer.setup({ capabilities = capabilities })
-    lspconfig.pyright.setup({ capabilities = capabilities })
-    lspconfig.tsserver.setup({ capabilities = capabilities })
-    lspconfig.svelte.setup({ { capabilities = capabilities } })
+    lspconfig.rust_analyzer.setup({ capabilities = capabilities, on_attach = base_on_attach })
+    lspconfig.pyright.setup({ capabilities = capabilities, on_attach = base_on_attach })
+    lspconfig.tsserver.setup({ capabilities = capabilities, on_attach = base_on_attach })
+    lspconfig.svelte.setup({ { capabilities = capabilities, on_attach = base_on_attach } })
+    lspconfig.templ.setup({ { capabilities = capabilities, on_attach = base_on_attach } })
+    lspconfig.lua_ls.setup({ { capabilities = capabilities, on_attach = base_on_attach } })
+    lspconfig.html.setup({ { capabilities = capabilities, on_attach = base_on_attach } })
 end
 
+M.priority = 2
 return M

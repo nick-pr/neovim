@@ -2,7 +2,7 @@ return {
     "nvim-treesitter/nvim-treesitter",
     build = ":TSUpdate",
     event = "BufReadPost",
-    dependencies = { "nvim-treesitter/nvim-treesitter-textobjects" },
+    dependencies = { "nvim-treesitter/nvim-treesitter-textobjects", "vrischmann/tree-sitter-templ" },
     opts = {
         playground = {
             enable = true,
@@ -70,6 +70,9 @@ return {
             "astro",
             "lua",
             "go",
+            "gomod",
+            "gosum",
+            "gowork",
             "markdown",
             "markdown_inline",
             "toml",
@@ -81,6 +84,7 @@ return {
             "vim",
             "yaml",
             "rust",
+            "css",
             "gitcommit",
         },
         incremental_selection = {
@@ -104,5 +108,18 @@ return {
         for _, group in ipairs(vim.fn.getcompletion("@lsp", "highlight")) do
             vim.api.nvim_set_hl(0, group, {})
         end
+
+        local treesitter_parser_config = require("nvim-treesitter.parsers").get_parser_configs()
+
+        -- This configures the parser for templ files (A go templating language)
+        treesitter_parser_config.templ = {
+            install_info = {
+                url = "https://github.com/vrischmann/tree-sitter-templ.git",
+                files = { "src/parser.c", "src/scanner.c" },
+                branch = "master",
+            },
+        }
+        vim.treesitter.language.register("templ", "templ")
+
     end,
 }

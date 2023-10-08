@@ -32,3 +32,6 @@ map("n", "N", "Nzz", { noremap = true, silent = true })
 
 -- Sick backspace map
 map("n", "<bs>", "<C-^>", { noremap = true, silent = true })
+
+
+map("n", "<ctl>j","10j", { noremap = true, silent = true })

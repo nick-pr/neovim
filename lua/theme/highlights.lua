@@ -1,35 +1,8 @@
-local p = require("theme.palette")
+local p = require("theme/palette")
+local c = require("theme/colors")
 
-local FOREGROUND = p.gray_200
-local BACKGROUND = "#141416"
-
-local c = {
-    float_border = p.gray_400,
-    float_bg = "#1B1B1F",
-    background = BACKGROUND,
-    foreground = FOREGROUND,
-    keyword = p.fuchsia_325,
-    functions = p.blue_300,
-    parameter = p.orange_300,
-    comment = p.gray_500,
-    property = p.orange_200,
-    field = FOREGROUND,
-    import = p.orange_300,
-    string = p.green_250,
-    type = p.teal_350,
-    tag = p.red_300,
-    operator = FOREGROUND,
-    constructor = p.orange_300,
-    overlay = p.gray_400,
-    punc_bracket = p.slate_400,
-    numbers = p.red_400,
-    visual = "#272932",
-}
-
--- Highlight table that will used to apply the highlights. Uses colors directly from the palette or from predefined color variables as defined above.
-
+-- Highlight table that will used to apply the highlights
 local M = {}
-
 M.dark = {
     -- Core Highlights
     Normal = { fg = c.foreground, bg = c.background },
@@ -117,6 +90,7 @@ M.dark = {
     ["@function.builtin"] = { fg = p.orange_300, bold = false },
     ["@text.reference"] = { fg = c.functions },
     ["@namespace"] = { fg = p.rose_300 },
+    ["@field.rust"] = { fg = c.property },
 
     -- Treesitter (Rust)
     ["@storageclass.rust"] = { link = "@keyword" },
@@ -127,6 +101,9 @@ M.dark = {
 
     -- Treesitter (Lua)
     ["@field.lua"] = { fg = c.property },
+
+    -- Treesitter (HTML)
+    ["@text.title"] = { fg = c.forground },
 
     -- Treesitter (LSP)
     ["@lsp.type.variable"] = { link = "@variable" },
@@ -145,6 +122,4 @@ M.dark = {
     NvimTreeOpenedFolderName = { fg = p.orange_300 },
     NvimTreeOpenedFile = { fg = c.foreground },
 }
-
-M.dark2 = {}
 return M
