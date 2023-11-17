@@ -1,6 +1,2 @@
-local argon = require("theme")
+require("themes").init("argon")
 
-vim.cmd("hi clear")
-vim.g.colors_name = "argon"
-
-argon.init()

@@ -1,6 +1,6 @@
-local p = require("theme/palette")
+local p = require("themes.argon.palette")
 local FOREGROUND = p.gray_200
-local BACKGROUND = "#141416"
+local BACKGROUND = "#121212"
 
 return {
     float_border = p.gray_400,
@@ -10,7 +10,7 @@ return {
     keyword = p.fuchsia_325,
     functions = p.blue_300,
     parameter = p.orange_300,
-    comment = p.gray_500,
+    comment = "#55606C",
     property = p.orange_200,
     field = FOREGROUND,
     import = p.orange_300,
@@ -20,7 +20,10 @@ return {
     operator = FOREGROUND,
     constructor = p.orange_300,
     overlay = p.gray_400,
-    punc_bracket = p.slate_400,
+    punc_bracket = p.gray_400,
     numbers = p.red_400,
     visual = "#272932",
+    cursor_line = "#181A1E",
+    status_line_bg = "#1F2125",
 }
+

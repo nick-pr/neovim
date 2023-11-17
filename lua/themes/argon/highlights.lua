@@ -1,15 +1,14 @@
-local p = require("theme/palette")
-local c = require("theme/colors")
+local p = require("themes.argon.palette")
+local c = require("themes.argon.colors")
 
 -- Highlight table that will used to apply the highlights
-local M = {}
-M.dark = {
+return {
     -- Core Highlights
     Normal = { fg = c.foreground, bg = c.background },
-    SignColumn = { bg = c.background },
-    LineNr = { fg = p.gray_500, bg = c.background },
-    CursorLineNR = { fg = p.orange_300, bg = c.background },
-    CursorLine = { bg = "none" },
+    SignColumn = { bg = c.cursor_line },
+    LineNr = { fg = c.comment, bg = c.background },
+    CursorLineNR = { fg = p.orange_300, bg = c.cursor_line },
+    CursorLine = { bg = c.cursor_line },
     EndOfBuffer = { fg = c.background },
     Pmenu = { fg = c.overlay, bg = p.dark_1 },
     PmenuSel = { fg = p.orange_300, bg = p.dark_1 },
@@ -30,7 +29,7 @@ M.dark = {
     Todo = { fg = p.orange_300 },
     Include = { fg = c.import, bold = false },
     MatchParen = { fg = c.foreground, bg = c.background },
-    VertSplit = { fg = "#303030", bg = c.background },
+    VertSplit = { fg = c.status_line_bg, bg = c.background },
     FloatBorder = { fg = c.overlay },
     NormalFloat = { bg = c.background },
     Visual = { bg = c.visual },
@@ -54,7 +53,7 @@ M.dark = {
     -- Fzf-lua
     FzfLuaNormal = { link = "Normal" },
     -- FzfLuaCursor =      { fg = c.foreground, bg = c.float_bg },
-    FzfLuaBorder =      { fg = c.FOREGROUND, bg = c.BACKGROUND },
+    FzfLuaBorder = { fg = c.FOREGROUND, bg = c.BACKGROUND },
     -- FzfLuaCursorLine =  { bg = c.floatBg, fg = p.orange_300 },
 
     -- Treesitter
@@ -67,7 +66,7 @@ M.dark = {
     ["@constructor"] = { fg = c.constructor },
     ["@constructor.lua"] = { link = "@punctuation.bracket" },
     ["@punctuation.bracket"] = { fg = c.punc_bracket },
-    ["@punctuation.delimiter"] = { fg = c.overlay },
+    ["@punctuation.delimiter"] = { fg = c.punc_bracket },
     ["@tag.delimiter"] = { fg = c.overlay },
     ["@property"] = { fg = c.property },
     ["@tag.attribute"] = { link = "@property" },
@@ -75,7 +74,7 @@ M.dark = {
     ["@comment"] = { link = "Comment" },
     ["@tag"] = { fg = c.tag },
     ["@tag.attribute.svelte"] = { fg = p.sky_300 },
-    ["@text.title.svelte"] = { link = "Normal"},
+    ["@text.title.svelte"] = { link = "Normal" },
     ["@boolean"] = { link = "Boolean" },
     ["@operator"] = { link = "Operator" },
     ["@parameter"] = { fg = c.parameter },
@@ -110,9 +109,12 @@ M.dark = {
     ["@lsp.type.namespace"] = { link = "@namespace" },
 
     -- LSP
-    DiagnosticSignHint = { fg = p.blue_400 },
-    DiagnosticSignWarn = { fg = p.orange_300 },
-    DiagnosticSignError = { fg = p.red_500 },
+    DiagnosticSignHint = { fg = p.blue_400, bg = c.status_line_bg },
+    DiagnosticSignWarn = { fg = p.orange_300, bg = c.status_line_bg },
+    DiagnosticSignError = { fg = p.red_500, bg = c.status_line_bg },
+
+    --Oil
+    OilDir = { fg = p.blue_300, bold = true },
 
     -- Nvim-tree
     NvimTreeNormal = { bg = c.float_bg },
@@ -121,5 +123,25 @@ M.dark = {
     NvimTreeRootFolder = { fg = p.neutral_400 },
     NvimTreeOpenedFolderName = { fg = p.orange_300 },
     NvimTreeOpenedFile = { fg = c.foreground },
+
+    -- Statusbar and Winbar
+    Statuslinetest = { bg = p.blue_300 },
+    FileInfoComponent = { fg = p.foreground, bold = true },
+
+    -- ViModeComponentNormal = { bg = p.orange_300, fg = c.background ,bold = true },
+    -- ViModeComponentVisual = { bg = p.purple_300, fg = c.background,  bold = true },
+    -- ViModeComponentVisualLine = { bg = p.purple_300, fg = c.background, bold = true },
+    -- ViModeComponentInsert = { bg = p.green_300, fg = c.background, bold = true },
+    -- ViModeComponentCmd = { fg = p.red_300, bg = c.status_line_bg, bold = true },
+
+    ViModeComponentNormal = { fg = c.status_line_bg, bg = p.orange_300, bold = true },
+    ViModeComponentVisual = { fg = c.status_line_bg, bg = p.purple_300, bold = true },
+    ViModeComponentVisualLine = { fg = c.status_line_bg, bg = p.purple_300, bold = true },
+    ViModeComponentInsert = { fg = c.status_line_bg, bg = p.green_300, bold = true },
+    ViModeComponentCmd = { fg = c.status_line_bg, bg = p.red_300, bold = true },
+
+    PwdComponent = { fg = c.foreground, bg = c.status_line_bg },
+    PwdComponentLabel = { fg = c.foreground, bg = c.status_line_bg },
+
+    FileComponent = { fg = c.foreground, bg = c.status_line_bg, bold = true },
 }
-return M

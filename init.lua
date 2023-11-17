@@ -20,9 +20,6 @@ vim.g.loaded_netrwPlugin = 1
 -- Call Modules
 require("core")
 require("lazy").setup("plugins", {
-    install = {
-        colorscheme = { "argon" },
-    },
     ui = { border = "single" },
     change_detection = { notify = false },
 })

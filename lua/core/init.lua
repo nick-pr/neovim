@@ -1,6 +1,8 @@
 local core_modules = {
     "core.settings",
     "core.mappings",
+    "core.statusline",
+    "core.winbar",
     "core.autocmds",
 }
 

@@ -1,4 +1,5 @@
-local p = require("theme/palette")
+-- local p = require("themespalette")
+local p = {}
 local M = {}
 
 M.file_info = {
@@ -6,14 +7,15 @@ M.file_info = {
         name = "file_info",
         opts = { type = "relative" },
     },
-    hl = { style = "bold", bg = "none" },
-    left_sep = { str = " ", hl = { bg = "none" } },
+    hl = "FileInfoComponent",
+    icon = {str = "" , hl="FileInfoComponentIcon"},
+    left_sep = { str = " ", hl =  "FileInfoComponentLeftSep"},
 }
 
 M.lsp_locations = {
     provider = "lsp_locations",
-    hl = { style = "bold", bg = "none" },
-    left_sep = { str = "  ", hl = { bg = "none"} },
+    hl = "LspLocationComponent",
+    left_sep = { str = "  ", hl = "LspLocationComponentLeftSep" },
 }
 
 return M

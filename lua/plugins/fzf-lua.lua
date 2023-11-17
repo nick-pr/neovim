@@ -3,6 +3,9 @@ return {
     dependencies = { "nvim-tree/nvim-web-devicons" },
     opts = {
         "max-perf",
+        winopts = {
+            fullscreen = true,
+        },
         file_ignore_patterns = { "/opt/homebrew/", "node_modules/" },
         files = {
             previewer = false,
