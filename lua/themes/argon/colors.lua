@@ -23,7 +23,7 @@ return {
     punc_bracket = p.gray_400,
     numbers = p.red_400,
     visual = "#272932",
-    cursor_line = "#181A1E",
+    cursor_line = "#19191D",
     status_line_bg = "#1F2125",
 }
 

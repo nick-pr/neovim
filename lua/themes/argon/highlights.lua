@@ -7,8 +7,8 @@ return {
     Normal = { fg = c.foreground, bg = c.background },
     SignColumn = { bg = c.cursor_line },
     LineNr = { fg = c.comment, bg = c.background },
-    CursorLineNR = { fg = p.orange_300, bg = c.cursor_line },
-    CursorLine = { bg = c.cursor_line },
+    CursorLineNR = { fg = p.orange_300, bg = c.BACKGROUND},
+    CursorLine = { bg = c.BACKGROUND },
     EndOfBuffer = { fg = c.background },
     Pmenu = { fg = c.overlay, bg = p.dark_1 },
     PmenuSel = { fg = p.orange_300, bg = p.dark_1 },
@@ -143,5 +143,5 @@ return {
     PwdComponent = { fg = c.foreground, bg = c.status_line_bg },
     PwdComponentLabel = { fg = c.foreground, bg = c.status_line_bg },
 
-    FileComponent = { fg = c.foreground, bg = c.status_line_bg, bold = true },
+    FileComponent = { fg = c.foreground, bg = c.status_line_bg},
 }
