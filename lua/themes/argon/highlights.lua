@@ -137,6 +137,7 @@ return {
     ViModeComponentNormal = { fg = c.status_line_bg, bg = p.orange_300, bold = true },
     ViModeComponentVisual = { fg = c.status_line_bg, bg = p.purple_300, bold = true },
     ViModeComponentVisualLine = { fg = c.status_line_bg, bg = p.purple_300, bold = true },
+    ViModeComponentVisualBlock = { fg = c.status_line_bg, bg = p.purple_300, bold = true },
     ViModeComponentInsert = { fg = c.status_line_bg, bg = p.green_300, bold = true },
     ViModeComponentCmd = { fg = c.status_line_bg, bg = p.red_300, bold = true },
 
