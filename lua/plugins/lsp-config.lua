@@ -2,7 +2,6 @@ local M = { "neovim/nvim-lspconfig" }
 
 M.config = function(opts)
     local lspconfig = require("lspconfig")
-    local navic = require("nvim-navic")
 
     function base_on_attach(client, bufnr)
         if client.server_capabilities.documentSymbolProvider then
@@ -56,7 +55,7 @@ M.config = function(opts)
     lspconfig.templ.setup({ { capabilities = capabilities, on_attach = base_on_attach } })
     lspconfig.lua_ls.setup({ { capabilities = capabilities, on_attach = base_on_attach } })
     lspconfig.html.setup({ { capabilities = capabilities, on_attach = base_on_attach } })
+    lspconfig.astro.setup({ { capabilities = capabilities, on_attach = base_on_attach } })
 end
 
-M.priority = 2
 return M

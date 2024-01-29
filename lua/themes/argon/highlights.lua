@@ -12,6 +12,7 @@ return {
     EndOfBuffer = { fg = c.background },
     Pmenu = { fg = c.overlay, bg = p.dark_1 },
     PmenuSel = { fg = p.orange_300, bg = p.dark_1 },
+    StatusLine = { fg = c.FOREGROUND, bg = c.status_line_bg },
 
     Keyword = { fg = c.keyword, bold = false },
     Conditional = { link = "Keyword" },
@@ -36,8 +37,6 @@ return {
     Search = { bg = p.dark_4 },
     Comment = { fg = c.comment },
     PreProc = { fg = p.orange_300 },
-    StatusLine = { link = "VertSplit" },
-    StatusLineTerm = { link = "VertSplit" },
     MatchParen = { fg = p.other.yellow, bold = true },
     Folded = { bg = "#181820" },
 
@@ -84,11 +83,11 @@ return {
     ["@constant"] = { link = "Normal" },
     ["@number"] = { link = "Number" },
     ["@label"] = { fg = p.blue_300 },
-    ["@function.macro"] = { fg = p.orange_300, bold = false },
+    ["@function.macro"] = { fg = p.orange_250, bold = false },
     ["@exception"] = { fg = p.orange_300, bold = false },
     ["@function.builtin"] = { fg = p.orange_300, bold = false },
     ["@text.reference"] = { fg = c.functions },
-    ["@namespace"] = { fg = p.rose_300 },
+    ["@module"] = { fg = p.red_300 },
     ["@field.rust"] = { fg = c.property },
 
     -- Treesitter (Rust)
@@ -103,6 +102,7 @@ return {
 
     -- Treesitter (HTML)
     ["@text.title"] = { fg = c.forground },
+    ["@string.special.url"] = { fg = p.blue_300 },
 
     -- Treesitter (LSP)
     ["@lsp.type.variable"] = { link = "@variable" },

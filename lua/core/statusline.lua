@@ -1,24 +1,24 @@
 local modes = {
-    ["n"] =  { str = "NORMAL", hlgroup = "ViModeComponentNormal" },
+    ["n"] = { str = "NORMAL", hlgroup = "ViModeComponentNormal" },
     ["no"] = { str = "NORMAL", hlgroup = "ViModeComponentNormal" },
-    ["v"] =  { str = "VISUAL", hlgroup = "ViModeComponentVisual" },
-    ["V"] =  { str = "V-LINE", hlgroup = "ViModeComponentVisualLine" },
-    ["i"] =  { str = "INSERT", hlgroup = "ViModeComponentInsert" },
+    ["v"] = { str = "VISUAL", hlgroup = "ViModeComponentVisual" },
+    ["V"] = { str = "V-LINE", hlgroup = "ViModeComponentVisualLine" },
+    ["i"] = { str = "INSERT", hlgroup = "ViModeComponentInsert" },
     ["ic"] = { str = "INSERT", hlgroup = "ViModeComponentInsert" },
-    ["c"] =  { str = "CMD-LN", hlgroup = "ViModeComponentCmd" }, 
+    ["c"] = { str = "CMD-LN", hlgroup = "ViModeComponentCmd" },
     [""] = { str = "V-BLCK", hlgroup = "ViModeComponentVisualBlock" },
-    ["s"] =  { str = "SELECT", hlgroup = "ViModeComponentSelect" },
-    ["S"] =  { str = "S-LINE", hlgroup = "ViModeComponentSelectLine" },
+    ["s"] = { str = "SELECT", hlgroup = "ViModeComponentSelect" },
+    ["S"] = { str = "S-LINE", hlgroup = "ViModeComponentSelectLine" },
     [""] = { str = "S-BLCK", hlgroup = "ViModeComponentSelectBlock" },
     ["R"] = "REPLACE",
     ["Rv"] = "VISUAL-REPLACE",
     ["cv"] = "VIM EX",
     ["ce"] = "EX",
-    ["r"] = { str = "PROMPT", hlgroup="ViModeComponentPrompt"},
+    ["r"] = { str = "PROMPT", hlgroup = "ViModeComponentPrompt" },
     ["rm"] = "MOAR",
     ["r?"] = "CONFIRM",
     ["!"] = "SHELL",
-    ["t"] = {str = "TERMINAL", hlgroup = "ViModeComponentTerm"},
+    ["t"] = { str = "TERMINAL", hlgroup = "ViModeComponentTerm" },
 }
 local function mode()
     local mode = modes[vim.api.nvim_get_mode().mode]
@@ -28,12 +28,17 @@ local function mode()
     end
 
     return table.concat({
-        "%#", mode.hlgroup, "#",
-        " ",mode.str," "
+        "%#",
+        mode.hlgroup,
+        "#",
+        " ",
+        mode.str,
+        " ",
+        "%# StatusLine #",
     })
 end
 
-local function pwd() 
+local function pwd()
     local cwd =vim.fn.fnamemodify(vim.loop.cwd(), ":~")
 
     return table.concat({
@@ -45,7 +50,6 @@ function statusline()
     return table.concat({
         mode(),
         pwd(),
-        -- " [%f]"
     })
 end
 

@@ -27,3 +27,11 @@ pcall(require, "override")
 
 -- Set colorscheme
 vim.cmd("colorscheme argon")
+
+-- Need to get templ files to work correctly with treesitter
+-- See https://github.com/vrischmann/tree-sitter-templ and https://github.com/a-h/templ
+vim.filetype.add({
+    extension = {
+        templ = "templ",
+    },
+})

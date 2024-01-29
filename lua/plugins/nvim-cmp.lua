@@ -14,13 +14,14 @@ M.config = function()
 
     local opts = {
         formatting = {
-            -- format = function(entry,vim_item)
-            --     return vim_item
-            -- end
+            format = function(_, vim_item)
+                vim_item.menu = ""
+                return vim_item
+            end,
         },
         window = {
             -- completion = cmp.config.window.bordered({ border = {"┌","─","┐","│","┘","─","└","│"}}),
-            completion = cmp.config.window.bordered({border = "single"}),
+            completion = cmp.config.window.bordered({ border = "single" }),
             documentation = cmp.config.window.bordered(),
         },
         snippet = {

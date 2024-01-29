@@ -47,6 +47,7 @@ return {
     stone_800 = "#292524",
     stone_900 = "#1C1917",
 
+    red_200 = "#FECACA",
     red_300 = "#FCA5A5",
     red_350 = "#FA8B8B",
     red_400 = "#F87171",
@@ -54,6 +55,7 @@ return {
     red_600 = "#DC2626",
 
     orange_200 = "#FED7AA",
+    orange_250 = "#FEC98F",
     orange_300 = "#FDBA74",
     orange_400 = "#FB923C",
     orange_500 = "#F97316",

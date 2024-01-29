@@ -13,7 +13,7 @@ return {
     Pmenu = { fg = c.overlay, bg = p.dark_1 },
     PmenuSel = { fg = p.orange_300, bg = p.dark_1 },
 
-    Keyword = { fg = c.keyword, bold = false },
+    Keyword = { fg = c.keyword, bold = true },
     Conditional = { link = "Keyword" },
     Repeat = { link = "Keyword" },
 
