@@ -7,8 +7,8 @@ return {
     Normal = { fg = c.foreground, bg = c.background },
     SignColumn = { bg = c.cursor_line },
     LineNr = { fg = c.comment, bg = c.background },
-    CursorLineNR = { fg = p.orange_300, bg = c.BACKGROUND},
-    CursorLine = { bg = c.BACKGROUND },
+    CursorLineNR = { fg = p.orange_300, bg = c.cursor_line },
+    CursorLine = { bg = c.cursor_line },
     EndOfBuffer = { fg = c.background },
     Pmenu = { fg = c.overlay, bg = p.dark_1 },
     PmenuSel = { fg = p.orange_300, bg = p.dark_1 },
@@ -104,6 +104,10 @@ return {
     ["@text.title"] = { fg = c.forground },
     ["@string.special.url"] = { fg = p.blue_300 },
 
+    -- Treesitter (CSS)
+    ["@number.css"] = { fg = c.forground },
+    ["@string.css"] = { fg = c.forground },
+
     -- Treesitter (LSP)
     ["@lsp.type.variable"] = { link = "@variable" },
     ["@lsp.type.namespace"] = { link = "@namespace" },
@@ -144,5 +148,5 @@ return {
     PwdComponent = { fg = c.foreground, bg = c.status_line_bg },
     PwdComponentLabel = { fg = c.foreground, bg = c.status_line_bg },
 
-    FileComponent = { fg = c.foreground, bg = c.status_line_bg},
+    FileComponent = { fg = c.foreground, bg = c.status_line_bg },
 }

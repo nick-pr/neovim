@@ -31,6 +31,8 @@ return {
     zinc_400 = "#a1a1aa",
     zinc_500 = "#71717a",
     zinc_600 = "#52525b",
+    zinc_700 = "#3f3f46",
+    zinc_750 = "#333338",
     zinc_800 = "#27272A",
     zinc_900 = "#18181B",
 
@@ -41,8 +43,11 @@ return {
     neutral_500 = "#737373",
     neutral_600 = "#525252",
     neutral_700 = "#404040",
+    neutral_750 = "#333333",
     neutral_800 = "#262626",
+    neutral_850 = "#1F1F1F",
     neutral_900 = "#171717",
+    neutral_950 = "#0a0a0a",
 
     stone_800 = "#292524",
     stone_900 = "#1C1917",

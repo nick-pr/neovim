@@ -1,6 +1,7 @@
 local p = require("themes.argon.palette")
 local FOREGROUND = p.gray_200
-local BACKGROUND = "#121212"
+local BACKGROUND = "#141414"
+-- local BACKGROUND = p.neutral_900
 
 return {
     float_border = p.gray_400,
@@ -10,7 +11,8 @@ return {
     keyword = p.fuchsia_300,
     functions = p.blue_300,
     parameter = p.orange_300,
-    comment = "#55606C",
+    -- comment = "#55606C",
+    comment = p.zinc_500,
     property = p.orange_200,
     field = FOREGROUND,
     import = p.orange_300,
@@ -22,8 +24,8 @@ return {
     overlay = p.gray_400,
     punc_bracket = p.gray_400,
     numbers = p.red_400,
-    visual = "#272932",
-    cursor_line = "#19191D",
-    status_line_bg = "#1F2125",
+    visual = p.zinc_750,
+    cursor_line = p.neutral_850,
+    status_line_bg = p.neutral_800,
 }
 
