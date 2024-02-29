@@ -63,7 +63,6 @@ return {
         ensure_installed = {
             "svelte",
             "bash",
-            "help",
             "html",
             "javascript",
             "json",
@@ -86,6 +85,7 @@ return {
             "rust",
             "css",
             "gitcommit",
+            "vimdoc",
         },
         incremental_selection = {
             enable = true,
