@@ -11,6 +11,7 @@ return {
         files = {
             previewer = false,
             cwd_prompt = false,
+            find_opts = "-type f",
         },
         buffers = {
             previewer = false,
