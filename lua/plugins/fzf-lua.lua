@@ -23,5 +23,7 @@ return {
         require("fzf-lua").setup(opts)
         map("n", "<leader>ff", "<cmd>Fzf files<CR>", { noremap = true })
         map("n", "<leader>fb", "<cmd>Fzf buffers<CR>", { noremap = true })
+        map("n", "<leader>ds", "<cmd>Fzf lsp_document_symbols<CR>", { noremap = true })
+        map("n", "<leader>ws", "<cmd>Fzf lsp_workspace_symbols<CR>", { noremap = true })
     end,
 }

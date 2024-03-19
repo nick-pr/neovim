@@ -22,7 +22,7 @@ M.config = function(opts)
             local opts = { noremap = true, silent = true, buffer = bufnr }
             vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
             vim.keymap.set("n", "gi", vim.lsp.buf.implementation, opts)
-            vim.keymap.set("n", "<Leader>d", ":lua vim.diagnostic.open_float()<CR>", opts)
+            vim.keymap.set("n", "<Leader>k", ":lua vim.diagnostic.open_float()<CR>", opts)
             vim.keymap.set("n", "<Leader>r", ":lua vim.lsp.buf.rename()<CR>", opts)
         end,
     })
@@ -48,7 +48,16 @@ M.config = function(opts)
         on_attach = base_on_attach
     })
 
-    lspconfig.rust_analyzer.setup({ capabilities = capabilities, on_attach = base_on_attach })
+    lspconfig.rust_analyzer.setup({ 
+        capabilities = capabilities,
+        on_attach = base_on_attach,
+        init_options = {
+            procMacro = { enable = true },
+        },
+        init_options = {
+            procMacro = { enable = true },
+        }
+    })
     lspconfig.pyright.setup({ capabilities = capabilities, on_attach = base_on_attach })
     lspconfig.tsserver.setup({ capabilities = capabilities, on_attach = base_on_attach })
     lspconfig.svelte.setup({ { capabilities = capabilities, on_attach = base_on_attach } })

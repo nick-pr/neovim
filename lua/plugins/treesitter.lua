@@ -57,7 +57,7 @@ return {
                 },
             },
         },
-        highlight = { enable = true },
+        highlight = { enable = true, additional_vim_regex_highlighting = false },
         indent = { enable = true },
         context_commentstring = { enable = true, enable_autocmd = false },
         ensure_installed = {
@@ -109,6 +109,11 @@ return {
             vim.api.nvim_set_hl(0, group, {})
         end
 
+        vim.filetype.add({
+            extension = {
+                templ = "templ",
+            },
+        })
         -- local treesitter_parser_config = require("nvim-treesitter.parsers").get_parser_configs()
 
         -- -- This configures the parser for templ files (A go templating language)
@@ -120,6 +125,5 @@ return {
         --     },
         -- }
         -- vim.treesitter.language.register("templ", "templ")
-
     end,
 }

@@ -6,7 +6,7 @@ return {
     -- Core Highlights
     Normal = { fg = c.foreground, bg = c.background },
     SignColumn = { bg = c.cursor_line },
-    LineNr = { fg = c.comment, bg = c.background },
+    LineNr = { fg = c.comment, bg = p.zinc_850 },
     CursorLineNR = { fg = p.orange_300, bg = c.cursor_line },
     CursorLine = { bg = c.cursor_line },
     EndOfBuffer = { fg = c.background },
