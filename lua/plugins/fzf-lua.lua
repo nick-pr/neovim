@@ -1,5 +1,5 @@
 return {
-    "ibhagwan/fzf-lua",
+    url = "https://gitlab.com/ibhagwan/fzf-lua",
     dependencies = { "nvim-tree/nvim-web-devicons" },
     opts = {
         "max-perf",
