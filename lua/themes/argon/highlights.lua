@@ -67,7 +67,7 @@ return {
     ["@punctuation.bracket"] = { fg = c.punc_bracket },
     ["@punctuation.delimiter"] = { fg = c.punc_bracket },
     ["@tag.delimiter"] = { fg = c.overlay },
-    ["@property"] = { fg = c.property },
+    ["@variable.member"] = { fg = c.property },
     ["@tag.attribute"] = { link = "@property" },
     ["@field"] = { fg = c.field },
     ["@comment"] = { link = "Comment" },
@@ -111,6 +111,17 @@ return {
     -- Treesitter (LSP)
     ["@lsp.type.variable"] = { link = "@variable" },
     ["@lsp.type.namespace"] = { link = "@namespace" },
+
+    -- Treesitter (Markdown)
+    ["@markup.heading.1"] = { fg = p.orange_300 },
+    ["@markup.heading.2"] = { fg = c.keyword },
+    ["@markup.heading.3"] = { fg = p.sky_300 },
+    ["@markup.strong"] = { fg = p.red_300, bold = true },
+    ["@markup.italic"] = { fg = p.green_300, italic = true },
+    ["@markup.link"] = { fg = c.overlay, italic = true },
+    ["@markup.link.label"] = { fg = c.FOREGROUND, italic = true },
+    ["@markup.link.url"] = { fg = p.blue_300, underline=true},
+    ["@markup.raw"] = { fg = c.overlay},
 
     -- LSP
     DiagnosticSignHint = { fg = p.blue_400, bg = c.status_line_bg },
