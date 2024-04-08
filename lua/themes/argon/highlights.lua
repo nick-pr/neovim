@@ -34,7 +34,7 @@ return {
     FloatBorder = { fg = c.overlay },
     NormalFloat = { bg = c.background },
     Visual = { bg = c.visual },
-    Search = { bg = p.dark_4 },
+    Search = { bg = p.yellow_500, fg = c.background},
     Comment = { fg = c.comment },
     PreProc = { fg = p.orange_300 },
     MatchParen = { fg = p.other.yellow, bold = true },
