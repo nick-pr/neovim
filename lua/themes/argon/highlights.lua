@@ -82,6 +82,7 @@ return {
     ["@constant.builtin"] = { link = "@function.macro" },
     ["@constant"] = { fg= c.FOREGROUND },
     ["@number"] = { link = "Number" },
+    ["@property"] = { fg = c.property},
     ["@label"] = { fg = p.blue_300 },
     ["@function.macro"] = { fg = p.orange_250, bold = false },
     ["@exception"] = { fg = p.orange_300, bold = false },
