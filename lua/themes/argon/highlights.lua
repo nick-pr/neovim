@@ -80,7 +80,7 @@ return {
     ["@variable"] = { fg = c.foreground },
     ["@variable.builtin"] = { link = "@number" },
     ["@constant.builtin"] = { link = "@function.macro" },
-    ["@constant"] = { link = "Normal" },
+    ["@constant"] = { fg= c.FOREGROUND },
     ["@number"] = { link = "Number" },
     ["@label"] = { fg = p.blue_300 },
     ["@function.macro"] = { fg = p.orange_250, bold = false },
