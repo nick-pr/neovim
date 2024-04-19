@@ -86,6 +86,8 @@ return {
             "css",
             "gitcommit",
             "vimdoc",
+            "templ",
+            "proto",
         },
         incremental_selection = {
             enable = true,
