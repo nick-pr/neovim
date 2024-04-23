@@ -9,6 +9,21 @@ M.config = function(opts)
         end
     end
 
+    local base_capabilities = vim.tbl_extend("force", require("cmp_nvim_lsp").default_capabilities(), {
+        workspace = {
+            didChangeWatchedFiles = {
+                dynamicRegistration = true,
+            },
+        },
+        textDocument = {
+            completion = {
+                completionItem = {
+                    snippetSupport = false,
+                },
+            },
+        },
+    })
+
     -- Setting the border of LspInfo
     require("lspconfig.ui.windows").default_options.border = "rounded"
     vim.api.nvim_create_autocmd("LspAttach", {
@@ -37,34 +52,31 @@ M.config = function(opts)
         severity_sort = true,
     })
 
-    local capabilities = require("cmp_nvim_lsp").default_capabilities()
-    capabilities.textDocument.completion.completionItem.snippetSupport = false
-
     -- Language sever setups
     lspconfig.gopls.setup({
         cmd = { "gopls", "--remote=auto" },
-        capabilities = capabilities,
+        capabilities = base_capabilities,
         init_options = { staticcheck = true },
-        on_attach = base_on_attach
+        on_attach = base_on_attach,
     })
 
-    lspconfig.rust_analyzer.setup({ 
-        capabilities = capabilities,
+    lspconfig.rust_analyzer.setup({
+        capabilities = base_capabilities,
         on_attach = base_on_attach,
         init_options = {
             procMacro = { enable = true },
         },
         init_options = {
             procMacro = { enable = true },
-        }
+        },
     })
-    lspconfig.pyright.setup({ capabilities = capabilities, on_attach = base_on_attach })
-    lspconfig.tsserver.setup({ capabilities = capabilities, on_attach = base_on_attach })
-    lspconfig.svelte.setup({ { capabilities = capabilities, on_attach = base_on_attach } })
-    lspconfig.templ.setup({ { capabilities = capabilities, on_attach = base_on_attach } })
-    lspconfig.lua_ls.setup({ { capabilities = capabilities, on_attach = base_on_attach } })
-    lspconfig.html.setup({ { capabilities = capabilities, on_attach = base_on_attach } })
-    lspconfig.astro.setup({ { capabilities = capabilities, on_attach = base_on_attach } })
+    lspconfig.pyright.setup({ capabilities = base_capabilities, on_attach = base_on_attach })
+    lspconfig.tsserver.setup({ capabilities = base_capabilities, on_attach = base_on_attach })
+    lspconfig.svelte.setup({ { capabilities = base_capabilities, on_attach = base_on_attach } })
+    lspconfig.templ.setup({ { capabilities = base_capabilities, on_attach = base_on_attach } })
+    lspconfig.lua_ls.setup({ { capabilities = base_capabilities, on_attach = base_on_attach } })
+    lspconfig.html.setup({ { capabilities = base_capabilities, on_attach = base_on_attach } })
+    lspconfig.astro.setup({ { capabilities = base_capabilities, on_attach = base_on_attach } })
 end
 
 return M
