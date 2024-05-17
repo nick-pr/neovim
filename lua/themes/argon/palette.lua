@@ -105,6 +105,7 @@ return {
     teal_325 = "#52E5CF",
     teal_350 = "#46DFCA",
     teal_400 = "#2DD4BF",
+    teal_500 = "#14b8a6",
 
     cyan_300 = "#67E8F9",
     cyan_400 = "#22D3EE",
@@ -148,6 +149,8 @@ return {
     fuchsia_500 = "#D946EF",
     fuchsia_600 = "#C026D3",
     fuchsia_900 = "#701A75",
+
+    pink_300 = "#f9a8d4",
 
     rose_300 = "#FDA4AF",
 

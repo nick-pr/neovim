@@ -8,7 +8,7 @@ return {
     background = BACKGROUND,
     foreground = FOREGROUND,
     keyword = p.yellow_300,
-    functions = FOREGROUND,
+    functions = p.slate_400,
     parameter = FOREGROUND,
     comment = "#606070",
     property = FOREGROUND,

@@ -10,7 +10,7 @@ return {
     foreground = FOREGROUND,
     keyword = p.fuchsia_300,
     functions = p.blue_300,
-    parameter = p.orange_300,
+    parameter = FOREGROUND,
     -- comment = "#55606C",
     comment = p.zinc_500,
     property = p.orange_200,

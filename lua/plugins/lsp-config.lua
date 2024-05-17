@@ -3,11 +3,7 @@ local M = { "neovim/nvim-lspconfig" }
 M.config = function(opts)
     local lspconfig = require("lspconfig")
 
-    function base_on_attach(client, bufnr)
-        if client.server_capabilities.documentSymbolProvider then
-            navic.attach(client, bufnr)
-        end
-    end
+    function base_on_attach(client, bufnr) end
 
     local base_capabilities = vim.tbl_extend("force", require("cmp_nvim_lsp").default_capabilities(), {
         workspace = {

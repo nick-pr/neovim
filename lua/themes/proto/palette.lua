@@ -21,6 +21,7 @@ return {
     gray_250 = "#DBDEE3",
     gray_275 = "#D6DADF",
     gray_300 = "#D1D5DB",
+    gray_350 = "#B7BCC5",
     gray_400 = "#9CA3AF",
     gray_500 = "#6B7280",
     gray_600 = "#4B5563",
