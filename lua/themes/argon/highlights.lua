@@ -115,15 +115,16 @@ return {
     ["@lsp.type.namespace"] = { link = "@namespace" },
 
     -- Treesitter (Markdown)
-    ["@markup.heading.1"] = { fg = p.orange_300 },
-    ["@markup.heading.2"] = { fg = c.keyword },
-    ["@markup.heading.3"] = { fg = p.sky_300 },
+    ["@markup.heading"] = { fg = p.orange_300, bold=true},
     ["@markup.strong"] = { fg = p.red_300, bold = true },
     ["@markup.italic"] = { fg = p.green_300, italic = true },
     ["@markup.link"] = { fg = c.overlay, italic = true },
     ["@markup.link.label"] = { fg = c.FOREGROUND, italic = true },
     ["@markup.link.url"] = { fg = p.blue_300, underline = true },
     ["@markup.raw"] = { fg = c.overlay },
+
+    ["@markup.heading.gitcommit"] = { bold=false},
+
 
     -- LSP
     DiagnosticSignHint = { fg = p.blue_400, bg = c.status_line_bg },
