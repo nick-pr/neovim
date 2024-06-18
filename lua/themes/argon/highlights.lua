@@ -39,6 +39,7 @@ return {
     PreProc = { fg = p.orange_300 },
     MatchParen = { fg = p.other.yellow, bold = true },
     Folded = { bg = "#181820" },
+    WinSeparator = {fg = c.cursor_line, bold = true },
 
     -- GitSigns
     GitSignsAdd = { fg = p.green_400, bg = c.background },
@@ -122,7 +123,6 @@ return {
     ["@markup.link.label"] = { fg = c.FOREGROUND, italic = true },
     ["@markup.link.url"] = { fg = p.blue_300, underline = true },
     ["@markup.raw"] = { fg = c.overlay },
-
     ["@markup.heading.gitcommit"] = { bold=false},
 
 
