@@ -25,6 +25,8 @@ require("lazy").setup("plugins", {
 })
 pcall(require, "override")
 
+require("core")
+
 -- Set colorscheme
 vim.cmd("colorscheme argon")
 
