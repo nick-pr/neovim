@@ -39,7 +39,7 @@ return {
     PreProc = { fg = p.orange_300 },
     MatchParen = { fg = p.other.yellow, bold = true },
     Folded = { bg = "#181820" },
-    WinSeparator = {fg = c.cursor_line, bold = true },
+    WinSeparator = { fg = c.cursor_line, bold = true },
 
     -- GitSigns
     GitSignsAdd = { fg = p.green_400, bg = c.background },
@@ -58,6 +58,7 @@ return {
 
     -- Treesitter
     ["@type"] = { link = "Type" },
+    ["@type.builtin"] = { link = "Type" },
     ["@type.definition"] = { fg = c.type, bold = false },
     ["@type.qualifier"] = { fg = p.emerald_300, bold = false },
     ["@keyword"] = { link = "Keyword" },
@@ -105,6 +106,19 @@ return {
 
     -- Treesitter (HTML)
     ["@text.title"] = { fg = c.forground },
+    ["@markup.heading.1.html"] = { fg = c.FOREGROUND, bold = false },
+    ["@markup.heading.2.html"] = { fg = c.FOREGROUND, bold = false },
+    ["@markup.heading.3.html"] = { fg = c.FOREGROUND, bold = false },
+    ["@markup.heading.4.html"] = { fg = c.FOREGROUND, bold = false },
+    ["@string.special.url"] = { fg = p.blue_300 },
+
+    -- Svelte
+
+    ["@text.title.svelte"] = { fg = c.forground },
+    ["@markup.heading.1.svelte"] = { fg = c.FOREGROUND, bold = false },
+    ["@markup.heading.2.svelte"] = { fg = c.FOREGROUND, bold = false },
+    ["@markup.heading.3.svelte"] = { fg = c.FOREGROUND, bold = false },
+    ["@markup.heading.4.svelte"] = { fg = c.FOREGROUND, bold = false },
     ["@string.special.url"] = { fg = p.blue_300 },
 
     -- Treesitter (CSS)
@@ -116,15 +130,14 @@ return {
     ["@lsp.type.namespace"] = { link = "@namespace" },
 
     -- Treesitter (Markdown)
-    ["@markup.heading"] = { fg = p.orange_300, bold=true},
+    ["@markup.heading"] = { fg = p.orange_300, bold = true },
     ["@markup.strong"] = { fg = p.red_300, bold = true },
     ["@markup.italic"] = { fg = p.green_300, italic = true },
     ["@markup.link"] = { fg = c.overlay, italic = true },
     ["@markup.link.label"] = { fg = c.FOREGROUND, italic = true },
     ["@markup.link.url"] = { fg = p.blue_300, underline = true },
     ["@markup.raw"] = { fg = c.overlay },
-    ["@markup.heading.gitcommit"] = { bold=false},
-
+    ["@markup.heading.gitcommit"] = { bold = false },
 
     -- LSP
     DiagnosticSignHint = { fg = p.blue_400, bg = c.status_line_bg },

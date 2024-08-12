@@ -88,6 +88,7 @@ return {
             "vimdoc",
             "templ",
             "proto",
+            "typst",
         },
         incremental_selection = {
             enable = true,
