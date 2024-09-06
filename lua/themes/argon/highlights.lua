@@ -131,9 +131,10 @@ return {
 
     -- Treesitter (Markdown)
     ["@markup.heading"] = { fg = p.orange_300, bold = true },
-    ["@markup.strong"] = { fg = p.red_300, bold = true },
+    ["@markup.strong"] = { fg = c.FOREGROUND, bold = true },
     ["@markup.italic"] = { fg = p.green_300, italic = true },
     ["@markup.link"] = { fg = c.overlay, italic = true },
+    ["@markup.list"] = { fg = p.red_300, italic = true },
     ["@markup.link.label"] = { fg = c.FOREGROUND, italic = true },
     ["@markup.link.url"] = { fg = p.blue_300, underline = true },
     ["@markup.raw"] = { fg = c.overlay },

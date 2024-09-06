@@ -67,7 +67,7 @@ M.config = function(opts)
         },
     })
     lspconfig.pyright.setup({ capabilities = base_capabilities, on_attach = base_on_attach })
-    lspconfig.tsserver.setup({ capabilities = base_capabilities, on_attach = base_on_attach })
+    lspconfig.ts_ls.setup({ capabilities = base_capabilities, on_attach = base_on_attach })
     lspconfig.svelte.setup({ { capabilities = base_capabilities, on_attach = base_on_attach } })
     lspconfig.templ.setup({ { capabilities = base_capabilities, on_attach = base_on_attach } })
     lspconfig.lua_ls.setup({ { capabilities = base_capabilities, on_attach = base_on_attach } })
