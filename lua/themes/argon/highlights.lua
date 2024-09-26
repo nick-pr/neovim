@@ -5,8 +5,8 @@ local c = require("themes.argon.colors")
 return {
     -- Core Highlights
     Normal = { fg = c.foreground, bg = c.background },
-    SignColumn = { bg = c.cursor_line },
-    LineNr = { fg = c.comment, bg = p.zinc_850 },
+    SignColumn = { bg = p.neutral_750 },
+    LineNr = { fg = c.comment, bg = p.neutral_800 },
     CursorLineNR = { fg = p.orange_300, bg = c.cursor_line },
     CursorLine = { bg = c.cursor_line },
     EndOfBuffer = { fg = c.background },
@@ -113,7 +113,6 @@ return {
     ["@string.special.url"] = { fg = p.blue_300 },
 
     -- Svelte
-
     ["@text.title.svelte"] = { fg = c.forground },
     ["@markup.heading.1.svelte"] = { fg = c.FOREGROUND, bold = false },
     ["@markup.heading.2.svelte"] = { fg = c.FOREGROUND, bold = false },
@@ -130,13 +129,15 @@ return {
     ["@lsp.type.namespace"] = { link = "@namespace" },
 
     -- Treesitter (Markdown)
-    ["@markup.heading"] = { fg = p.orange_300, bold = true },
-    ["@markup.strong"] = { fg = c.FOREGROUND, bold = true },
-    ["@markup.italic"] = { fg = p.green_300, italic = true },
+    ["@markup.heading.1"] = { fg = p.orange_300, bold = true },
+    ["@markup.heading.2"] = { fg = p.blue_300, bold = true },
+    ["@markup.heading.3"] = { fg = p.red_300, bold = true },
+    ["@markup.strong"] = { bold = true },
+    ["@markup.italic"] = { italic = true },
     ["@markup.link"] = { fg = c.overlay, italic = true },
     ["@markup.list"] = { fg = p.red_300, italic = true },
     ["@markup.link.label"] = { fg = c.FOREGROUND, italic = true },
-    ["@markup.link.url"] = { fg = p.blue_300, underline = true },
+    ["@markup.link.url"] = { fg = p.blue_400, underline = true },
     ["@markup.raw"] = { fg = c.overlay },
     ["@markup.heading.gitcommit"] = { bold = false },
 

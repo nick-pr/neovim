@@ -49,6 +49,7 @@ return {
     neutral_750 = "#333333",
     neutral_800 = "#262626",
     neutral_850 = "#1F1F1F",
+    neutral_875 = "#1B1B1B",
     neutral_900 = "#171717",
     neutral_950 = "#0a0a0a",
 

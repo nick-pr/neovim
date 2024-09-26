@@ -50,6 +50,7 @@ function statusline()
     return table.concat({
         mode(),
         pwd(),
+        "%# StatusLine #",
     })
 end
 
