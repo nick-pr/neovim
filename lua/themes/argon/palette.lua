@@ -118,6 +118,7 @@ return {
     sky_500 = "#0ea5e9",
     sky_600 = "#0284c7",
 
+    blue_200 = "#bfdbfe",
     blue_300 = "#93C5FD",
     blue_350 = "#7AB5FC",
     blue_375 = "#6DADFB",
@@ -143,6 +144,8 @@ return {
     purple_600 = "#9333EA",
     purple_700 = "#7E22CE",
 
+    fuchsia_200 = "#f5d0fe",
+    fuchsia_250 = "#F3BEFD",
     fuchsia_300 = "#F0ABFC",
     fuchsia_325 = "#EE9FFC",
     fuchsia_350 = "#EC92FB",
