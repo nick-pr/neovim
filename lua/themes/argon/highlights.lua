@@ -19,8 +19,6 @@ local c = {
     constructor = p.orange_200,
     overlay = p.gray_400,
     punc_bracket = p.gray_400,
-    numbers = p.red_400,
-    visual = p.zinc_750,
     cursor_line = p.neutral_800,
 }
 
@@ -54,7 +52,7 @@ return {
     VertSplit =                         { fg = c.STATUS_LINE_BG, bg = c.BACKGROUND },
     FloatBorder =                       { fg = c.overlay },
     NormalFloat =                       { bg = c.BACKGROUND },
-    Visual =                            { bg = c.visual },
+    Visual =                            { bg = p.zinc_750 },
     Search =                            { bg = p.yellow_500, fg = c.BACKGROUND },
     Comment =                           { fg = c.OVERLAY },
     PreProc =                           { fg = p.orange_300 },
