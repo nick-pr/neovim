@@ -89,6 +89,7 @@ return {
             "templ",
             "proto",
             "typst",
+            "sql",
         },
         incremental_selection = {
             enable = true,
